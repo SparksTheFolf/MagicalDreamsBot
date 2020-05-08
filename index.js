@@ -10,6 +10,10 @@ bot.on('ready', () =>{
 
 bot.on('message', msg=>{
 
-    
+    if(msg.content === 'website'){
+
+        msg.reply('Here is the website: https://magicaldreams.us/');
+
+    }
 
 })
