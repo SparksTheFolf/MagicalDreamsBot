@@ -42,11 +42,11 @@ bot.on('message', msg=>{
 
     if(msg.content === 'shamu'){
 
-        msg.reply(':happy: :happy: :happy: :happy: :happy: :happy: :happy: :happy: :happy: :happy: :happy: ');
+        msg.reply(':happy: :happy: :happy: :happy: :happy: :happy: :happy: :happy: :happy: :happy: :happy:(cant to cross emojis) ');
 
     }
 
-    if(msg.content === 'mangers'){
+    if(msg.content === 'managers'){
 
         msg.reply('Current Managers are: Chums122, DreamBig02, MakingMiners, Rei, Arch, Starport75');
 
