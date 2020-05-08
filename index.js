@@ -16,7 +16,13 @@ bot.on('message', msg=>{
 
     }
 
-    if(msg.content === 'application' && msg.content === 'app'){
+    if(msg.content === 'app'){
+
+        msg.reply('About a 2 week waiting period, here is the website: https://magicaldreams.us/apply/');
+
+    }
+
+    if(msg.content === 'application'){
 
         msg.reply('About a 2 week waiting period, here is the website: https://magicaldreams.us/apply/');
 
