@@ -28,4 +28,16 @@ bot.on('message', msg=>{
 
     }
 
+    if(msg.content === 'ip'){
+
+        msg.reply('Server ip is: magicaldreams.us');
+
+    }
+
+    if(msg.content === 'server ip'){
+
+        msg.reply('Server ip is: magicaldreams.us');
+
+    }
+
 })
