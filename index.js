@@ -46,4 +46,10 @@ bot.on('message', msg=>{
 
     }
 
+    if(msg.content === 'mangers'){
+
+        msg.reply('Current Managers are: Chums122, DreamBig02, MakingMiners, Rei, Arch, Starport75');
+
+    }
+
 })
