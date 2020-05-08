@@ -40,4 +40,10 @@ bot.on('message', msg=>{
 
     }
 
+    if(msg.content === 'shamu'){
+
+        msg.reply(':happy: :happy: :happy: :happy: :happy: :happy: :happy: :happy: :happy: :happy: :happy: ');
+
+    }
+
 })
