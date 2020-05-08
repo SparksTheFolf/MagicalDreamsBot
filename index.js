@@ -58,4 +58,16 @@ bot.on('message', msg=>{
 
     }
 
+    if(msg.content === 'morning'){
+
+        msg.reply('Morning to you too! :) How are you?');
+
+    }
+
+    if(msg.content === 'im good how are you'){
+
+        msg.reply('I am going well, thanks for asking! :)');
+
+    }
+
 })
