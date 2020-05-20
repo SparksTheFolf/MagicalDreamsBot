@@ -15,13 +15,8 @@ bot.on('ready', () =>{
     console.log('MDBot is Online!');
 
     bot.user.setStatus('available')
-    bot.user.setPresence({
-        game: {
-            name: '!mdhelp',
-            type: "!mdhelp",
-            url: "magicaldreams.us"
-        }
-    });
+    client.user.setActivity("!mdhelp"); 
+
 })
 
 bot.on('message', msg=>{
