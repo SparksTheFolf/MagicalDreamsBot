@@ -25,7 +25,7 @@ bot.on('message', msg=>{
      //       if(!args[1]) return message.channel.send('You must type a minecraft server ip')
         //    if(!args[2]) return message.channel.send('You must type a minecraft server port')
  
-            ping('play.hypixel.net', 25565, (error, reponse) =>{
+            ping('magicaldreams.us', 25565, (error, reponse) =>{
                 if(error) throw error
 
                 console.log(reponse)
