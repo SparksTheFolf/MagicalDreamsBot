@@ -91,16 +91,38 @@ bot.on('message', msg=>{
 
     switch(args[0]){
         case 'admin':
-            score = score+1;
-            console.log(score)
-            if(!msg.member.roles.find(r => r.name === "Tod")) return msg.reply('YOU DO NOT HAVE PERMISSIONS').then(msg => msg.delete(5000))
+
+            if(!msg.member.roles.find(r => r.name === "Tod")){
+                        score = score+1;
+                console.log(score)
                 const Embed = new RichEmbed()
                 .setColor(0x2AFF00)
                 .setTitle('Magical Dreams: Admin Settings')
                 .addField('Current Build Version3', "hello")
+            }else{
 
+                score = score+1;
+                console.log(score)
+
+                msg.reply('YOU DO NOT HAVE PERMISSIONS').then(msg => msg.delete(10000))
+            }
     
               break;
+    }
+
+    switch(args[0]){
+        case 'nono':
+           score = score+1;
+
+            const Embed = new RichEmbed()
+            .setColor(0x2AFF00)
+            .setTitle('Magical Dreams: NONO(stacker_nono)')
+            .addField('Is he the best?', 'Duno, maybe?')
+            .addField('Needs to learn more JS', 'YESS')
+            .addField('Change is IGN?', 'Yesss, to stacker_yesyes')
+
+           msg.reply(Embed)
+           console.log(score)
     }
 
 
@@ -111,6 +133,8 @@ bot.on('message', msg=>{
 
         console.log(score)
     }
+
+    
 
     if(msg.content === 'website?'){
 
