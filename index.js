@@ -1,6 +1,6 @@
 const {Client, RichEmbed} = require('discord.js')
 const bot = new Client();
-var score = 0;
+var score = 27;
 
 
 bot.login(process.env.token);
