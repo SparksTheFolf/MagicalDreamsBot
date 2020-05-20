@@ -72,7 +72,7 @@ bot.on('message', msg=>{
 
     switch(args[0]){
         case 'about':
-
+           score = score+1;
             const Embed = new RichEmbed()
             .setColor(0x2AFF00)
             .setTitle('Magical Dreams: About')
@@ -82,7 +82,7 @@ bot.on('message', msg=>{
             .addField('Website', 'https://github.com/nolant108')
 
            msg.reply(Embed)
-           score = score+1;
+
 
            console.log(score)
     }
