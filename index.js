@@ -70,6 +70,23 @@ bot.on('message', msg=>{
            console.log(score)
     }
 
+    switch(args[0]){
+        case 'about':
+
+            const Embed = new RichEmbed()
+            .setColor(0xF0FF00)
+            .setTitle('Magical Dreams: About')
+            .addField('Current Build Version', "v1.3.7")
+            .addField('Current Score Since Build', score)
+            .addField('Author', "nono(stacker_nono)")
+            .addField('Website', 'https://github.com/nolant108')
+
+           msg.reply(Embed)
+           score = score+1;
+
+           console.log(score)
+    }
+
 
     if(msg.content === 'website'){
 
@@ -86,6 +103,8 @@ bot.on('message', msg=>{
 
         console.log(score)
     }
+
+    
 
     if(msg.content === 'app'){
 
