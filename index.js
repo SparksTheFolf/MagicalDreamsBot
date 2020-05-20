@@ -43,6 +43,20 @@ bot.on('message', msg=>{
  
     }
 
+    switch(args[0]){
+        case 'mdhelp':
+
+            const Embed = new RichEmbed()
+            .setTitle('MD: Help')
+            .addField('Server Status', "!md")
+            .addField('Managers', "managers")
+            .addField('Apply for Staff', "app , apply , application")
+            .addField('Server Ip', 'ip,  server ip')
+
+           msg.reply(Embed)
+
+    }
+
 
     if(msg.content === 'website'){
 
