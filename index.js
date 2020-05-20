@@ -14,8 +14,7 @@ const ping = require('minecraft-server-util')
 bot.on('ready', () =>{
     console.log('MDBot is Online!');
 
-  //  client.user.setActivity("!mdhelp"); 
-  //client.user.setStatus('online', '!mdhelp') 
+    bot.user.setActivity('!mdhelp')
 
 
 })
