@@ -35,7 +35,7 @@ bot.on('message', msg=>{
                 if(error) throw error
 
                 const Embed = new RichEmbed()
-                .setColor(0x2AFF00)
+                .setColor(0x3498DB)
                 .setTitle('Server Status')
                 .addField('Server IP', resonse.host)
                 .addField('Server Version', resonse.version)
@@ -74,7 +74,7 @@ bot.on('message', msg=>{
         case 'about':
 
             const Embed = new RichEmbed()
-            .setColor(0xF0FF00)
+            .setColor(0x2AFF00)
             .setTitle('Magical Dreams: About')
             .addField('Current Build Version', "v1.3.7")
             .addField('Current Score Since Build', score)
