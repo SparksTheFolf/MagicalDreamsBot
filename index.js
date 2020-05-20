@@ -63,86 +63,114 @@ bot.on('message', msg=>{
             .addField('Server Ip', 'ip,  server ip')
 
            msg.reply(Embed)
+           score = score+1;
 
+           console.log(score)
     }
 
 
     if(msg.content === 'website'){
 
         msg.reply('Here is the website: https://magicaldreams.us/');
+        score = score+1;
 
+        console.log(score)
     }
 
     if(msg.content === 'website?'){
 
         msg.reply('Here is the website: https://magicaldreams.us/');
+        score = score+1;
 
+        console.log(score)
     }
 
     if(msg.content === 'app'){
 
         msg.reply('About a 2 week waiting period, here is the website: https://magicaldreams.us/apply/');
+        score = score+1;
 
+        console.log(score)
     }
     
         if(msg.content === 'apply'){
 
         msg.reply('About a 2 week waiting period, here is the website: https://magicaldreams.us/apply/');
+        score = score+1;
 
+        console.log(score)
     }
 
     if(msg.content === 'app?'){
 
         msg.reply('About a 2 week waiting period, here is the website: https://magicaldreams.us/apply/');
+        score = score+1;
 
+        console.log(score)
     }
 
     if(msg.content === 'application'){
 
         msg.reply('About a 2 week waiting period, here is the website: https://magicaldreams.us/apply/');
+        score = score+1;
 
+        console.log(score)
     }
 
     if(msg.content === 'ip'){
 
         msg.reply('Server ip is: magicaldreams.us');
+        score = score+1;
 
+        console.log(score)
     }
 
     if(msg.content === 'server ip'){
 
         msg.reply('Server ip is: magicaldreams.us');
+        score = score+1;
 
+        console.log(score)
     }
 
     if(msg.content === 'shamu'){
 
         msg.reply(':happy: :happy: :happy: :happy: :happy: :happy: :happy: :happy: :happy: :happy: :happy:(cant to cross emojis) ');
+        score = score+1;
 
+        console.log(score)
     }
 
     if(msg.content === 'managers'){
 
         msg.reply('Current Managers are: Chums122, DreamBig02, MakingMiners, Rei_Arch, Starport75');
+        score = score+1;
 
+        console.log(score)
     }
 
     if(msg.content === 'who are the managers'){
 
         msg.reply('Current Managers are: Chums122, DreamBig02, MakingMiners, Rei_Arch, Starport75');
+        score = score+1;
 
+        console.log(score)
     }
 
     if(msg.content === 'morning'){
 
         msg.reply('Morning to you too! :) How are you?');
+        score = score+1;
 
+        console.log(score)
     }
 
     if(msg.content === 'im good how are you'){
 
         msg.reply('I am going well, thanks for asking! :)');
+        score = score+1;
 
+        console.log(score)
     }
 
 })
