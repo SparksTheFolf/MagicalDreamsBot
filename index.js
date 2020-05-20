@@ -36,7 +36,6 @@ bot.on('message', msg=>{
                 .addField('Online players', resonse.onlinePlayers)
                 .addField('Max Players', resonse.maxPlayers)
 
-                console.log(resonse)
                msg.reply(Embed)
 
             })
