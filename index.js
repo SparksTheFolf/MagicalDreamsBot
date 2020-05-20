@@ -1,15 +1,16 @@
-const {Client, RichEmbed, Message} = require('discord.js')
+const {Client, RichEmbed} = require('discord.js')
 const bot = new Client();
 
+const token = 'NzA4Mzk2NDkzMzU0MDQxNDc0.XsVYUg.BgLHuGDdQAWlkwTbDVGpihMQf5M'
 
-bot.login(process.env.token);
+//bot.login(process.env.token);
 
 const PREFIX = '!'
 
 const ping = require('minecraft-server-util')
 
-bot.login(process.env.token);
-//bot.login(token)
+//bot.login(process.env.token);
+bot.login(token)
 
 bot.on('ready', () =>{
     console.log('MDBot is Online!');
@@ -26,18 +27,19 @@ bot.on('message', msg=>{
      //       if(!args[1]) return message.channel.send('You must type a minecraft server ip')
         //    if(!args[2]) return message.channel.send('You must type a minecraft server port')
  
-            ping('magicaldreams.us', 25565, (error, reponse) =>{
+            ping('magicaldreams.us', 25565, (error, resonse) =>{
                 if(error) throw error
 
                 const Embed = new RichEmbed()
                 .setTitle('Server Status')
-                .addField('Server IP')
-                .addField('Server Version')
-                .addField('Online players')
-                .addField('Max Players')
+                .addField('Server IP', resonse.host)
+                .addField('Server Version', resonse.version)
+                .addField('Online players', resonse.onlinePlayers)
+                .addField('Max Players', resonse.maxPlayers)
 
-                Message.channel.send(Embed)
-               
+                console.log(resonse)
+               msg.reply(Embed)
+
             })
         break
  
