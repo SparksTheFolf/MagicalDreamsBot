@@ -36,7 +36,7 @@ bot.on('message', msg=>{
                 .addField('Online players')
                 .addField('Max Players')
 
-                Message.reply(Embed)
+                Message.reponse(Embed)
                
             })
         break
