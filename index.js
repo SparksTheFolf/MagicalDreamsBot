@@ -91,7 +91,7 @@ bot.on('message', msg=>{
         case 'admin':
             score = score+1;
             console.log(score)
-            if(!msg.member.roles.find(r => r.name === "Tod")){
+            if(msg.member.roles.find(r => r.name === "Tod")){
                 const Embed = new RichEmbed()
                 .setColor(0x2AFF00)
                 .setTitle('Magical Dreams: Admin Settings')
