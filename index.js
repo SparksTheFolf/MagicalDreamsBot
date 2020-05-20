@@ -1,6 +1,6 @@
 const {Client, RichEmbed} = require('discord.js')
 const bot = new Client();
-var score = 27;
+var score = 35;
 
 
 bot.login(process.env.token);
@@ -73,6 +73,7 @@ bot.on('message', msg=>{
     switch(args[0]){
         case 'about':
            score = score+1;
+
             const Embed = new RichEmbed()
             .setColor(0x2AFF00)
             .setTitle('Magical Dreams: About')
@@ -82,9 +83,27 @@ bot.on('message', msg=>{
             .addField('Website', 'https://github.com/nolant108')
 
            msg.reply(Embed)
-
-
            console.log(score)
+    }
+
+
+    switch(args[0]){
+        case 'admin':
+            score = score+1;
+            console.log(score)
+            if(!msg.member.roles.find(r => r.name === "OWNER")){
+                const Embed = new RichEmbed()
+                .setColor(0x2AFF00)
+                .setTitle('Magical Dreams: Admin Settings')
+              //  .addField('Current Build Version', "v1.3.7")
+               // .addField('Current Score Since Build', score)
+               // .addField('Author', "nono(stacker_nono)")
+               // .addField('Website', 'https://github.com/nolant108')
+            }else{
+                msg.reply('YOU DO NOT HAVE PERMISSIONS')
+                .then(msg => msg.delete(5000))
+            }
+        break;
     }
 
 
