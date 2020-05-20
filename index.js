@@ -1,5 +1,5 @@
-const Discord = require('discord.js')
-const bot = new Discord.Client();
+const {Client, RichEmbed} = require('discord.js')
+const bot = new Client();
 
 
 bot.login(process.env.token);
@@ -25,13 +25,10 @@ bot.on('message', msg=>{
      //       if(!args[1]) return message.channel.send('You must type a minecraft server ip')
         //    if(!args[2]) return message.channel.send('You must type a minecraft server port')
  
-            ping('magicaldreams.us', 25565, (error, reponse) =>{
+            ping('play.hypixel.net', 25565, (error, reponse) =>{
                 if(error) throw error
-                .setTitle('Server Status')
-                .addField('Server IP', reponse.host)
-                .addField('Server Version', reponse.version)
-                .addField('Online Players', reponse.onlinePlayers)
-                .addField('Max Players', reponse.maxPlayers)
+
+                console.log(reponse)
                
             })
         break
