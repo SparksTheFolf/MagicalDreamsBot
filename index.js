@@ -52,6 +52,12 @@ bot.on('message', msg=>{
         msg.reply('About a 2 week waiting period, here is the website: https://magicaldreams.us/apply/');
 
     }
+    
+        if(msg.content === 'apply'){
+
+        msg.reply('About a 2 week waiting period, here is the website: https://magicaldreams.us/apply/');
+
+    }
 
     if(msg.content === 'app?'){
 
