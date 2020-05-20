@@ -64,6 +64,7 @@ bot.on('message', msg=>{
             .addField('Apply for Staff', "app , apply , application")
             .addField('Server Ip', 'ip,  server ip')
             .addField('Staff Commands', '!admin')
+            .addField('About MDBot', '!about')
 
            msg.reply(Embed)
            score = score+1;
