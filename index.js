@@ -1,6 +1,6 @@
 const {Client, RichEmbed} = require('discord.js')
 const bot = new Client();
-var score = 38;
+var score = 40;
 
 
 bot.login(process.env.token);
@@ -63,6 +63,7 @@ bot.on('message', msg=>{
             .addField('Managers', "managers")
             .addField('Apply for Staff', "app , apply , application")
             .addField('Server Ip', 'ip,  server ip')
+            .addField('Staff Commands', '!admin')
 
            msg.reply(Embed)
            score = score+1;
@@ -91,17 +92,16 @@ bot.on('message', msg=>{
         case 'admin':
             score = score+1;
             console.log(score)
-            if(msg.member.roles.find(r => r.name === "Tod")){
+            if(msg.member.roles.find(r => r.name === "Tod")) return msg.reply('YOU DO NOT HAVE PERMISSIONS').then(msg => msg.delete(5000))
                 const Embed = new RichEmbed()
                 .setColor(0x2AFF00)
                 .setTitle('Magical Dreams: Admin Settings')
                 .addField('Current Build Version3', "hello")
-                msg.reply('HI Tod')
+
              
-            }else{
-                msg.reply('YOU DO NOT HAVE PERMISSIONS')
-                .then(msg => msg.delete(5000))
-            }
+            
+
+            
         break;
     }
 
