@@ -1,4 +1,8 @@
-const {Client, RichEmbed} = require('discord.js')
+const Discord = require('discord.js');
+const bot = new Discord.Client();
+
+
+bot.login(process.env.token);
 
 const PREFIX = '!'
 
