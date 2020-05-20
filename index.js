@@ -1,14 +1,39 @@
-const Discord = require('discord.js');
-const bot = new Discord.Client();
+const {Client, RichEmbed } = require('discord.js')
+const bot = new Client();
 
+const PREFIX = '!'
+
+const ping = require('minecraft-server-util')
 
 bot.login(process.env.token);
+//bot.login(token)
 
 bot.on('ready', () =>{
     console.log('MDBot is Online!');
 })
 
 bot.on('message', msg=>{
+
+    let args = msg.content.substring(PREFIX.length).split(' ')
+
+    switch(args[0]){
+        case 'mc':
+
+            const Embed = new RichEmbed()
+            ping('magcialdreams.us', 25565, (error, response) =>{
+                if(error) throw error
+
+                const Embed = new RichEmbed()
+
+                .setTitle('Server Status', )
+                .addField('Online Players', )
+
+                console.log(response)
+            })
+        break
+
+    }
+
 
     if(msg.content === 'website'){
 
