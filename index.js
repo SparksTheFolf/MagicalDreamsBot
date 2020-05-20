@@ -1,7 +1,5 @@
-const Discord = require('discord.js');
-const bot = new Discord.Client();
-var client  = new Discord.Client();
-var emb = new Discord.RichEmbed();
+const {Client, RichEmbed} = require('discord.js');
+const bot = new Client();
 
 
 bot.login(process.env.token);
