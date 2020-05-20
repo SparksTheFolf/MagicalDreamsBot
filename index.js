@@ -13,6 +13,15 @@ const ping = require('minecraft-server-util')
 
 bot.on('ready', () =>{
     console.log('MDBot is Online!');
+
+    bot.user.setStatus('available')
+    bot.user.setPresence({
+        game: {
+            name: '!mdhelp',
+            type: "!mdhelp",
+            url: "magicaldreams.us"
+        }
+    });
 })
 
 bot.on('message', msg=>{
