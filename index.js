@@ -1,16 +1,15 @@
 const {Client, RichEmbed} = require('discord.js')
 const bot = new Client();
 
-const token = 'NzA4Mzk2NDkzMzU0MDQxNDc0.XsVYUg.BgLHuGDdQAWlkwTbDVGpihMQf5M'
 
-//bot.login(process.env.token);
+bot.login(process.env.token);
 
 const PREFIX = '!'
 
 const ping = require('minecraft-server-util')
 
 //bot.login(process.env.token);
-bot.login(token)
+//bot.login(token)
 
 bot.on('ready', () =>{
     console.log('MDBot is Online!');
@@ -21,7 +20,7 @@ bot.on('message', msg=>{
     let args = msg.content.substring(PREFIX.length).split(' ')
  
     switch(args[0]){
-        case 'mc':
+        case 'md':
 
 
      //       if(!args[1]) return message.channel.send('You must type a minecraft server ip')
