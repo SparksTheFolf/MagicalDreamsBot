@@ -1,4 +1,4 @@
-const {Client, RichEmbed, response, MessageChannel} = require('discord.js')
+const {Client, RichEmbed, response, Message} = require('discord.js')
 const bot = new Client();
 
 
@@ -37,7 +37,7 @@ bot.on('message', msg=>{
                 .addField('Max Players', response.maxPlayers)
 
                 console.log(reponse)
-                MessageChannel.response(Embed)
+                Message.reply(Embed)
                
             })
         break
