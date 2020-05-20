@@ -35,6 +35,7 @@ bot.on('message', msg=>{
                 if(error) throw error
 
                 const Embed = new RichEmbed()
+                .setColor(0x3498DB)
                 .setTitle('Server Status')
                 .addField('Server IP', resonse.host)
                 .addField('Server Version', resonse.version)
@@ -56,6 +57,7 @@ bot.on('message', msg=>{
         case 'help':
 
             const Embed = new RichEmbed()
+            .setColor(0xF0FF00)
             .setTitle('Magical Dreams: Help')
             .addField('Server Status', "!md")
             .addField('Managers', "managers")
