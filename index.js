@@ -39,7 +39,7 @@ bot.on('message', msg=>{
                 .addField('Server Version', resonse.version)
                 .addField('Online players', resonse.onlinePlayers)
                 .addField('Max Players', resonse.maxPlayers)
-
+               msg.reply("Here you go, :) ")
                msg.reply(Embed)
 
             })
