@@ -15,20 +15,23 @@ bot.on('ready', () =>{
 bot.on('message', msg=>{
 
     let args = msg.content.substring(PREFIX.length).split(' ')
-
+ 
     switch(args[0]){
         case 'mc':
-
-            const Embed = new RichEmbed()
-            ping('magcialdreams.us', 25565, (error, response) =>{
+ 
+            if(!args[1]) return msg.channel.send('You must type a minecraft server ip')
+            if(!args[2]) return msg.channel.send('You must type a minecraft server port')
+ 
+            ping(args[1], parseInt(args[2]), (error, reponse) =>{
                 if(error) throw error
-
                 const Embed = new RichEmbed()
-
-                .setTitle('Server Status', )
-                .addField('Online Players', )
-
-                console.log(response)
+                .setTitle('Server Status')
+                .addField('Server IP', reponse.host)
+                .addField('Server Version', reponse.version)
+                .addField('Online Players', reponse.onlinePlayers)
+                .addField('Max Players', reponse.maxPlayers)
+               
+                msg.channel.send(Embed)
             })
         break
 
