@@ -1,4 +1,4 @@
-const {Client, RichEmbed, response, Message} = require('discord.js')
+const {Client, RichEmbed, Message} = require('discord.js')
 const bot = new Client();
 
 
@@ -31,10 +31,10 @@ bot.on('message', msg=>{
 
                 const Embed = new RichEmbed()
                 .setTitle('Server Status')
-                .addField('Server IP', response.host)
-                .addField('Server Version', response.version)
-                .addField('Online players', response.onlinePlayers)
-                .addField('Max Players', response.maxPlayers)
+                .addField('Server IP')
+                .addField('Server Version')
+                .addField('Online players')
+                .addField('Max Players')
 
                 Message.reply(Embed)
                
