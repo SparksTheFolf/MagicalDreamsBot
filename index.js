@@ -95,7 +95,7 @@ bot.on('message', msg=>{
                 const Embed = new RichEmbed()
                 .setColor(0x2AFF00)
                 .setTitle('Magical Dreams: Admin Settings')
-              //  .addField('Current Build Version', "v1.3.7")
+                .addField('Current Build Version', "v1.3.7")
                // .addField('Current Score Since Build', score)
                // .addField('Author', "nono(stacker_nono)")
                // .addField('Website', 'https://github.com/nolant108')
