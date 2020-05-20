@@ -99,11 +99,8 @@ bot.on('message', msg=>{
                 .setTitle('Magical Dreams: Admin Settings')
                 .addField('Current Build Version3', "hello")
 
-             
-            
-
-            
-        break;
+    
+              break;
     }
 
 
