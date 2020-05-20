@@ -1,5 +1,5 @@
-const Discord = require('discord.js');
-const bot = new Discord.Client();
+const {Client, RichEmbed } = require('discord.js')
+const bot = new Client();
 
 
 bot.login(process.env.token);
@@ -27,7 +27,7 @@ bot.on('message', msg=>{
  
             ping('magicaldreams.us', 25565, (error, reponse) =>{
                 if(error) throw error
-                var embed = new Discord.MessageEmbed()
+                var embed = new MessageEmbed()
                 .setTitle('Server Status')
                 .addField('Server IP', reponse.host)
                 .addField('Server Version', reponse.version)
