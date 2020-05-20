@@ -35,7 +35,7 @@ bot.on('message', msg=>{
                 if(error) throw error
 
                 const Embed = new RichEmbed()
-                .setColor(0x3498DB)
+                .setColor(0x2AFF00)
                 .setTitle('Server Status')
                 .addField('Server IP', resonse.host)
                 .addField('Server Version', resonse.version)
