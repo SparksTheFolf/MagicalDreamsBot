@@ -1,5 +1,6 @@
 const {Client, RichEmbed} = require('discord.js')
 const bot = new Client();
+var score = 0;
 
 
 bot.login(process.env.token);
@@ -41,6 +42,10 @@ bot.on('message', msg=>{
                 .addField('Max Players', resonse.maxPlayers)
                msg.reply("Here you go, :) ")
                msg.reply(Embed)
+
+               score = score+1;
+
+               console.log(score)
 
             })
         break
