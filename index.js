@@ -1,4 +1,4 @@
-const {Client, RichEmbed } = require('discord.js')
+const {Client, MessageEmbed } = require('discord.js')
 const bot = new Client();
 
 
