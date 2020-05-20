@@ -21,14 +21,23 @@ bot.on('message', msg=>{
  
     switch(args[0]){
         case 'mc':
- 
+
+
      //       if(!args[1]) return message.channel.send('You must type a minecraft server ip')
         //    if(!args[2]) return message.channel.send('You must type a minecraft server port')
  
             ping('magicaldreams.us', 25565, (error, reponse) =>{
                 if(error) throw error
 
+                const Embed = new RichEmbed()
+                .setTitle('Server Status')
+                .addField('Server IP', response.host)
+                .addField('Server Version', response.version)
+                .addField('Online players', response.onlinePlayers)
+                .addField('Max Players', response.maxPlayers)
+
                 console.log(reponse)
+                MessageChannel.response(Embed)
                
             })
         break
