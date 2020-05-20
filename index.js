@@ -14,7 +14,7 @@ const ping = require('minecraft-server-util')
 bot.on('ready', () =>{
     console.log('MDBot is Online!');
 
-    bot.user.setActivity('for !mdhelp', {type: 'WATCHING'})
+    bot.user.setActivity('for !help', {type: 'WATCHING'})
 
 
 })
@@ -48,10 +48,10 @@ bot.on('message', msg=>{
     }
 
     switch(args[0]){
-        case 'mdhelp':
+        case 'help':
 
             const Embed = new RichEmbed()
-            .setTitle('MD: Help')
+            .setTitle('Magical Dreams: Help')
             .addField('Server Status', "!md")
             .addField('Managers', "managers")
             .addField('Apply for Staff', "app , apply , application")
