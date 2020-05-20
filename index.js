@@ -22,7 +22,7 @@ bot.on('message', msg=>{
            // if(!args[1]) return msg.channel.send('You must type a minecraft server ip')
            // if(!args[2]) return msg.channel.send('You must type a minecraft server port')
  
-            ping('magicaldreams.us', '25565', (error, reponse) =>{
+            ping('magicaldreams.us', 25565, (error, reponse) =>{
                 if(error) throw error
                 const Embed = new RichEmbed()
                 .setTitle('Server Status')
