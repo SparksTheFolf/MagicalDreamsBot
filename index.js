@@ -1,6 +1,6 @@
 const {Client, RichEmbed } = require('discord.js')
-var client  = new Discord.Client();
-var emb = new Discord.RichEmbed();
+var client  = new discord.Client();
+var emb = new discord.RichEmbed();
 
 const PREFIX = '!'
 
