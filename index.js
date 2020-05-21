@@ -126,6 +126,35 @@ bot.on('message', msg=>{
     }
 
 
+    switch(args[0]){
+        case 'bode':
+           score = score+1;
+
+            const Embed = new RichEmbed()
+            .setColor(0x2AFF00)
+            .setTitle('Magical Dreams: Bode (Disneyland_)')
+            .addField('Whomst', 'Iz Bode')
+            .addField('and BTW', 'You Just got Vectored')
+
+
+           msg.reply(Embed)
+           console.log(score)
+    }
+
+    switch(args[0]){
+        case 'kara':
+           score = score+1;
+
+            const Embed = new RichEmbed()
+            .setColor(0x2AFF00)
+            .setTitle('Magical Dreams: Kara (_Kara)')
+            .addField('kara is a cool kat coordinator', 'kara is a cool kat coordinator!!!!!!!!')
+
+
+           msg.reply(Embed)
+           console.log(score)
+    }
+
     if(msg.content === 'website'){
 
         msg.reply('Here is the website: https://magicaldreams.us/');
