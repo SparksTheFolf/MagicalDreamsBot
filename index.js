@@ -149,6 +149,7 @@ bot.on('message', msg=>{
             .setColor(0x2AFF00)
             .setTitle('Magical Dreams: Kara (_Kara)')
             .addField('kara is a cool kat coordinator', 'kara is a cool kat coordinator!!!!!!!!')
+            .addField('And She is...', 'A Dancing Queen')
 
 
            msg.reply(Embed)
