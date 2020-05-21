@@ -1,6 +1,6 @@
 const {Client, RichEmbed} = require('discord.js')
 const bot = new Client();
-var score = 40;
+var score = 59;
 
 
 bot.login(process.env.token);
@@ -79,7 +79,7 @@ bot.on('message', msg=>{
             const Embed = new RichEmbed()
             .setColor(0x2AFF00)
             .setTitle('Magical Dreams: About')
-            .addField('Current Build Version', "v1.3.7")
+            .addField('Current Build Version', "v1.4.2")
             .addField('Current Score Since Build', score)
             .addField('Author', "nono(stacker_nono)")
             .addField('Website', 'https://github.com/nolant108')
@@ -218,7 +218,39 @@ bot.on('message', msg=>{
         console.log(score)
     }
 
+    if(msg.content === 'Good morning!'){
+
+        msg.reply('Morning to you too! :)');
+        score = score+1;
+
+        console.log(score)
+    }
+
     if(msg.content === 'morning'){
+
+        msg.reply('Morning to you too! :) How are you?');
+        score = score+1;
+
+        console.log(score)
+    }
+
+    if(msg.content === 'morning!'){
+
+        msg.reply('Morning to you too! :) How are you?');
+        score = score+1;
+
+        console.log(score)
+    }
+
+    if(msg.content === 'Morning!'){
+
+        msg.reply('Morning to you too! :) How are you?');
+        score = score+1;
+
+        console.log(score)
+    }
+
+    if(msg.content === 'Morning'){
 
         msg.reply('Morning to you too! :) How are you?');
         score = score+1;
