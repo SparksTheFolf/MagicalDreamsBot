@@ -306,12 +306,60 @@ bot.on('message', msg=>{
         msg.delete(1000)
         msg.reply('YOU ARE NOT ALLOWED TO SAY THIS WORD(The Managers Have Been Notified) :(  ---MSG will delete in 10 seconds---')
         .then(msg => msg.delete(10000))
+    }
 
-       
-   
-       
+    if(msg.content === 'shit'){
 
+        score = score+1;
+        console.log(score)
+        msg.delete(1000)
+        msg.reply('YOU ARE NOT ALLOWED TO SAY THIS WORD(The Managers Have Been Notified) :(  ---MSG will delete in 10 seconds---')
+        .then(msg => msg.delete(10000))
+    }
 
+    if(msg.content === 'hell'){
+
+        score = score+1;
+        console.log(score)
+        msg.delete(1000)
+        msg.reply('YOU ARE NOT ALLOWED TO SAY THIS WORD(The Managers Have Been Notified) :(  ---MSG will delete in 10 seconds---')
+        .then(msg => msg.delete(10000))
+    }
+
+    if(msg.content === '$h!T'){
+
+        score = score+1;
+        console.log(score)
+        msg.delete(1000)
+        msg.reply('YOU ARE NOT ALLOWED TO SAY THIS WORD(The Managers Have Been Notified) :(  ---MSG will delete in 10 seconds---')
+        .then(msg => msg.delete(10000))
+    }
+
+    if(msg.content === '$h!t'){
+
+        score = score+1;
+        console.log(score)
+        msg.delete(1000)
+        msg.reply('YOU ARE NOT ALLOWED TO SAY THIS WORD(The Managers Have Been Notified) :(  ---MSG will delete in 10 seconds---')
+        .then(msg => msg.delete(10000))
+    }
+
+    if(msg.content === 'asshole'){
+
+        score = score+1;
+        console.log(score)
+        msg.delete(1000)
+        msg.reply('YOU ARE NOT ALLOWED TO SAY THIS WORD(The Managers Have Been Notified) :(  ---MSG will delete in 10 seconds---')
+        .then(msg => msg.delete(10000))
+    }
+
+    if(msg.content === 'son of a bitch'){
+
+        score = score+1;
+        console.log(score)
+        msg.delete(1000)
+        msg.reply('YOU ARE NOT ALLOWED TO SAY THIS WORD(The Managers Have Been Notified) :(  ---MSG will delete in 10 seconds---')
+        .then(msg => msg.delete(10000))
     }
 
 })
