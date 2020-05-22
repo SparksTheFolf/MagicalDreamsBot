@@ -130,7 +130,7 @@ bot.on('message', msg=>{
            score = score+1;
 
             const Embed = new RichEmbed()
-            .setColor(0x2AFF00)
+            .setColor(0xBD00FF)
             .setTitle('Magical Dreams: Mik (kozzy913)')
             .addField('Bee Movie?', 'Barry says "Ya like Jazz?"')
             .addField('According to all known laws of aviation,'
