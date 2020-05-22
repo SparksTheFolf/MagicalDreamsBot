@@ -397,7 +397,6 @@ switch(args[0]){
 
 
     let wordArray = msg.content.split(" ");
-    console.log(wordArray);
 
     let filterWords = ['fuck', 'shit', 'hell', '$h!t', 'asshole', 'son of a bitch', 'bitches'];
 
