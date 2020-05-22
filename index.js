@@ -309,9 +309,9 @@ bot.on('message', msg=>{
 
        // msg.channels.get('log-stuff').send(" ATTN!!!!" + member.user.tag + " has said something Bad!!")
         
-       client.on("ready", () => {
-        console.log(client.users.get('ID_OF_USER').send("Please Do Not Say Bad Words, This is a family friendly server! :)"));
-    });
+       client.channels.get("log-stuff").then( message.channel.send("ATTN!! " + message.author.toString() + ", has said something BAD!!"))
+       
+
 
     }
 
