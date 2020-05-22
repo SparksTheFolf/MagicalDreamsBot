@@ -321,7 +321,7 @@ bot.on('message', msg=>{
         score = score+1;
         console.log(score)
         msg.delete(1000)
-        msg.reply('> You are not allowed to say that here! Our team has been notified and this incident has been logged.')
+        msg.reply('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
         .then(msg => msg.delete(10000))
     }
 
@@ -330,7 +330,7 @@ bot.on('message', msg=>{
         score = score+1;
         console.log(score)
         msg.delete(1000)
-        msg.reply('> You are not allowed to say that here! Our team has been notified and this incident has been logged.')
+        msg.reply('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
         .then(msg => msg.delete(10000))
     }
 
@@ -339,7 +339,7 @@ bot.on('message', msg=>{
         score = score+1;
         console.log(score)
         msg.delete(1000)
-        msg.reply('> You are not allowed to say that here! Our team has been notified and this incident has been logged.')
+        msg.reply('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
         .then(msg => msg.delete(10000))
     }
 
@@ -348,7 +348,7 @@ bot.on('message', msg=>{
         score = score+1;
         console.log(score)
         msg.delete(1000)
-        msg.reply('> You are not allowed to say that here! Our team has been notified and this incident has been logged.')
+        msg.reply('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
         .then(msg => msg.delete(10000))
     }
 
@@ -358,7 +358,7 @@ bot.on('message', msg=>{
         score = score+1;
         console.log(score)
         msg.delete(1000)
-        msg.reply('> You are not allowed to say that here! Our team has been notified and this incident has been logged.')
+        msg.reply('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
         .then(msg => msg.delete(10000))
     }
 
@@ -367,7 +367,7 @@ bot.on('message', msg=>{
         score = score+1;
         console.log(score)
         msg.delete(1000)
-        msg.reply('> You are not allowed to say that here! Our team has been notified and this incident has been logged.')
+        msg.reply('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
         .then(msg => msg.delete(10000))
     }
 
@@ -376,7 +376,7 @@ bot.on('message', msg=>{
         score = score+1;
         console.log(score)
         msg.delete(1000)
-        msg.reply('> You are not allowed to say that here! Our team has been notified and this incident has been logged.')
+        msg.reply('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
         .then(msg => msg.delete(10000))
     }
 
@@ -385,7 +385,7 @@ bot.on('message', msg=>{
         score = score+1;
         console.log(score)
         msg.delete(1000)
-        msg.reply('> You are not allowed to say that here! Our team has been notified and this incident has been logged.')
+        msg.reply('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
         .then(msg => msg.delete(10000))
     }
 
@@ -394,7 +394,7 @@ bot.on('message', msg=>{
         score = score+1;
         console.log(score)
         msg.delete(1000)
-        msg.reply('> You are not allowed to say that here! Our team has been notified and this incident has been logged.')
+        msg.reply('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
         .then(msg => msg.delete(10000))
     }
 
@@ -403,7 +403,7 @@ bot.on('message', msg=>{
         score = score+1;
         console.log(score)
         msg.delete(1000)
-        msg.reply('> You are not allowed to say that here! Our team has been notified and this incident has been logged.')
+        msg.reply('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
         .then(msg => msg.delete(10000))
     }
 
@@ -412,7 +412,7 @@ bot.on('message', msg=>{
         score = score+1;
         console.log(score)
         msg.delete(1000)
-        msg.reply('> You are not allowed to say that here! Our team has been notified and this incident has been logged.')
+        msg.reply('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
         .then(msg => msg.delete(10000))
     }
 
