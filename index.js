@@ -1,6 +1,5 @@
-const {Client, RichEmbed, emitter} = require('discord.js')
+const {Client, RichEmbed} = require('discord.js')
 const bot = new Client();
-const emitter = new emitter();
 var score = 110;
 
 
@@ -21,9 +20,9 @@ bot.on('ready', () =>{
     
 })
 
-Client.on("messageDelete", (messageDelete) => {
-        const channel = messageDelete.guild.channels.find(ch => ch.name === 'log-stuff');channel.send(`The message : "${messageDelete.content}" by ${messageDelete.author} was deleted. There ID is ${messageDelete.author.id}`)
-       }); 
+//Client.on("messageDelete", (messageDelete) => {
+   //     const channel = messageDelete.guild.channels.find(ch => ch.name === 'log-stuff');channel.send(`The message : "${messageDelete.content}" by ${messageDelete.author} was deleted. There ID is ${messageDelete.author.id}`)
+  //     }); 
 
 bot.on('message', msg=>{
 
