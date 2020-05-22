@@ -69,7 +69,7 @@ bot.on('message', msg=>{
             .addField('Server Ip', 'ip,  server ip')
             .addField('Staff Commands', '!admin')
             .addField('About MDBot', '!about')
-            .addField('People Bios','!chums, !cole, !kindal, !nono , !kara, !bode , !ben, !mik')
+            .addField('People Bios','!chums, !cole, !kindal, !nono , !kara, !bode , !ben, !65, !mik')
 
            msg.reply(Embed)
            score = score+1;
