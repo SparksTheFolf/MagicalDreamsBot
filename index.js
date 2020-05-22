@@ -305,9 +305,7 @@ bot.on('message', msg=>{
         console.log(score)
         msg.delete(1000)
         msg.reply('YOU ARE NOT ALLOWED TO SAY THIS WORD(The Managers Have Been Notified) :(  ---MSG will delete in 10 seconds---')
-        msg.delete(10000)
-         //   msg.channels.get('#log-stuff').send('Someone said a swear word')
-
+        .then(msg => msg.delete(10000))
     }
 
 })
