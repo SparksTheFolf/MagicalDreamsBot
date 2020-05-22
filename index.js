@@ -69,7 +69,7 @@ bot.on('message', msg=>{
             .addField('Server Ip', 'ip,  server ip')
             .addField('Staff Commands', '!admin')
             .addField('About MDBot', '!about')
-            .addField('People Bios','!chums, !cole, !nono , !kara, !bode , !mik')
+            .addField('People Bios','!chums, !cole, !kindal, !nono , !kara, !bode , !mik')
 
            msg.reply(Embed)
            score = score+1;
@@ -131,13 +131,13 @@ bot.on('message', msg=>{
     }
 
     switch(args[0]){
-        case 'nono':
+        case 'kindal':
            score = score+1;
 
             const Embed = new RichEmbed()
             .setColor(0x2AFF00)
             .setTitle('Magical Dreams: MakingMiners')
-            .addField('Bio', 'We keep moving forward, opening new doors, and doing new things, because were curious and curiosity keeps leading us down new paths.')
+            .addField('Bio', 'We keep moving forward, opening new doors, and doing new things, because were curious and curiosity keeps leading us down new paths. Oh and by the way.. I’m Kindal tehe')
             .addField('I say...', 'Useless')
 
 
