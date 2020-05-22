@@ -395,104 +395,17 @@ switch(args[0]){
 
     //----------------------swear filter-----------------------
 
-    if(msg.content === 'fuck'){
 
-        score = score+1;
-        console.log(score)
-        msg.delete(10)
-        msg.reply('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
+    let wordArray = msg.content.split(" ");
+    console.log(wordArray);
+
+    let filterWords = ['fuck', 'shit', 'hell', '$h!t', 'asshole', 'son of a bitch', 'bitches'];
+
+    for(var i = 0; 1 < filterWords.length; i++) {
+        msg.delete();
+        msg.channel.send('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
         .then(msg => msg.delete(10000))
-    }
-
-    if(msg.content === 'Fuck'){
-
-        score = score+1;
-        console.log(score)
-        msg.delete(10)
-        msg.reply('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
-        .then(msg => msg.delete(10000))
-    }
-
-    if(msg.content === 'testing fucking swear filter'){
-
-        score = score+1;
-        console.log(score)
-        msg.delete(10)
-        msg.reply('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
-        .then(msg => msg.delete(10000))
-    }
-
-    if(msg.content === 'fuck me'){
-
-        score = score+1;
-        console.log(score)
-        msg.delete(10)
-        msg.reply('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
-        .then(msg => msg.delete(10000))
-    }
-
-    
-    if(msg.content === 'Fuck'){
-
-        score = score+1;
-        console.log(score)
-        msg.delete(10)
-        msg.reply('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
-        .then(msg => msg.delete(10000))
-    }
-
-    if(msg.content === 'shit'){
-
-        score = score+1;
-        console.log(score)
-        msg.delete(10)
-        msg.reply('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
-        .then(msg => msg.delete(10000))
-    }
-
-    if(msg.content === 'hell'){
-
-        score = score+1;
-        console.log(score)
-        msg.delete(10)
-        msg.reply('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
-        .then(msg => msg.delete(10000))
-    }
-
-    if(msg.content === '$h!T'){
-
-        score = score+1;
-        console.log(score)
-        msg.delete(10)
-        msg.reply('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
-        .then(msg => msg.delete(10000))
-    }
-
-    if(msg.content === '$h!t'){
-
-        score = score+1;
-        console.log(score)
-        msg.delete(10)
-        msg.reply('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
-        .then(msg => msg.delete(10000))
-    }
-
-    if(msg.content === 'asshole'){
-
-        score = score+1;
-        console.log(score)
-        msg.delete(10)
-        msg.reply('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
-        .then(msg => msg.delete(10000))
-    }
-
-    if(msg.content === 'son of a bitch'){
-
-        score = score+1;
-        console.log(score)
-        msg.delete(10)
-        msg.reply('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
-        .then(msg => msg.delete(10000))
+            
     }
 
 })
