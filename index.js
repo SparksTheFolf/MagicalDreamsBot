@@ -69,7 +69,7 @@ bot.on('message', msg=>{
             .addField('Server Ip', 'ip,  server ip')
             .addField('Staff Commands', '!admin')
             .addField('About MDBot', '!about')
-            .addField('People Bios','!chums, !cole, !kindal, !nono , !kara, !bode , !mik')
+            .addField('People Bios','!chums, !cole, !kindal, !nono , !kara, !bode , !ben, !mik')
 
            msg.reply(Embed)
            score = score+1;
@@ -170,6 +170,21 @@ switch(args[0]){
         .setColor(0x2AFF00)
         .setTitle('Magical Dreams: starport75')
         .addField('I say...', 'It can be anything! :)')
+
+       msg.reply(Embed)
+       console.log(score)
+}
+
+switch(args[0]){
+    case 'ben':
+       score = score+1;
+
+        const Embed = new RichEmbed()
+        .setColor(0x2AFF00)
+        .setTitle('Magical Dreams: Ben[OhBen]')
+        .addField('Ben is...', 'an awesome ride technician and trainer')
+        .addField('Ben is...', 'an awesome ride technician and trainer!!!')
+        .addField('Ride breaks down...', 'coffin dance plays')
 
        msg.reply(Embed)
        console.log(score)
