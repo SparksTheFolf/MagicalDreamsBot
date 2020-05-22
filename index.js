@@ -164,6 +164,7 @@ bot.on('message', msg=>{
         console.log(score)
     }
 
+
     
 
     if(msg.content === 'website?'){
@@ -294,6 +295,20 @@ bot.on('message', msg=>{
         score = score+1;
 
         console.log(score)
+    }
+
+    //----------------------swear filter-----------------------
+
+    if(msg.content === 'fuck'){
+
+        score = score+1;
+        console.log(score)
+        msg.delete(1000)
+        msg.reply('YOU ARE NOT ALLOWED TO SAY THIS WORD(The Managers Have Been Notified) :(')
+        
+        client.on('ready', client => {
+            client.channels.get('#log-stuff').send('Someone said a swear word')
+        })
     }
 
 })
