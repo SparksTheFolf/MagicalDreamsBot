@@ -17,7 +17,7 @@ bot.on('ready', () =>{
 
     bot.user.setActivity('for !help', {type: 'WATCHING'})
 
-    client.on("messageDelete", (messageDelete) => {
+    Client.on("messageDelete", (messageDelete) => {
         const channel = messageDelete.guild.channels.find(ch => ch.name === 'log-stuff');channel.send(`The message : "${messageDelete.content}" by ${messageDelete.author} was deleted. There ID is ${messageDelete.author.id}`)
        }); 
 
