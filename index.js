@@ -307,8 +307,12 @@ bot.on('message', msg=>{
         msg.reply('YOU ARE NOT ALLOWED TO SAY THIS WORD(The Managers Have Been Notified) :(  ---MSG will delete in 10 seconds---')
         .then(msg => msg.delete(10000))
 
-        msg.channels.get('log-stuff').send(" ATTN!!!!" + member.user.tag + " has said something Bad!!")
+       // msg.channels.get('log-stuff').send(" ATTN!!!!" + member.user.tag + " has said something Bad!!")
         
+       client.on("ready", () => {
+        console.log(client.users.get('ID_OF_USER').send("Please Do Not Say Bad Words, This is a family friendly server! :)"));
+    });
+
     }
 
 })
