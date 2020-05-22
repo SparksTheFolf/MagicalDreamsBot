@@ -306,9 +306,8 @@ bot.on('message', msg=>{
         msg.delete(1000)
         msg.reply('YOU ARE NOT ALLOWED TO SAY THIS WORD(The Managers Have Been Notified) :(')
         
-        client.on('ready', client => {
-            client.channels.get('#log-stuff').send('Someone said a swear word')
-        })
+            msg.channels.get('#log-stuff').send('Someone said a swear word')
+
     }
 
 })
