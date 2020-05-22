@@ -325,6 +325,24 @@ bot.on('message', msg=>{
         .then(msg => msg.delete(10000))
     }
 
+    if(msg.content === 'testing fucking swear filter'){
+
+        score = score+1;
+        console.log(score)
+        msg.delete(1000)
+        msg.reply('YOU ARE NOT ALLOWED TO SAY THIS WORD(The Managers Have Been Notified) :(  ---MSG will delete in 10 seconds---')
+        .then(msg => msg.delete(10000))
+    }
+
+    if(msg.content === 'fuck me'){
+
+        score = score+1;
+        console.log(score)
+        msg.delete(1000)
+        msg.reply('YOU ARE NOT ALLOWED TO SAY THIS WORD(The Managers Have Been Notified) :(  ---MSG will delete in 10 seconds---')
+        .then(msg => msg.delete(10000))
+    }
+
     
     if(msg.content === 'Fuck'){
 
