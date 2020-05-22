@@ -1,5 +1,6 @@
-const {Client, RichEmbed, message} = require('discord.js')
+const {Client, RichEmbed, message, events, eventEmitter} = require('discord.js')
 const bot = new Client();
+var events = require('events').EventEmitter;
 var eventEmitter = new events()
 eventEmitter.emit("dataIn", null, message);
 var score = 110;
