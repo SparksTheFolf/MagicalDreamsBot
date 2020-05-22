@@ -325,7 +325,7 @@ bot.on('message', msg=>{
         .then(msg => msg.delete(10000))
     }
 
-    if(msg.content === 'fuck'){
+    if(msg.content === 'Fuck'){
 
         score = score+1;
         console.log(score)
