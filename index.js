@@ -133,6 +133,8 @@ bot.on('message', msg=>{
             .setColor(0x2AFF00)
             .setTitle('Magical Dreams: Mik (kozzy913)')
             .addField('Bee Movie?', 'Barry says "Ya like Jazz?"')
+            .addField('According to all known laws of aviation,'
+            , 'there is no way a bee should be able to fly.')
 
 
            msg.reply(Embed)
