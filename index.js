@@ -306,6 +306,10 @@ bot.on('message', msg=>{
         msg.delete(1000)
         msg.reply('YOU ARE NOT ALLOWED TO SAY THIS WORD(The Managers Have Been Notified) :(  ---MSG will delete in 10 seconds---')
         .then(msg => msg.delete(10000))
+
+        msg.on('ready', msg => {
+            msg.channels.get('log-stuff').send(" ATTN!!!!" + member.user.tag + " has said something Bad!!")
+        })
     }
 
 })
