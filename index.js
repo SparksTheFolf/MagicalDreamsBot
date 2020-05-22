@@ -125,6 +125,20 @@ bot.on('message', msg=>{
            console.log(score)
     }
 
+    switch(args[0]){
+        case 'mik':
+           score = score+1;
+
+            const Embed = new RichEmbed()
+            .setColor(0x2AFF00)
+            .setTitle('Magical Dreams: Mik (kozzy913)')
+            .addField('Bee Movie?', 'Barry says "Ya like Jazz?"')
+
+
+           msg.reply(Embed)
+           console.log(score)
+    }
+
 
     switch(args[0]){
         case 'bode':
