@@ -190,6 +190,21 @@ switch(args[0]){
        console.log(score)
 }
 
+switch(args[0]){
+    case '65':
+       score = score+1;
+
+        const Embed = new RichEmbed()
+        .setColor(0x2AFF00)
+        .setTitle('Magical Dreams: 65Thomas')
+        .addField('65 Thomas is...', 'out to lunch.')
+        .addField('He’s always hungry...', 'so it might take a minute.')
+        .addField('Unless you have a cookie....', 'Then he’ll come running.')
+
+       msg.reply(Embed)
+       console.log(score)
+}
+
     switch(args[0]){
         case 'mik':
            score = score+1;
