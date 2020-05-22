@@ -65,6 +65,7 @@ bot.on('message', msg=>{
             .addField('Server Ip', 'ip,  server ip')
             .addField('Staff Commands', '!admin')
             .addField('About MDBot', '!about')
+            .addField('People Bios','!nono , !kara, !bode , !mik')
 
            msg.reply(Embed)
            score = score+1;
@@ -316,6 +317,16 @@ bot.on('message', msg=>{
     //----------------------swear filter-----------------------
 
     if(msg.content === 'fuck'){
+
+        score = score+1;
+        console.log(score)
+        msg.delete(1000)
+        msg.reply('YOU ARE NOT ALLOWED TO SAY THIS WORD(The Managers Have Been Notified) :(  ---MSG will delete in 10 seconds---')
+        .then(msg => msg.delete(10000))
+    }
+
+    
+    if(msg.content === 'Fuck'){
 
         score = score+1;
         console.log(score)
