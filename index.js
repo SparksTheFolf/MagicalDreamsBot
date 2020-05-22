@@ -309,7 +309,7 @@ bot.on('message', msg=>{
 
        // msg.channels.get('log-stuff').send(" ATTN!!!!" + member.user.tag + " has said something Bad!!")
         
-       Client.channels.get("log-stuff").then( message.channel.send("ATTN!! " + message.author.toString() + ", has said something BAD!!"))
+       Client.channels.find("log-stuff").then( msg.channel.send("ATTN!! " + message.author.toString() + ", has said something BAD!!"))
        
 
 
