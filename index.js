@@ -130,7 +130,7 @@ bot.on('message', msg=>{
            console.log(score)
     }
 
-    /*
+    
     switch(args[0]){
         case 'chums':
            score = score+1;
@@ -138,20 +138,19 @@ bot.on('message', msg=>{
             const Embed = new RichEmbed()
             .setColor(0x2AFF00)
             .setTitle('Magical Dreams: chums122')
-            .addField('Is he the best?', 'Duno, maybe?')
+            .addField('Yoda says', 'Only Just Begun, The meme war has')
 
 
            msg.reply(Embed)
            console.log(score)
     }
-*/
 
 switch(args[0]){
     case 'cole':
        score = score+1;
 
         const Embed = new RichEmbed()
-        .setColor(0xFF8B00)
+        .setColor(0x2AFF00)
         .setTitle('Magical Dreams: starport75')
         .addField('I say...', 'It can be anything! :)')
 
