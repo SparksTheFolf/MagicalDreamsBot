@@ -130,6 +130,21 @@ bot.on('message', msg=>{
            console.log(score)
     }
 
+    switch(args[0]){
+        case 'nono':
+           score = score+1;
+
+            const Embed = new RichEmbed()
+            .setColor(0x2AFF00)
+            .setTitle('Magical Dreams: MakingMiners')
+            .addField('Bio', 'We keep moving forward, opening new doors, and doing new things, because were curious and curiosity keeps leading us down new paths.')
+            .addField('I say...', 'Useless')
+
+
+           msg.reply(Embed)
+           console.log(score)
+    }
+
     
     switch(args[0]){
         case 'chums':
