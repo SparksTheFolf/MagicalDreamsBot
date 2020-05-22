@@ -69,7 +69,7 @@ bot.on('message', msg=>{
             .addField('Server Ip', 'ip,  server ip')
             .addField('Staff Commands', '!admin')
             .addField('About MDBot', '!about')
-            .addField('People Bios','!nono , !kara, !bode , !mik')
+            .addField('People Bios','!chums, !cole, !nono , !kara, !bode , !mik')
 
            msg.reply(Embed)
            score = score+1;
@@ -129,6 +129,35 @@ bot.on('message', msg=>{
            msg.reply(Embed)
            console.log(score)
     }
+
+    /*
+    switch(args[0]){
+        case 'chums':
+           score = score+1;
+
+            const Embed = new RichEmbed()
+            .setColor(0x2AFF00)
+            .setTitle('Magical Dreams: chums122')
+            .addField('Is he the best?', 'Duno, maybe?')
+
+
+           msg.reply(Embed)
+           console.log(score)
+    }
+*/
+
+switch(args[0]){
+    case 'cole':
+       score = score+1;
+
+        const Embed = new RichEmbed()
+        .setColor(0xFF8B00)
+        .setTitle('Magical Dreams: starport75')
+        .addField('I say...', 'It can be anything! :)')
+
+       msg.reply(Embed)
+       console.log(score)
+}
 
     switch(args[0]){
         case 'mik':
