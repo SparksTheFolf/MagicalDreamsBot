@@ -69,7 +69,7 @@ bot.on('message', msg=>{
             .addField('Server Ip', 'ip,  server ip')
             .addField('Staff Commands', '!admin')
             .addField('About MDBot', '!about')
-            .addField('People Bios','!chums, !cole, !kindal, !nono , !kara, !bode , !ben, !65, !mik')
+            .addField("People Bio's",'!chums, !cole, !kindal, !nono , !marlin, !kara, !bode , !ben, !65, !mik')
 
            msg.reply(Embed)
            score = score+1;
@@ -140,6 +140,20 @@ bot.on('message', msg=>{
             .addField('Bio', 'We keep moving forward, opening new doors, and doing new things, because were curious and curiosity keeps leading us down new paths. Oh and by the way.. I’m Kindal tehe')
             .addField('I say...', 'Useless')
 
+
+           msg.reply(Embed)
+           console.log(score)
+    }
+
+    switch(args[0]){
+        case 'marlin':
+           score = score+1;
+
+            const Embed = new RichEmbed()
+            .setColor(0x2AFF00)
+            .setTitle('Magical Dreams: Marlin')
+            .addField('Google Sign In: Someone just signed into your computer, do you know them?', "Yes I know him, He's me.")
+            .addField('Have a great weekend!', 'I Hope your code behaves on Monday the same way it did on Friday')
 
            msg.reply(Embed)
            console.log(score)
