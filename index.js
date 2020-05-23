@@ -124,7 +124,6 @@ bot.on('message', msg=>{
             .setTitle('Magical Dreams: NONO(stacker_nono)')
             .addField('Is he the best?', 'Duno, maybe?')
             .addField('Needs to learn more JS', 'YESS')
-            .addField('Change is IGN?', 'Yesss, to stacker_yesyes')
 
            msg.reply(Embed)
            console.log(score)
