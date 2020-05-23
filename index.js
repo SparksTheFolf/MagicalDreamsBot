@@ -261,7 +261,7 @@ switch(args[0]){
             .addField('kara is a cool kat coordinator', 'kara is a cool kat coordinator!!!!!!!!')
             .addField('And She is...', 'A Dancing Queen')
             .addField('kara gets the', 'limo out front')
-            .addField("Server Mom!!", "Kara is not the server mom, lol")
+            .addField("Server Mom!!", "Kara is the server mom, lol")
 
 
            msg.reply(Embed)
