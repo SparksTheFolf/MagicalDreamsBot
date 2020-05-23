@@ -260,6 +260,8 @@ switch(args[0]){
             .setTitle('Magical Dreams: Kara (_Kara)')
             .addField('kara is a cool kat coordinator', 'kara is a cool kat coordinator!!!!!!!!')
             .addField('And She is...', 'A Dancing Queen')
+            .addField('kara gets the', 'limo out front')
+
 
 
            msg.reply(Embed)
