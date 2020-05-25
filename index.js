@@ -45,7 +45,7 @@ bot.on('message', msg=>{
     }
  
     switch(args[0]){
-        case 'md':
+        case 'server':
 
 
      //       if(!args[1]) return message.channel.send('You must type a minecraft server ip')
@@ -79,13 +79,14 @@ bot.on('message', msg=>{
             const Embed = new RichEmbed()
             .setColor(0xF0FF00)
             .setTitle('Magical Dreams: Help')
-            .addField('Server Status', "!md")
+            .addField('Server Status', "md!server")
+            .addField('Create A Poll', 'md!poll')
             .addField('Managers', "managers")
             .addField('Apply for Staff', "app , apply , application")
             .addField('Server Ip', 'ip,  server ip')
-            .addField('Staff Commands', '!admin')
-            .addField('About MDBot', '!about')
-            .addField("People Bio's",'!chums, !cole, !kindal, !nono , !marlin, !kara, !bode , !ben, !65, !mik')
+            .addField('Staff Commands', 'md!admin')
+            .addField('About MDBot', 'md!about')
+            .addField("People Bio's",'md!chums, md!cole, md!kindal, md!nono , md!marlin, md!kara, md!bode , md!ben, md!65, md!mik')
 
            msg.reply(Embed)
            score = score+1;
