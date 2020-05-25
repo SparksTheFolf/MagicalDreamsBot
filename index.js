@@ -5,7 +5,7 @@ var score = 110;
 
 bot.login(process.env.token);
 
-const PREFIX = '!'
+const PREFIX = 'md!'
 
 const ping = require('minecraft-server-util')
 
@@ -15,10 +15,13 @@ const ping = require('minecraft-server-util')
 bot.on('ready', () =>{
     console.log('MDBot is Online!');
 
-    bot.user.setActivity('for !help', {type: 'WATCHING'})
+    bot.user.setActivity('for md!help', {type: 'WATCHING'})
 
     
 })
+
+
+
 
 //Client.on("messageDelete", (messageDelete) => {
    //     const channel = messageDelete.guild.channels.find(ch => ch.name === 'log-stuff');channel.send(`The message : "${messageDelete.content}" by ${messageDelete.author} was deleted. There ID is ${messageDelete.author.id}`)
@@ -27,6 +30,19 @@ bot.on('ready', () =>{
 bot.on('message', msg=>{
 
     let args = msg.content.substring(PREFIX.length).split(' ')
+
+    switch(args[0]){
+        case "poll":
+            const Embed = new RichEmbed()
+            .setColor(0xFFC300)
+            .setTitle("Initiate Poll")
+            .addField('md!poll to initiate a simple yes or no poll');
+
+            if(!args[1]){
+                msg.reply(Embed)
+            }
+        break;
+    }
  
     switch(args[0]){
         case 'md':
