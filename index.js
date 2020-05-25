@@ -36,7 +36,7 @@ bot.on('message', msg=>{
             const Embed = new RichEmbed()
             .setColor(0xFFC300)
             .setTitle("Initiate Poll")
-            .addField('md!poll to initiate a simple yes or no poll');
+            .addField('md!poll', ' to initiate a simple yes or no poll');
 
             if(!args[1]){
                 msg.reply(Embed)
