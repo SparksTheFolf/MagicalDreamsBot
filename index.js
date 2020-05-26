@@ -41,6 +41,14 @@ bot.on('message', msg=>{
             if(!args[1]){
                 msg.reply(Embed)
             }
+
+            let msgArgs = args.slice(1).join(' ');
+
+            msg.reply(msgArgs).then(messageReaction =>{
+                messageReaction.react(":thumbsup:");
+                messageReaction.react(":thumbsdown:");
+            })
+
         break;
     }
  
