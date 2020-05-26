@@ -45,8 +45,8 @@ bot.on('message', msg=>{
             let msgArgs = args.slice(1).join(' ');
 
             msg.reply(msgArgs).then(messageReaction =>{
-                messageReaction.react(":thumbsup:");
-                messageReaction.react(":thumbsdown:");
+                messageReaction.react("👍");
+                messageReaction.react("👎");
             })
 
         break;
