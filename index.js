@@ -1,4 +1,5 @@
 const {Client, RichEmbed} = require('discord.js')
+require('events').EventEmitter.defaultMaxListeners = 25
 const bot = new Client();
 var score = 110;
 
@@ -607,5 +608,9 @@ switch(args[0]){
 
     }, 2/10000)
     //end of message updating
+
+    bot.on('close', () => {
+        connection.removeAllListeners();
+    });
 
 })
