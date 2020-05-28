@@ -596,13 +596,7 @@ switch(args[0]){
         .addField("Before", oldMessage.content)
         .addField("After", newMessage.content)
         .setFooter("Message Logger 2020 © MagicalDreams")
-        
-
-      
-            loggingChannel.send(ReportEmbed);
-            score = score+1;
-            console.log(score)
-        
+    
 
 
         let loggingChannel = newMessage.guild.channels.find(ch => ch.name === "bot-log")
