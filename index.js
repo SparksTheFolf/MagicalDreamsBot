@@ -587,8 +587,8 @@ switch(args[0]){
      //start of message updating
     
     
-bot.on("messageUpdate", async(oldMessage, newMessage) =>{
-        if(oldMessage.content === newMessage.content){
+    bot.on("messageUpdate", async(oldMessage, newMessage) =>{
+        if(!oldMessage.content == newMessage.content){
             return;
         }       
            const Embed = new RichEmbed()
