@@ -1,4 +1,4 @@
-const {Client, RichEmbed} = require('discord.js')
+const {Client, RichEmbed, Discord} = require('discord.js')
 const bot = new Client();
 var score = 110;
 
@@ -565,7 +565,7 @@ switch(args[0]){
             return;
         }
 
-        let logEmbed = new Discord.RichEmbed()
+          const Embed = new RichEmbed()
         .setAuthor(oldMessage.author.tag, oldMessage.author.avatarURL)
         .setThumbnail(oldMessage.author.avatarURL)
         .setColor("0x00A6FF")
@@ -577,7 +577,7 @@ switch(args[0]){
         let loggingChannel = newMessage.guild.channels.find(ch => ch.name === "log-stuff")
         if(!loggingChannel) return;
 
-        loggingChannel.send(logEmbed);
+        loggingChannel.send(Embed);
 
 
     })
