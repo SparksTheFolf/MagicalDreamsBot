@@ -27,7 +27,7 @@ bot.on('ready', () =>{
    //     const channel = messageDelete.guild.channels.find(ch => ch.name === 'log-stuff');channel.send(`The message : "${messageDelete.content}" by ${messageDelete.author} was deleted. There ID is ${messageDelete.author.id}`)
   //     }); 
 
-bot.on('message', async(oldMessage, newMessage), msg=>{
+bot.on('message', (oldMessage, newMessage), msg=>{
 
     let args = msg.content.substring(PREFIX.length).split(' ')
 
