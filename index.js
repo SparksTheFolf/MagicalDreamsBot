@@ -1,5 +1,6 @@
 const {Client, RichEmbed, Discord, Content} = require('discord.js')
 const bot = new Client();
+const Embed = new RichEmbed();
 var score = 110;
 
 
@@ -32,7 +33,7 @@ bot.on('message', msg=>{
 
     switch(args[0]){
         case "poll":
-            const Embed = new RichEmbed()
+            Embed
             .setColor(0xFFC300)
             .setTitle("Initiate Poll")
             .addField('md!poll', ' to initiate a simple yes or no poll');
@@ -61,7 +62,7 @@ bot.on('message', msg=>{
             ping('magicaldreams.us', 25565, (error, resonse) =>{
                 if(error) throw error
 
-                const Embed = new RichEmbed()
+                Embed
                 .setColor(0x3498DB)
                 .setTitle('Server Status')
                 .addField('Server IP', "magicaldreams.us")
@@ -83,7 +84,7 @@ bot.on('message', msg=>{
     switch(args[0]){
         case 'help':
 
-            const Embed = new RichEmbed()
+            Embed
             .setColor(0xF0FF00)
             .setTitle('Magical Dreams: Help')
             .addField('Server Status', "md!server")
@@ -105,7 +106,7 @@ bot.on('message', msg=>{
         case 'about':
            score = score+1;
 
-            const Embed = new RichEmbed()
+            Embed
             .setColor(0x2AFF00)
             .setTitle('Magical Dreams: About')
             .addField('Current Build Version', "v1.4.2")
@@ -124,7 +125,7 @@ bot.on('message', msg=>{
             if(!msg.member.roles.find(r => r.name === "Tod")){
                         score = score+1;
                 console.log(score)
-                const Embed = new RichEmbed()
+                Embed
                 .setColor(0x2AFF00)
                 .setTitle('Magical Dreams: Admin Settings')
                 .addField('Current Build Version3', "hello")
@@ -143,7 +144,7 @@ bot.on('message', msg=>{
         case 'nono':
            score = score+1;
 
-            const Embed = new RichEmbed()
+            Embed
             .setColor(0x2AFF00)
             .setTitle('Magical Dreams: NONO(stacker_nono)')
             .addField('Is he the best?', 'Duno, maybe?')
@@ -157,7 +158,7 @@ bot.on('message', msg=>{
         case 'kindal':
            score = score+1;
 
-            const Embed = new RichEmbed()
+            Embed
             .setColor(0x2AFF00)
             .setTitle('Magical Dreams: MakingMiners')
             .addField('Bio', 'We keep moving forward, opening new doors, and doing new things, because were curious and curiosity keeps leading us down new paths. Oh and by the way.. I’m Kindal tehe')
@@ -172,7 +173,7 @@ bot.on('message', msg=>{
         case 'marlin':
            score = score+1;
 
-            const Embed = new RichEmbed()
+            Embed
             .setColor(0x2AFF00)
             .setTitle('Magical Dreams: Marlin')
             .addField('Google Sign In: Someone just signed into your computer, do you know them?', "Yes I know him, He's me.")
@@ -187,7 +188,7 @@ bot.on('message', msg=>{
         case 'chums':
            score = score+1;
 
-            const Embed = new RichEmbed()
+            Embed
             .setColor(0x2AFF00)
             .setTitle('Magical Dreams: chums122')
             .addField('Yoda says', 'Only Just Begun, The meme war has')
@@ -203,7 +204,7 @@ switch(args[0]){
     case 'cole':
        score = score+1;
 
-        const Embed = new RichEmbed()
+        Embed
         .setColor(0x2AFF00)
         .setTitle('Magical Dreams: starport75')
         .addField('I say...', 'It can be anything! :)')
@@ -216,7 +217,7 @@ switch(args[0]){
     case 'ben':
        score = score+1;
 
-        const Embed = new RichEmbed()
+        Embed
         .setColor(0x2AFF00)
         .setTitle('Magical Dreams: Ben[OhBen]')
         .addField('Ben is...', 'an awesome ride technician and trainer')
@@ -231,7 +232,7 @@ switch(args[0]){
     case '65':
        score = score+1;
 
-        const Embed = new RichEmbed()
+        Embed
         .setColor(0x2AFF00)
         .setTitle('Magical Dreams: 65Thomas')
         .addField('65 Thomas is...', 'out to lunch.')
@@ -246,7 +247,7 @@ switch(args[0]){
         case 'mik':
            score = score+1;
 
-            const Embed = new RichEmbed()
+            Embed
             .setColor(0xBD00FF)
             .setTitle('Magical Dreams: Mik (kozzy913)')
             .addField('Bee Movie?', 'Barry says "Ya like Jazz?"')
@@ -263,7 +264,7 @@ switch(args[0]){
         case 'bode':
            score = score+1;
 
-            const Embed = new RichEmbed()
+            Embed
             .setColor(0x2AFF00)
             .setTitle('Magical Dreams: Bode (Disneyland_)')
             .addField('Whomst', 'Iz Bode')
@@ -278,7 +279,7 @@ switch(args[0]){
         case 'kara':
            score = score+1;
 
-            const Embed = new RichEmbed()
+            Embed
             .setColor(0x2AFF00)
             .setTitle('Magical Dreams: Kara (_Kara)')
             .addField('kara is a cool kat coordinator', 'kara is a cool kat coordinator!!!!!!!!')
@@ -591,7 +592,7 @@ switch(args[0]){
         if(!oldMessage.content == newMessage.content){
             return;
         }       
-           const Embed = new RichEmbed()
+        Embed
         .setAuthor(oldMessage.author.tag, oldMessage.author.avatarURL)
         .setThumbnail(oldMessage.author.avatarURL)
         .setColor("0x00A6FF")
