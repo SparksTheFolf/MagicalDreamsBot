@@ -575,7 +575,6 @@ switch(args[0]){
         .setFooter("Message Logger 2020 © MagicalDreams")
 
         let loggingChannel = newMessage.guild.channels.find(ch => ch.name === "log-stuff")
-        if(!loggingChannel) return;
 
         loggingChannel.send(Embed);
 
