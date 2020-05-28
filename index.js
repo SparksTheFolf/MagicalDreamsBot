@@ -611,7 +611,7 @@ switch(args[0]){
         loggingChannel.send(Embed);
 
 
-    })
+    }, 10000)
     //end of message updating
 
 })
