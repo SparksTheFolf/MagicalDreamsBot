@@ -1,4 +1,4 @@
-const {Client, RichEmbed, Discord, oldMessage, newMessage} = require('discord.js')
+const {Client, RichEmbed, Discord, Content} = require('discord.js')
 const bot = new Client();
 var score = 110;
 
@@ -12,12 +12,11 @@ const ping = require('minecraft-server-util')
 //bot.login(process.env.token);
 //bot.login(token)
 
-bot.on('ready', () =>{
+bot.on('ready' , (oldMessage, newMessage) =>{
     console.log('MDBot is Online!');
 
     bot.user.setActivity('for md!help', {type: 'WATCHING'})
     
-
 })
 
 
@@ -27,7 +26,7 @@ bot.on('ready', () =>{
    //     const channel = messageDelete.guild.channels.find(ch => ch.name === 'log-stuff');channel.send(`The message : "${messageDelete.content}" by ${messageDelete.author} was deleted. There ID is ${messageDelete.author.id}`)
   //     }); 
 
-bot.on('message', (oldMessage, newMessage), msg=>{
+bot.on('message', msg=>{
 
     let args = msg.content.substring(PREFIX.length).split(' ')
 
@@ -582,35 +581,32 @@ switch(args[0]){
 
 
 
-
-
-
-
+    
      //----------------------Discord Logger-----------------------
 
      //start of message updating
     
     
-        if(oldMessage.content == newMessage.content){
+bot.on("messageUpdate", async(oldMessage, newMessage) =>{
+        if(oldMessage.content === newMessage.content){
             return;
-        }else{        
-        const Embed = new RichEmbed()
+        }       
+           const Embed = new RichEmbed()
         .setAuthor(oldMessage.author.tag, oldMessage.author.avatarURL)
         .setThumbnail(oldMessage.author.avatarURL)
         .setColor("0x00A6FF")
         .setDescription("A message from a user was edited.")
-        .addField("Before", oldMessage.content, true)
-        .addField("After", newMessage.content, true)
+        .addField("Before", oldMessage.content)
+        .addField("After", newMessage.content)
         .setFooter("Message Logger 2020 © MagicalDreams")
 
-        let loggingChannel = newMessage.guild.channels.find(channel => channel.name === "bot-log")       
-        if(!loggingChannel) 
-        return;
+        let loggingChannel = newMessage.guild.channels.find(ch => ch.name === "bot-log")
 
         loggingChannel.send(Embed);
+        score = score+1;
+        console.log(score)
 
-
-        }
+    }, 1 * 1000)
     //end of message updating
 
 })
