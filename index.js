@@ -590,19 +590,27 @@ switch(args[0]){
         }       
         const ReportEmbed = new RichEmbed()
         .setAuthor(oldMessage.author.tag, oldMessage.author.avatarURL)
-        .setThumbnail(oldMessage.author.avatarURL)
+      //  .setThumbnail(oldMessage.author.avatarURL)
         .setColor("0x00A6FF")
         .setDescription("A message from a user was edited.")
         .addField("Before", oldMessage.content)
         .addField("After", newMessage.content)
         .setFooter("Message Logger 2020 © MagicalDreams")
 
+        if(guild.channels.find(ch => ch.name === "bot-log") == true){
+            let loggingChannel = loggingChannel.content()
+            loggingChannel.send(ReportEmbed);
+            score = score+1;
+            console.log(score)
+        }
+
+/*
         let loggingChannel = newMessage.guild.channels.find(ch => ch.name === "bot-log")
 
-        loggingChannel.send(ReportEmbed/5);
+        loggingChannel.send(ReportEmbed);
         score = score+1;
         console.log(score)
-
+*/
     }, 2/1000)
     //end of message updating
 
