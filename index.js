@@ -559,6 +559,8 @@ switch(args[0]){
      //----------------------Discord Logger-----------------------
 
      //start of message updating
+    
+    /*
 bot.on("messageUpdate", async(oldMessage, newMessage) =>{
         if(oldMessage.content === newMessage.content){
             return;
@@ -578,5 +580,5 @@ bot.on("messageUpdate", async(oldMessage, newMessage) =>{
 
     }, 1 * 1000)
     //end of message updating
-
+*/
 })
