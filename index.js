@@ -585,7 +585,7 @@ switch(args[0]){
     
     
     bot.on("messageUpdate", async(oldMessage, newMessage) =>{
-        if(oldMessage.content === newMessage.content){
+        if(oldMessage.content == newMessage.content){
             return;
         }       
         const ReportEmbed = new RichEmbed()
@@ -596,22 +596,22 @@ switch(args[0]){
         .addField("Before", oldMessage.content)
         .addField("After", newMessage.content)
         .setFooter("Message Logger 2020 © MagicalDreams")
+        
 
-        if(loggingChannel = newMessage.guild.channels.find(ch => ch.name === "bot-log")){
-            let loggingChannel = loggingChannel.content()
+      
             loggingChannel.send(ReportEmbed);
             score = score+1;
             console.log(score)
-        }
+        
 
-/*
+
         let loggingChannel = newMessage.guild.channels.find(ch => ch.name === "bot-log")
 
         loggingChannel.send(ReportEmbed);
         score = score+1;
         console.log(score)
-*/
-    }, 2/1000)
+
+    }, 2/10000)
     //end of message updating
 
 })
