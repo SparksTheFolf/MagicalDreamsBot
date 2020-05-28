@@ -565,7 +565,7 @@ switch(args[0]){
             return;
         }
 
-        let logEmbed = new Discord.RichEmbed()
+          const Embed = new RichEmbed()
         .setAuthor(oldMessage.author.tag, oldMessage.author.avatarURL)
         .setThumbnail(oldMessage.author.avatarURL)
         .setColor("RANDOM")
@@ -577,7 +577,7 @@ switch(args[0]){
         let loggingChannel = newMessage.guild.channels.find(ch => ch.name === "log-stuff")
         if(!loggingChannel) return;
 
-        loggingChannel.send(logEmbed);
+        loggingChannel.send(Embed);
 
 
     })
