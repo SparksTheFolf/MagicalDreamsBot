@@ -585,7 +585,7 @@ switch(args[0]){
     
     
     bot.on("messageUpdate", async(oldMessage, newMessage) =>{
-        if(!oldMessage.content == newMessage.content){
+        if(oldMessage.content === newMessage.content){
             return;
         }       
         const ReportEmbed = new RichEmbed()
