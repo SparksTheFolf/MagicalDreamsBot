@@ -27,7 +27,7 @@ bot.on('ready', () =>{
    //     const channel = messageDelete.guild.channels.find(ch => ch.name === 'log-stuff');channel.send(`The message : "${messageDelete.content}" by ${messageDelete.author} was deleted. There ID is ${messageDelete.author.id}`)
   //     }); 
 
-bot.on('message', msg=>{
+bot.on('message', async(oldMessage, newMessage), msg=>{
 
     let args = msg.content.substring(PREFIX.length).split(' ')
 
@@ -591,11 +591,9 @@ switch(args[0]){
      //start of message updating
     
     
-    bot.on("messageUpdate", async(oldMessage, newMessage) =>{
-        if(oldMessage.content === newMessage.content){
+        if(oldMessage.content == newMessage.content){
             return;
-        }    
-        
+        }else{        
         const Embed = new RichEmbed()
         .setAuthor(oldMessage.author.tag, oldMessage.author.avatarURL)
         .setThumbnail(oldMessage.author.avatarURL)
@@ -606,12 +604,13 @@ switch(args[0]){
         .setFooter("Message Logger 2020 © MagicalDreams")
 
         let loggingChannel = newMessage.guild.channels.find(channel => channel.name === "bot-log")       
-        if(!loggingChannel) return;
+        if(!loggingChannel) 
+        return;
 
         loggingChannel.send(Embed);
 
 
-    }, 10000)
+        }
     //end of message updating
 
 })
