@@ -16,8 +16,8 @@ bot.on('ready', () =>{
     console.log('MDBot is Online!');
 
     bot.user.setActivity('for md!help', {type: 'WATCHING'})
-
     
+
 })
 
 
@@ -557,15 +557,46 @@ switch(args[0]){
         .then(msg => msg.delete(10000))
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
      //----------------------Discord Logger-----------------------
 
      //start of message updating
+    
+    
     bot.on("messageUpdate", async(oldMessage, newMessage) =>{
         if(oldMessage.content === newMessage.content){
             return;
-        }
-
-          const Embed = new RichEmbed()
+        }    
+        
+        const Embed = new RichEmbed()
         .setAuthor(oldMessage.author.tag, oldMessage.author.avatarURL)
         .setThumbnail(oldMessage.author.avatarURL)
         .setColor("0x00A6FF")
@@ -574,7 +605,7 @@ switch(args[0]){
         .addField("After", newMessage.content, true)
         .setFooter("Message Logger 2020 © MagicalDreams")
 
-        let loggingChannel = newMessage.guild.channels.find(ch => ch.name === "log-stuff")
+        let loggingChannel = newMessage.guild.channels.find(channel => channel.name === "bot-log")       
         if(!loggingChannel) return;
 
         loggingChannel.send(Embed);
