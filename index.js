@@ -568,7 +568,7 @@ switch(args[0]){
         let logEmbed = new Discord.RichEmbed()
         .setAuthor(oldMessage.author.tag, oldMessage.author.avatarURL)
         .setThumbnail(oldMessage.author.avatarURL)
-        .setColor("RANDOM")
+        .setColor("0x00A6FF")
         .setDescription("A message from a user was edited.")
         .addField("Before", oldMessage.content, true)
         .addField("After", newMessage.content, true)
