@@ -5,7 +5,7 @@ var score = 110;
 
 bot.login(process.env.token);
 
-const PREFIX = '!'
+const PREFIX = 'md!'
 
 const ping = require('minecraft-server-util')
 
@@ -15,10 +15,13 @@ const ping = require('minecraft-server-util')
 bot.on('ready', () =>{
     console.log('MDBot is Online!');
 
-    bot.user.setActivity('for !help', {type: 'WATCHING'})
+    bot.user.setActivity('for md!help', {type: 'WATCHING'})
 
     
 })
+
+
+
 
 //Client.on("messageDelete", (messageDelete) => {
    //     const channel = messageDelete.guild.channels.find(ch => ch.name === 'log-stuff');channel.send(`The message : "${messageDelete.content}" by ${messageDelete.author} was deleted. There ID is ${messageDelete.author.id}`)
@@ -27,9 +30,30 @@ bot.on('ready', () =>{
 bot.on('message', msg=>{
 
     let args = msg.content.substring(PREFIX.length).split(' ')
+
+    switch(args[0]){
+        case "poll":
+            const Embed = new RichEmbed()
+            .setColor(0xFFC300)
+            .setTitle("Initiate Poll")
+            .addField('md!poll', ' to initiate a simple yes or no poll');
+
+            if(!args[1]){
+                msg.reply(Embed)
+            }
+
+            let msgArgs = args.slice(1).join(' ');
+
+            msg.reply(msgArgs).then(messageReaction =>{
+                messageReaction.react("👍");
+                messageReaction.react("👎");
+            })
+
+        break;
+    }
  
     switch(args[0]){
-        case 'md':
+        case 'server':
 
 
      //       if(!args[1]) return message.channel.send('You must type a minecraft server ip')
@@ -63,13 +87,14 @@ bot.on('message', msg=>{
             const Embed = new RichEmbed()
             .setColor(0xF0FF00)
             .setTitle('Magical Dreams: Help')
-            .addField('Server Status', "!md")
+            .addField('Server Status', "md!server")
+            .addField('Create A Poll', 'md!poll')
             .addField('Managers', "managers")
             .addField('Apply for Staff', "app , apply , application")
             .addField('Server Ip', 'ip,  server ip')
-            .addField('Staff Commands', '!admin')
-            .addField('About MDBot', '!about')
-            .addField("People Bio's",'!chums, !cole, !kindal, !nono , !marlin, !kara, !bode , !ben, !65, !mik')
+            .addField('Staff Commands', 'md!admin')
+            .addField('About MDBot', 'md!about')
+            .addField("People Bio's",'md!chums, md!cole, md!kindal, md!nono , md!marlin, md!kara, md!bode , md!ben, md!65, md!mik')
 
            msg.reply(Embed)
            score = score+1;
