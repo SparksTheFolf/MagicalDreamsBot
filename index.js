@@ -557,7 +557,7 @@ switch(args[0]){
         .then(msg => msg.delete(10000))
     }
 
-     //----------------------Disocord Logger-----------------------
+     //----------------------Discord Logger-----------------------
 
      //start of message updating
     bot.on("messageUpdate", async(oldMessage, newMessage) =>{
@@ -577,7 +577,7 @@ switch(args[0]){
         let loggingChannel = newMessage.guild.channels.find(ch => ch.name === "log-stuff")
         if(!loggingChannel) return;
 
-        loggingChannel.sned(logEmbed);
+        loggingChannel.send(logEmbed);
 
 
     })
