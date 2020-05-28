@@ -603,7 +603,7 @@ switch(args[0]){
         score = score+1;
         console.log(score)
 
-    }, 1 * 1000)
+    }, 2/1000)
     //end of message updating
 
 })
