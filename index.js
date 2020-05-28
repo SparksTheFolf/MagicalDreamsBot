@@ -576,7 +576,7 @@ bot.on("messageUpdate", async(oldMessage, newMessage) =>{
         loggingChannel.send(Embed);
 
 
-    })
+    }, 1 * 1000)
     //end of message updating
 
 })
