@@ -599,7 +599,7 @@ switch(args[0]){
 
         let loggingChannel = newMessage.guild.channels.find(ch => ch.name === "bot-log")
 
-        loggingChannel.send(ReportEmbed);
+        loggingChannel.send(ReportEmbed/5);
         score = score+1;
         console.log(score)
 
