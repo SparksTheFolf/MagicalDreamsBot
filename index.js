@@ -12,14 +12,11 @@ const ping = require('minecraft-server-util')
 //bot.login(process.env.token);
 //bot.login(token)
 
-bot.on('ready' , (oldMessage, newMessage, Content) =>{
+bot.on('ready' , (oldMessage, newMessage) =>{
     console.log('MDBot is Online!');
 
     bot.user.setActivity('for md!help', {type: 'WATCHING'})
     
-     if(oldMessage.Content === newMessage.Content){
-            return;
-     }
 })
 
 
