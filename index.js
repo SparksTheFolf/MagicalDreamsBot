@@ -12,11 +12,13 @@ const ping = require('minecraft-server-util')
 //bot.login(process.env.token);
 //bot.login(token)
 
-bot.on('ready', () =>{
+bot.on('ready', , async(oldMessage, newMessage) =>{
     console.log('MDBot is Online!');
 
     bot.user.setActivity('for md!help', {type: 'WATCHING'})
-
+    
+     if(oldMessage.content === newMessage.content){
+            return;
     
 })
 
@@ -560,10 +562,6 @@ switch(args[0]){
      //----------------------Discord Logger-----------------------
 
      //start of message updating
-    bot.on("messageUpdate", async(oldMessage, newMessage) =>{
-        if(oldMessage.content === newMessage.content){
-            return;
-        }
 
           const Embed = new RichEmbed()
         .setAuthor(oldMessage.author.tag, oldMessage.author.avatarURL)
