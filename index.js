@@ -559,8 +559,10 @@ switch(args[0]){
      //----------------------Discord Logger-----------------------
 
      //start of message updating
-    bot.on("messageUpdate", async(oldMessage, newMessage) =>{
-          const Embed = new RichEmbed()
+bot.on("messageUpdate", async(oldMessage, newMessage) =>{
+        if(oldMessage.content === newMessage.content){
+            return;
+        }          const Embed = new RichEmbed()
         .setAuthor(oldMessage.author.tag, oldMessage.author.avatarURL)
         .setThumbnail(oldMessage.author.avatarURL)
         .setColor("0x00A6FF")
