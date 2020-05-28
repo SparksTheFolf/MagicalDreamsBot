@@ -571,7 +571,7 @@ bot.on("messageUpdate", async(oldMessage, newMessage) =>{
         .addField("After", newMessage.content, true)
         .setFooter("Message Logger 2020 © MagicalDreams")
 
-        let loggingChannel = newMessage.guild.channels.find(ch => ch.name === "log-stuff")
+        let loggingChannel = newMessage.guild.channels.find(ch => ch.name === "bot-log")
 
         loggingChannel.send(Embed);
 
