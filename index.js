@@ -585,7 +585,7 @@ switch(args[0]){
      //start of message updating
     
     
-    bot.on("messageUpdate", async(oldMessage, newMessage) =>{
+    bot.on("Update", oldMessage, newMessage =>{
         if(oldMessage.content == newMessage.content){
             return;
         }       
