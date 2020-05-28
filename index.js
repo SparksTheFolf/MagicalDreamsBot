@@ -1,5 +1,6 @@
-const {Client, RichEmbed, Discord} = require('discord.js')
+const {Client, RichEmbed, Discord, Content} = require('discord.js')
 const bot = new Client();
+const content = new Content();
 var score = 110;
 
 
