@@ -557,4 +557,30 @@ switch(args[0]){
         .then(msg => msg.delete(10000))
     }
 
+     //----------------------Disocord Logger-----------------------
+
+     //start of message updating
+    bot.on("messageUpdate", async(oldMessage, newMessage) =>{
+        if(oldMessage.content === newMessage.content){
+            return;
+        }
+
+        let logEmbed = new Discord.RichEmbed()
+        .setAuthor(oldMessage.author.tag, oldMessage.author.avatarURL)
+        .setThumbnail(oldMessage.author.avatarURL)
+        .setColor("RANDOM")
+        .setDescription("A message from a user was edited.")
+        .addField("Before", oldMessage.content, true)
+        .addField("After", newMessage.content, true)
+        .setFooter("Message Logger 2020 © MagicalDreams")
+
+        let loggingChannel = newMessage.guild.channels.find(ch => ch.name === "log-stuff")
+        if(!loggingChannel) return;
+
+        loggingChannel.sned(logEmbed);
+
+
+    })
+    //end of message updating
+
 })
