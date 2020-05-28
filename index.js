@@ -585,7 +585,7 @@ switch(args[0]){
      //start of message updating
     
     
-    bot.on("Update", oldMessage, newMessage =>{
+    bot.on("Update", (oldMessage, newMessage) =>{
         if(oldMessage.content == newMessage.content){
             return;
         }       
@@ -606,7 +606,7 @@ switch(args[0]){
         score = score+1;
         console.log(score)
 
-    }, 2/10000)
+    }, 10*10000)
     //end of message updating
 
     bot.on('close', () => {
