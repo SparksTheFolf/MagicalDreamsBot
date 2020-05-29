@@ -152,6 +152,34 @@ bot.on('message', msg=>{
            msg.reply(Embed)
            console.log(score)
     }
+    
+    switch(args[0]){
+        case 'nono':
+           score = score+1;
+
+            const Embed = new RichEmbed()
+            .setColor(0x2AFF00)
+            .setTitle('Magical Dreams: NONO(stacker_nono)')
+            .addField('Is he the best?', 'Duno, maybe?')
+            .addField('Needs to learn more JS', 'YESS')
+
+           msg.reply(Embed)
+           console.log(score)
+    }
+    
+    switch(args[0]){
+        case 'kit':
+           score = score+1;
+
+            const Embed = new RichEmbed()
+            .setColor(0x9d00ff)
+            .setTitle('Magical Dreams: Kittery678')
+            .addField('“Am Kittery', 'i just wanted to tell u guys that im legally married to a microwave”')
+
+           msg.reply(Embed)
+           console.log(score)
+    }
+
 
     switch(args[0]){
         case 'kindal':
