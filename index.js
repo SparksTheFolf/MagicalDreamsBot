@@ -71,7 +71,7 @@ bot.on('message', msg=>{
         }
 
 
-        var server =  servers[msg.guild.id];
+        var server =  servers[msg.member.id];
 
         server.queue.push(args[1]);
 
