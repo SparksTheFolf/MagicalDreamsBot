@@ -6,7 +6,6 @@ var score = 110;
 const ytdl = require("ytdl-core");
 
 var server = {};
-var server =  servers[msg.guild.id];
 
 
 bot.login(process.env.token);
@@ -28,9 +27,6 @@ bot.on('ready' , (oldMessage, newMessage) =>{
 
 
 
-//Client.on("messageDelete", (messageDelete) => {
-   //     const channel = messageDelete.guild.channels.find(ch => ch.name === 'log-stuff');channel.send(`The message : "${messageDelete.content}" by ${messageDelete.author} was deleted. There ID is ${messageDelete.author.id}`)
-  //     }); 
 
 bot.on('message', msg=>{
 
