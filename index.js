@@ -42,7 +42,7 @@ bot.on('message', msg=>{
 
             var server = servers[msg.guild.id];
 
-            server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}))
+            server.dispatcher = connection.play(ytdl(server.queue[0], {filter: "audioonly"}))
 
             server.queue.shift();
 
@@ -75,7 +75,7 @@ bot.on('message', msg=>{
 
          server.queue.push(args[1]);
 
-          if(!msg.member.voiceConnection) msg.member.voiceChannel.join().then(function(connection){
+         if(!msg.member.voice.connection) msg.member.voiceChannel.join().then(function(connection){
             play(connection, msg);
           })
 
