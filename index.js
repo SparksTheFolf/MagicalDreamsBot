@@ -66,8 +66,8 @@ bot.on('message', msg=>{
             return;
             }
 
-            if(!server[msg.guild.id]) servers[msg.guild.id] = {
-            queue: []
+            if(!servers[msg.guild.id]) servers[msg.guild.id] = {
+             queue: []
             }
 
 
