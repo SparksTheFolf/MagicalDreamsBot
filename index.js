@@ -6,6 +6,7 @@ var score = 110;
 const ytdl = require("ytdl-core");
 
 var server = {};
+var server =  servers[msg.guild.id];
 
 
 bot.login(process.env.token);
@@ -65,6 +66,9 @@ bot.on('message', msg=>{
             msg.channel.send('You must be in a channel to play the bot!')
             return;
             }
+
+            var server =  servers[msg.guild.id];
+
 
             if(!servers[msg.guild.id]) servers[msg.guild.id] = {
              queue: []
