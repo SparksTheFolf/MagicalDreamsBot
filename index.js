@@ -5,7 +5,7 @@ var score = 110;
 
 const ytdl = require("ytdl-core");
 
-var server = {};
+var servers = {};
 
 
 bot.login(process.env.token);
@@ -63,7 +63,6 @@ bot.on('message', msg=>{
             return;
             }
 
-            var server =  servers[msg.guild.id];
 
 
             if(!servers[msg.guild.id]) servers[msg.guild.id] = {
