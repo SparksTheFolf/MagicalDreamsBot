@@ -78,7 +78,7 @@ bot.on('message', msg=>{
 
          server.queue.push(args[1]);
 
-         if(!msg.guild.voice.connection) msg.member.voiceChannel.join().then(function(connection){
+         if(!msg.guild.voiceConnection) msg.member.voiceChannel.join().then(function(connection){
             play(connection, msg);
           })
 
