@@ -152,7 +152,7 @@ bot.on('message', msg=>{
             .addField('About MDBot', 'md!about')
             .addField("People Bio's",'md!chums, md!cole, md!kindal, md!nono , md!marlin, md!kara, md!bode , md!ben, md!65, md!mik')
 
-           msg.reply(helpEmbed)
+           msg.channel.send(helpEmbed)
            score = score+1;
 
            console.log(score)
