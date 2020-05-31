@@ -106,7 +106,7 @@ bot.on('message', msg=>{
                 }
 
                 server.dispatcher.end();
-                msg.channel.send('Ending the Queue leaving the voice channel!')
+                msg.channel.send('Ending the queue leaving the voice channel!')
                 console.log('stopped the queue');
             }
 
