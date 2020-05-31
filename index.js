@@ -44,7 +44,7 @@ bot.on('message', msg=>{
 
             var server = servers[msg.guild.id];
 
-            server.dispatcher = connection.play(ytdl(server.queue[0], {filter: "audioonly"}));
+            server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}));
 
             server.queue.shift();
 
@@ -84,7 +84,7 @@ bot.on('message', msg=>{
           })
 
         
-     break;
+            break;
     }
 
     switch(args[0]){
