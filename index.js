@@ -173,7 +173,7 @@ bot.on('message', msg=>{
             .setTitle('Magical Dreams: Help')
             .addField('Server Status', "md!server")
             .addField('Create A Poll', 'md!poll')
-            .addField('Music', 'md!play (with yt link), md!skip , md!stop')
+            .addField('Music', 'md!play (with yt link), md!skip , md!stop     ----Join #Music to listen----')
             .addField('Managers', "managers")
             .addField('Apply for Staff', "app , apply , application")
             .addField('Server Ip', 'ip,  server ip')
