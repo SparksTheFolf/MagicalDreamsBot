@@ -4,8 +4,12 @@ const bot = new Client();
 var score = 110;
 
 const ytdl = require("ytdl-core");
+var opusscript = require("opusscript");
+
 
 var servers = {};
+var connection = {};
+
 
 
 bot.login(process.env.token);
@@ -39,7 +43,7 @@ bot.on('message', msg=>{
 
             var server = servers[msg.guild.id];
 
-            server.dispatcher = connection.play(ytdl(server.queue[0], {filter: "audioonly"}))
+            server.dispatcher = connection.play(ytdl(server.queue[0], {filter: "audioonly"}));
 
             server.queue.shift();
 
@@ -70,7 +74,7 @@ bot.on('message', msg=>{
             }
 
 
-         var server =  servers[msg.guild.id];
+         var server = servers[msg.guild.id];
 
          server.queue.push(args[1]);
 
