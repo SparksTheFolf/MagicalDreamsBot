@@ -4,7 +4,8 @@ const bot = new Client();
 var score = 110;
 
 const ytdl = require("ytdl-core");
-var opusscript = require("opusscript");
+const opusscript = require("opusscript");
+const ffmpeg = require("ffmpeg-static");
 
 
 var servers = {};
