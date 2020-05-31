@@ -46,6 +46,8 @@ bot.on('message', msg=>{
 
             server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}));
 
+                score = score+1;
+
             server.queue.shift();
 
             server.dispatcher.on("end", function(){
@@ -75,7 +77,7 @@ bot.on('message', msg=>{
             }
 
 
-         var server = servers[msg.guild.id];
+         var server = servers[msg.guild.id]; 
 
          server.queue.push(args[1]);
 
@@ -84,7 +86,33 @@ bot.on('message', msg=>{
           })
 
         
-            break;
+        break;
+
+
+        case 'skip':
+
+            var server = servers[msg.guild.id]; 
+
+            if(server.dispatcher) server.dispatcher.end();
+            msg.channel.send('Skipping the song!');
+        break;
+
+        case 'stop':
+            var server = servers[msg.guild.id]; 
+
+            if(msg.guild.voiceConnection){
+                for(var i = server.queue.length - 1; i>=0; i--){
+                    server.queue.splice(i, 1);
+                }
+
+                server.dispatcher.end();
+                msg.channel.send('Ending the Queue leaving the voice channel!')
+                console.log('stopped the queue');
+            }
+
+            if(msg.guild.connection) msg.guild.voiceConnection.disconnect();
+
+        break;
     }
 
     switch(args[0]){
@@ -448,7 +476,7 @@ switch(args[0]){
 
     if(msg.content === 'morning'){
 
-        msg.reply('Morning to you too! :) How are you?');
+        msg.reply('Morning to you too! :) ');
         score = score+1;
 
         console.log(score)
@@ -456,7 +484,7 @@ switch(args[0]){
 
     if(msg.content === 'morning!'){
 
-        msg.reply('Morning to you too! :) How are you?');
+        msg.reply('Morning to you too! :) ');
         score = score+1;
 
         console.log(score)
@@ -464,7 +492,7 @@ switch(args[0]){
 
     if(msg.content === 'Morning!'){
 
-        msg.reply('Morning to you too! :) How are you?');
+        msg.reply('Morning to you too! :) ');
         score = score+1;
 
         console.log(score)
@@ -472,7 +500,7 @@ switch(args[0]){
 
     if(msg.content === 'Morning'){
 
-        msg.reply('Morning to you too! :) How are you?');
+        msg.reply('Morning to you too! :) ');
         score = score+1;
 
         console.log(score)
