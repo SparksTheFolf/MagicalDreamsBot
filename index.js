@@ -37,12 +37,9 @@ bot.on('message', msg=>{
 
     let args = msg.content.substring(PREFIX.length).split(' ')
 
-    
     switch(args[0]){
         case 'play':
-        
-           
-        
+
             function play(connection, msg){
 
             var server = servers[msg.guild.id];
@@ -90,9 +87,8 @@ bot.on('message', msg=>{
 
         
         break;
-        
 
-        
+
         case 'skip':
 
             var server = servers[msg.guild.id]; 
@@ -102,10 +98,8 @@ bot.on('message', msg=>{
 
             
         break;
-            
+
         case 'stop':
-
-
             var server = servers[msg.guild.id]; 
 
             if(msg.guild.voiceConnection){
@@ -123,19 +117,7 @@ bot.on('message', msg=>{
             if(msg.guild.connection) msg.guild.voiceConnection.disconnect();
 
         break;
-            
-            
     }
-
-
-
-
-
-
-
-    
-
-
 
     switch(args[0]){
         case "poll":
