@@ -67,7 +67,7 @@ bot.on('message', (message) => {
             }
         }
     })
-    bot.guilds.get(guild.config).member(message.author).roles.add(role.config) // ensure this is a string in the config ("")
+    bot.guilds.get(config.guild).member(message.author).roles.add(config.guild) // ensure this is a string in the config ("")
         .then(console.log(`TOKEN: ${message.author.token} :: Role ${"Verified"} added to member ${message.author.id}`))
         .catch(console.error)
 })
