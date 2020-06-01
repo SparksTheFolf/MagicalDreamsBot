@@ -41,7 +41,7 @@ bot.on('message', async message => {
     if(message.content.toLowerCase() === 'md!verify' && message.channel.id === '717160550995591169')
     {   
         await message.delete().catch(err => console.log(err));
-        if(role) {
+        if('692989638478135348') {
             try {
                 await message.member.roles.add('692989638478135348');
                 console.log("Role added!");
