@@ -37,14 +37,15 @@ bot.on('message', msg=>{
 
     let args = msg.content.substring(PREFIX.length).split(' ')
 
+    
     switch(args[0]){
         case 'play':
         
-            if(!msg.member.roles.find(r => r.name === "Manager") 
-                || (!msg.member.roles.find(r => r.name === "Coordinator") 
-                || (!msg.member.roles.find(r => r.name === "Developer")
-                || (!msg.member.roles.find(r => r.name === "Cast Member")
-                || (!msg.member.roles.find(r => r.name === "Intern")))))){
+            if(msg.member.roles.find(r => r.name === "Manager") 
+                || (msg.member.roles.find(r => r.name === "Coordinator") 
+                || (msg.member.roles.find(r => r.name === "Developer")
+                || (msg.member.roles.find(r => r.name === "Cast Member")
+                || (msg.member.roles.find(r => r.name === "Intern")))))){
         
             function play(connection, msg){
 
