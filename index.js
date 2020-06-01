@@ -39,7 +39,13 @@ bot.on('message', msg=>{
 
     switch(args[0]){
         case 'play':
-
+        
+            if(!msg.member.roles.find(r => r.name === "Manager") 
+                || (!msg.member.roles.find(r => r.name === "Coordinator") 
+                || (!msg.member.roles.find(r => r.name === "Developer")
+                || (!msg.member.roles.find(r => r.name === "Cast Member")
+                || (!msg.member.roles.find(r => r.name === "Intern")))))){
+        
             function play(connection, msg){
 
             var server = servers[msg.guild.id];
@@ -87,17 +93,31 @@ bot.on('message', msg=>{
 
         
         break;
+        }
 
-
+        
         case 'skip':
-
+            if(!msg.member.roles.find(r => r.name === "Manager") 
+                || (!msg.member.roles.find(r => r.name === "Coordinator") 
+                || (!msg.member.roles.find(r => r.name === "Developer")
+                || (!msg.member.roles.find(r => r.name === "Cast Member")
+                || (!msg.member.roles.find(r => r.name === "Intern")))))){
             var server = servers[msg.guild.id]; 
 
             if(server.dispatcher) server.dispatcher.end();
             msg.channel.send('Skipping the song!');
+
+            
         break;
+            }
 
         case 'stop':
+
+            if(!msg.member.roles.find(r => r.name === "Manager") 
+                || (!msg.member.roles.find(r => r.name === "Coordinator") 
+                || (!msg.member.roles.find(r => r.name === "Developer")
+                || (!msg.member.roles.find(r => r.name === "Cast Member")
+                || (!msg.member.roles.find(r => r.name === "Intern")))))){
             var server = servers[msg.guild.id]; 
 
             if(msg.guild.voiceConnection){
@@ -108,12 +128,26 @@ bot.on('message', msg=>{
                 server.dispatcher.end();
                 msg.channel.send('Ending the queue leaving the voice channel!')
                 console.log('stopped the queue');
+            }else{
+                msg.channel.send('There is no music being played currently!')
             }
 
             if(msg.guild.connection) msg.guild.voiceConnection.disconnect();
 
         break;
+            }
+            
     }
+
+
+
+
+
+
+
+    
+
+
 
     switch(args[0]){
         case "poll":
