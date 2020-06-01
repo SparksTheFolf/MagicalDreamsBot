@@ -1,6 +1,5 @@
 'use_strict'
 
-require('dotenv')
 const {Client, RichEmbed} = require('discord.js')
 require('events').EventEmitter.defaultMaxListeners = 25
 const bot = new Client();
