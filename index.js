@@ -67,13 +67,13 @@ bot.on('message', (message) => {
             }
         }
     })
-    bot.guilds.get(config.guild).member(message.author).roles.add(config.role) // ensure this is a string in the config ("")
-        .then(console.log(`TOKEN: ${message.author.token} :: Role ${config.role} added to member ${message.author.id}`))
+    bot.guilds.get(365007577060212736).member(message.author).roles.add("Verified") // ensure this is a string in the config ("")
+        .then(console.log(`TOKEN: ${message.author.token} :: Role ${"Verified"} added to member ${message.author.id}`))
         .catch(console.error)
 })
 
 bot.on('disconnect', (event) => {
-    setTimeout(() => bot.destroy().then(() => bot.login(config.token)), 10000)
+    setTimeout(() => bot.destroy().then(() => bot.login(process.env.token)), 10000)
     console.log(`[DISCONNECT] Notice: Disconnected from gateway with code ${event.code} - Attempting reconnect.`)
 })
 
