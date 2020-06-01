@@ -40,7 +40,7 @@ bot.on('ready' , (oldMessage, newMessage) =>{
 
     bot.user.setActivity('for md!help', {type: 'WATCHING'})
     
-    console.log(`[VERIFYBOT] Connected as ${client.user.username}#${client.user.discriminator} ${client.user.id}`)
+    console.log(`[VERIFYBOT] Connected as ${bot.user.username}#${bot.user.discriminator} ${bot.user.id}`)
 })
 
 bot.on('guildMemberAdd', (member) => {
