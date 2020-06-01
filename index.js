@@ -43,7 +43,7 @@ bot.on('ready' , (oldMessage, newMessage) =>{
     console.log(`[VERIFYBOT] Connected as ${client.user.username}#${client.user.discriminator} ${client.user.id}`)
 })
 
-client.on('guildMemberAdd', (member) => {
+bot.on('guildMemberAdd', (member) => {
     if (member.user.bot || member.guild.id !== config.guild) return
     const token = shortcode(8)
     const welcomemsg = `Welcome to the guild! We hope you find a home here! Check out the \`#general\` channel to make sure that we jive, and as long as our goals are similar, then there’s a place at the table waiting for you. \n\n If you accept the code of conduct, please verify your agreement by replying to **this DM** with the verification phrase: \n\n\`I agree to abide by all rules. My token is ${token}.\`\n\n **This message is case-sensitive, and please include the period at the end! ** \n\nQuestions? Get at a staff member in the server or via DM.`
@@ -54,7 +54,7 @@ client.on('guildMemberAdd', (member) => {
 
 const verifymsg = 'I agree to abide by all rules. My token is {token}.'
 
-client.on('message', (message) => {
+bot.on('message', (message) => {
     if (message.author.bot || !message.author.token || message.channel.type !== `dm`) return
     if (message.content !== (verifymsg.replace('{token}', message.author.token))) return
     message.channel.send({
@@ -67,22 +67,22 @@ client.on('message', (message) => {
             }
         }
     })
-    client.guilds.get(config.guild).member(message.author).roles.add(config.role) // ensure this is a string in the config ("")
+    bot.guilds.get(config.guild).member(message.author).roles.add(config.role) // ensure this is a string in the config ("")
         .then(console.log(`TOKEN: ${message.author.token} :: Role ${config.role} added to member ${message.author.id}`))
         .catch(console.error)
 })
 
-client.on('disconnect', (event) => {
-    setTimeout(() => client.destroy().then(() => client.login(config.token)), 10000)
+bot.on('disconnect', (event) => {
+    setTimeout(() => bot.destroy().then(() => bot.login(config.token)), 10000)
     console.log(`[DISCONNECT] Notice: Disconnected from gateway with code ${event.code} - Attempting reconnect.`)
 })
 
-client.on('reconnecting', () => {
+bot.on('reconnecting', () => {
     console.log(`[NOTICE] ReconnectAction: Reconnecting to Discord...`)
 })
 
-client.on('error', console.error)
-client.on('warn', console.warn)
+bot.on('error', console.error)
+bot.on('warn', console.warn)
 
 process.on('unhandledRejection', (error) => {
     console.error(`Uncaught Promise Error: \n${error.stack}`)
