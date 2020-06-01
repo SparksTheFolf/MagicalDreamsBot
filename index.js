@@ -54,7 +54,7 @@ bot.on('message', async message => {
     }
 });
 
-client.on('guildMemberAdd', member => {
+bot.on('guildMemberAdd', member => {
     console.log(member.user.tag);
 });
 
