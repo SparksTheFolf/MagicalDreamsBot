@@ -41,11 +41,7 @@ bot.on('message', msg=>{
     switch(args[0]){
         case 'play':
         
-            if(msg.member.roles.find(r => r.name === "Manager") 
-                || (msg.member.roles.find(r => r.name === "Coordinator") 
-                || (msg.member.roles.find(r => r.name === "Developer")
-                || (msg.member.roles.find(r => r.name === "Cast Member")
-                || (msg.member.roles.find(r => r.name === "Intern")))))){
+           
         
             function play(connection, msg){
 
@@ -94,15 +90,11 @@ bot.on('message', msg=>{
 
         
         break;
-        }
+        
 
         
         case 'skip':
-            if(!msg.member.roles.find(r => r.name === "Manager") 
-                || (!msg.member.roles.find(r => r.name === "Coordinator") 
-                || (!msg.member.roles.find(r => r.name === "Developer")
-                || (!msg.member.roles.find(r => r.name === "Cast Member")
-                || (!msg.member.roles.find(r => r.name === "Intern")))))){
+
             var server = servers[msg.guild.id]; 
 
             if(server.dispatcher) server.dispatcher.end();
@@ -110,15 +102,10 @@ bot.on('message', msg=>{
 
             
         break;
-            }
-
+            
         case 'stop':
 
-            if(!msg.member.roles.find(r => r.name === "Manager") 
-                || (!msg.member.roles.find(r => r.name === "Coordinator") 
-                || (!msg.member.roles.find(r => r.name === "Developer")
-                || (!msg.member.roles.find(r => r.name === "Cast Member")
-                || (!msg.member.roles.find(r => r.name === "Intern")))))){
+
             var server = servers[msg.guild.id]; 
 
             if(msg.guild.voiceConnection){
@@ -136,7 +123,7 @@ bot.on('message', msg=>{
             if(msg.guild.connection) msg.guild.voiceConnection.disconnect();
 
         break;
-            }
+            
             
     }
 
