@@ -1,5 +1,6 @@
 'use_strict'
 
+require('dotenv')
 const {Client, RichEmbed} = require('discord.js')
 require('events').EventEmitter.defaultMaxListeners = 25
 const bot = new Client();
@@ -33,6 +34,30 @@ bot.on('ready' , (oldMessage, newMessage) =>{
     bot.user.setActivity('for md!help', {type: 'WATCHING'})
     
 })
+
+bot.on('message', async message => {
+    if(message.author.bot) return;
+    if(message.channel.id === '')
+        await message.delete();
+    if(message.content.toLowerCase() === 'md!verify' && message.channel.id === '717160550995591169')
+    {   
+        await message.delete().catch(err => console.log(err));
+        const role = message.guild.roles.cache.get('692989638478135348');
+        if(role) {
+            try {
+                await message.member.roles.add(role);
+                console.log("Role added!");
+            }
+            catch(err) {
+                console.log(err);
+            }
+        }
+    }
+});
+
+client.on('guildMemberAdd', member => {
+    console.log(member.user.tag);
+});
 
 
 
