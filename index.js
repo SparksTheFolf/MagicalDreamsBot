@@ -1,16 +1,6 @@
-const {Client, RichEmbed} = require('discord.js')
-require('events').EventEmitter.defaultMaxListeners = 25
+const {Client, RichEmbed, Discord, Content} = require('discord.js')
 const bot = new Client();
-var score = 110;
-
-const ytdl = require("ytdl-core");
-const opusscript = require("opusscript");
-const ffmpeg = require("ffmpeg-static");
-
-
-var servers = {};
-var connection = {};
-
+var score = 120;
 
 
 bot.login(process.env.token);
@@ -32,102 +22,23 @@ bot.on('ready' , (oldMessage, newMessage) =>{
 
 
 
+//Client.on("messageDelete", (messageDelete) => {
+   //     const channel = messageDelete.guild.channels.find(ch => ch.name === 'log-stuff');channel.send(`The message : "${messageDelete.content}" by ${messageDelete.author} was deleted. There ID is ${messageDelete.author.id}`)
+  //     }); 
 
 bot.on('message', msg=>{
 
     let args = msg.content.substring(PREFIX.length).split(' ')
 
     switch(args[0]){
-        case 'play':
-
-            function play(connection, msg){
-
-            var server = servers[msg.guild.id];
-
-            server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}));
-
-                score = score+1;
-
-            server.queue.shift();
-
-            server.dispatcher.on("end", function(){
-                if(server.queue[0]){
-                    play(connection, msg);
-                }else{
-                    connection.disconnect();
-                }
-            })
-
-            }
-
-          if(!args[1]){
-            msg.channel.send("You need to provide a link!")
-            return;
-          }
-
-            if(!msg.member.voiceChannel){
-            msg.channel.send('You must be in a channel to play the bot!')
-            return;
-            }
-
-
-
-            if(!servers[msg.guild.id]) servers[msg.guild.id] = {
-             queue: []
-            }
-
-
-         var server = servers[msg.guild.id]; 
-
-         server.queue.push(args[1]);
-
-         if(!msg.guild.voiceConnection) msg.member.voiceChannel.join().then(function(connection){
-            play(connection, msg);
-          })
-
-        
-        break;
-
-
-        case 'skip':
-
-            var server = servers[msg.guild.id]; 
-
-            if(server.dispatcher) server.dispatcher.end();
-            msg.channel.send('Skipping the song!');
-
-            
-        break;
-
-        case 'stop':
-            var server = servers[msg.guild.id]; 
-
-            if(msg.guild.voiceConnection){
-                for(var i = server.queue.length - 1; i>=0; i--){
-                    server.queue.splice(i, 1);
-                }
-
-                server.dispatcher.end();
-                msg.channel.send('Ending the queue leaving the voice channel!')
-                console.log('stopped the queue');
-            }else{
-                msg.channel.send('There is no music being played currently!')
-            }
-
-            if(msg.guild.connection) msg.guild.voiceConnection.disconnect();
-
-        break;
-    }
-
-    switch(args[0]){
         case "poll":
-            const pollembed = new RichEmbed()
+            const Embed = new RichEmbed()
             .setColor(0xFFC300)
             .setTitle("Initiate Poll")
             .addField('md!poll', ' to initiate a simple yes or no poll');
 
             if(!args[1]){
-                msg.reply(pollembed)
+                msg.reply(Embed)
             }
 
             let msgArgs = args.slice(1).join(' ');
@@ -150,7 +61,7 @@ bot.on('message', msg=>{
             ping('magicaldreams.us', 25565, (error, resonse) =>{
                 if(error) throw error
 
-                const serverEmbed = new RichEmbed()
+                const Embed = new RichEmbed()
                 .setColor(0x3498DB)
                 .setTitle('Server Status')
                 .addField('Server IP', "magicaldreams.us")
@@ -158,7 +69,7 @@ bot.on('message', msg=>{
                 .addField('Online players', resonse.onlinePlayers)
                 .addField('Max Players', resonse.maxPlayers)
                msg.reply("Here you go, :) ")
-               msg.reply(serverEmbed)
+               msg.reply(Embed)
 
                score = score+1;
 
@@ -172,20 +83,19 @@ bot.on('message', msg=>{
     switch(args[0]){
         case 'help':
 
-            const helpEmbed = new RichEmbed()
+            const Embed = new RichEmbed()
             .setColor(0xF0FF00)
             .setTitle('Magical Dreams: Help')
             .addField('Server Status', "md!server")
             .addField('Create A Poll', 'md!poll')
-            .addField('Music', 'md!play (with yt link), md!skip , md!stop     ----Join #Music to listen----')
             .addField('Managers', "managers")
             .addField('Apply for Staff', "app , apply , application")
             .addField('Server Ip', 'ip,  server ip')
             .addField('Staff Commands', 'md!admin')
             .addField('About MDBot', 'md!about')
-            .addField("People Bio's",'md!chums, md!cole, md!kindal, md!nono , md!marlin, md!kara, md!bode , md!ben, md!65, md!mik')
+            .addField("People Bio's",'md!chums, md!cole, md!kindal, md!nono , md!marlin, md!kara, md!bode , md!ben, md!65, md!mik, md!kit')
 
-           msg.channel.send(helpEmbed)
+           msg.reply(Embed)
            score = score+1;
 
            console.log(score)
@@ -195,7 +105,7 @@ bot.on('message', msg=>{
         case 'about':
            score = score+1;
 
-           const aboutEmbed = new RichEmbed()
+            const Embed = new RichEmbed()
             .setColor(0x2AFF00)
             .setTitle('Magical Dreams: About')
             .addField('Current Build Version', "v1.4.2")
@@ -203,7 +113,7 @@ bot.on('message', msg=>{
             .addField('Author', "nono(stacker_nono)")
             .addField('Website', 'https://github.com/nolant108')
 
-           msg.reply(aboutEmbed)
+           msg.reply(Embed)
            console.log(score)
     }
 
@@ -214,7 +124,7 @@ bot.on('message', msg=>{
             if(!msg.member.roles.find(r => r.name === "Tod")){
                         score = score+1;
                 console.log(score)
-                const adminEmbed = new RichEmbed()
+                const Embed = new RichEmbed()
                 .setColor(0x2AFF00)
                 .setTitle('Magical Dreams: Admin Settings')
                 .addField('Current Build Version3', "hello")
@@ -233,28 +143,56 @@ bot.on('message', msg=>{
         case 'nono':
            score = score+1;
 
-           const nonoEmbed = new RichEmbed()           
+            const Embed = new RichEmbed()
             .setColor(0x2AFF00)
             .setTitle('Magical Dreams: NONO(stacker_nono)')
             .addField('Is he the best?', 'Duno, maybe?')
             .addField('Needs to learn more JS', 'YESS')
 
-           msg.reply(nonoEmbed)
+           msg.reply(Embed)
            console.log(score)
     }
+    
+    switch(args[0]){
+        case 'nono':
+           score = score+1;
+
+            const Embed = new RichEmbed()
+            .setColor(0x2AFF00)
+            .setTitle('Magical Dreams: NONO(stacker_nono)')
+            .addField('Is he the best?', 'Duno, maybe?')
+            .addField('Needs to learn more JS', 'YESS')
+
+           msg.reply(Embed)
+           console.log(score)
+    }
+    
+    switch(args[0]){
+        case 'kit':
+           score = score+1;
+
+            const Embed = new RichEmbed()
+            .setColor(0x9d00ff)
+            .setTitle('Magical Dreams: Kittery678')
+            .addField('“Am Kittery', 'i just wanted to tell u guys that im legally married to a microwave”')
+
+           msg.reply(Embed)
+           console.log(score)
+    }
+
 
     switch(args[0]){
         case 'kindal':
            score = score+1;
 
-           const kindalEmbed = new RichEmbed()
+            const Embed = new RichEmbed()
             .setColor(0x2AFF00)
             .setTitle('Magical Dreams: MakingMiners')
             .addField('Bio', 'We keep moving forward, opening new doors, and doing new things, because were curious and curiosity keeps leading us down new paths. Oh and by the way.. I’m Kindal tehe')
             .addField('I say...', 'Useless')
 
 
-           msg.reply(kindalEmbed)
+           msg.reply(Embed)
            console.log(score)
     }
 
@@ -262,12 +200,13 @@ bot.on('message', msg=>{
         case 'marlin':
            score = score+1;
 
-           const marlinEmbed = new RichEmbed()            .setColor(0x2AFF00)
+            const Embed = new RichEmbed()
+            .setColor(0x2AFF00)
             .setTitle('Magical Dreams: Marlin')
             .addField('Google Sign In: Someone just signed into your computer, do you know them?', "Yes I know him, He's me.")
             .addField('Have a great weekend!', 'I Hope your code behaves on Monday the same way it did on Friday')
 
-           msg.reply(marlinEmbed)
+           msg.reply(Embed)
            console.log(score)
     }
 
@@ -276,14 +215,15 @@ bot.on('message', msg=>{
         case 'chums':
            score = score+1;
 
-           const chumsEmbed = new RichEmbed()            .setColor(0x2AFF00)
+            const Embed = new RichEmbed()
+            .setColor(0x2AFF00)
             .setTitle('Magical Dreams: chums122')
             .addField('Yoda says', 'Only Just Begun, The meme war has')
             .addField('Did you ever hear the Tragedy of Darth Plagueis the wise?'
             , ' I thought not. Its not a story the Jedi would tell you. Its a Sith legend. Darth Plagueis was a Dark Lord of the Sith, so powerful and so wise he could use the Force to influence the midichlorians to create life... He had such a knowledge of the dark side that he could even keep the ones he cared about from dying. The dark side of the Force is a pathway to many abilities some consider to be unnatural. He became so powerful... the only thing he was afraid of was losing his power, which eventually, of course, he did. Unfortunately, he taught his apprentice everything he knew, then his apprentice killed him in his sleep. Its ironic he could save others from death, but not himself.')
 
 
-           msg.reply(chumsEmbed)
+           msg.reply(Embed)
            console.log(score)
     }
 
@@ -291,12 +231,12 @@ switch(args[0]){
     case 'cole':
        score = score+1;
 
-       const coleEmbed = new RichEmbed()       
+        const Embed = new RichEmbed()
         .setColor(0x2AFF00)
         .setTitle('Magical Dreams: starport75')
         .addField('I say...', 'It can be anything! :)')
 
-       msg.reply(coleEmbed)
+       msg.reply(Embed)
        console.log(score)
 }
 
@@ -304,14 +244,14 @@ switch(args[0]){
     case 'ben':
        score = score+1;
 
-       const benEmbed = new RichEmbed()
+        const Embed = new RichEmbed()
         .setColor(0x2AFF00)
         .setTitle('Magical Dreams: Ben[OhBen]')
         .addField('Ben is...', 'an awesome ride technician and trainer')
         .addField('Ben is...', 'an awesome ride technician and trainer!!!')
         .addField('Ride breaks down...', 'coffin dance plays')
 
-       msg.reply(benEmbed)
+       msg.reply(Embed)
        console.log(score)
 }
 
@@ -319,14 +259,14 @@ switch(args[0]){
     case '65':
        score = score+1;
 
-       const sixfiveEmbed = new RichEmbed()    
-           .setColor(0x2AFF00)
+        const Embed = new RichEmbed()
+        .setColor(0x2AFF00)
         .setTitle('Magical Dreams: 65Thomas')
         .addField('65 Thomas is...', 'out to lunch.')
         .addField('He’s always hungry...', 'so it might take a minute.')
         .addField('Unless you have a cookie....', 'Then he’ll come running.')
 
-       msg.reply(sixfiveEmbed)
+       msg.reply(Embed)
        console.log(score)
 }
 
@@ -334,15 +274,15 @@ switch(args[0]){
         case 'mik':
            score = score+1;
 
-           const mikEmbed = new RichEmbed()
-                       .setColor(0xBD00FF)
+            const Embed = new RichEmbed()
+            .setColor(0xBD00FF)
             .setTitle('Magical Dreams: Mik (kozzy913)')
             .addField('Bee Movie?', 'Barry says "Ya like Jazz?"')
             .addField('According to all known laws of aviation,'
             , 'there is no way a bee should be able to fly.')
 
 
-           msg.reply(mikEmbed)
+           msg.reply(Embed)
            console.log(score)
     }
 
@@ -351,14 +291,14 @@ switch(args[0]){
         case 'bode':
            score = score+1;
 
-           const bodeEmbed = new RichEmbed()
+            const Embed = new RichEmbed()
             .setColor(0x2AFF00)
             .setTitle('Magical Dreams: Bode (Disneyland_)')
             .addField('Whomst', 'Iz Bode')
             .addField('and BTW', 'You Just got Vectored')
 
 
-           msg.reply(bodeEmbed)
+           msg.reply(Embed)
            console.log(score)
     }
 
@@ -366,7 +306,8 @@ switch(args[0]){
         case 'kara':
            score = score+1;
 
-           const karaEmbed = new RichEmbed()            .setColor(0x2AFF00)
+            const Embed = new RichEmbed()
+            .setColor(0x2AFF00)
             .setTitle('Magical Dreams: Kara (_Kara)')
             .addField('kara is a cool kat coordinator', 'kara is a cool kat coordinator!!!!!!!!')
             .addField('And She is...', 'A Dancing Queen')
@@ -374,7 +315,7 @@ switch(args[0]){
             .addField("Server Mom!!", "Kara is the server mom, lol")
 
 
-           msg.reply(karaEmbed)
+           msg.reply(Embed)
            console.log(score)
     }
 
@@ -481,7 +422,7 @@ switch(args[0]){
 
     if(msg.content === 'morning'){
 
-        msg.reply('Morning to you too! :) ');
+        msg.reply('Morning to you too! :) How are you?');
         score = score+1;
 
         console.log(score)
@@ -489,7 +430,7 @@ switch(args[0]){
 
     if(msg.content === 'morning!'){
 
-        msg.reply('Morning to you too! :) ');
+        msg.reply('Morning to you too! :) How are you?');
         score = score+1;
 
         console.log(score)
@@ -497,7 +438,7 @@ switch(args[0]){
 
     if(msg.content === 'Morning!'){
 
-        msg.reply('Morning to you too! :) ');
+        msg.reply('Morning to you too! :) How are you?');
         score = score+1;
 
         console.log(score)
@@ -505,7 +446,7 @@ switch(args[0]){
 
     if(msg.content === 'Morning'){
 
-        msg.reply('Morning to you too! :) ');
+        msg.reply('Morning to you too! :) How are you?');
         score = score+1;
 
         console.log(score)
@@ -524,16 +465,13 @@ switch(args[0]){
 /*
     let wordArray = msg.content.split(" ");
     console.log(wordArray);
-
     let filterWords = ['fuck', 'shit', 'hell', '$h!t', 'asshole', 'son of a bitch', 'bitches'];
-
     for(var i = 0; 1 < filterWords.length; i++) {
         msg.delete();
         msg.channel.send('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
         .then(msg => msg.delete(10000))
             
     }
-
 */
 
 
@@ -643,63 +581,25 @@ switch(args[0]){
         .then(msg => msg.delete(10000))
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
      //----------------------Discord Logger-----------------------
 
      //start of message updating
     
-    
-    bot.on("Update", async(oldMessage, newMessage)=>{
-        if(oldMessage.content == newMessage.content){
+    /*
+bot.on("messageUpdate", async(oldMessage, newMessage) =>{
+        if(oldMessage.content === newMessage.content){
             return;
-        }       
-        const ReportEmbed = new RichEmbed()
+        }          const Embed = new RichEmbed()
         .setAuthor(oldMessage.author.tag, oldMessage.author.avatarURL)
-      //  .setThumbnail(oldMessage.author.avatarURL)
+        .setThumbnail(oldMessage.author.avatarURL)
         .setColor("0x00A6FF")
         .setDescription("A message from a user was edited.")
-        .addField("Before", oldMessage.content)
-        .addField("After", newMessage.content)
+        .addField("Before", oldMessage.content, true)
+        .addField("After", newMessage.content, true)
         .setFooter("Message Logger 2020 © MagicalDreams")
-    
-
-
         let loggingChannel = newMessage.guild.channels.find(ch => ch.name === "bot-log")
-
-        loggingChannel.send(ReportEmbed);
-        score = score+1;
-        console.log(score)
-
-    }, 2/10000)
+        loggingChannel.send(Embed);
+    }, 1 * 1000)
     //end of message updating
-
-    bot.on('close', () => {
-        connection.removeAllListeners();
-    });
-
+*/
 })
