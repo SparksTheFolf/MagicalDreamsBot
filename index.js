@@ -43,7 +43,7 @@ bot.on('message', async message => {
         await message.delete().catch(err => console.log(err));
         if('692989638478135348') {
             try {
-                await message.member.roles.add('692989638478135348');
+                await message.member.roles.add(692989638478135348);
                 console.log("Role added!");
             }
             catch(err) {
@@ -65,6 +65,9 @@ bot.on('message', msg=>{
 
     switch(args[0]){
         case 'play':
+            
+
+         score = score+1;
 
             function play(connection, msg){
 
