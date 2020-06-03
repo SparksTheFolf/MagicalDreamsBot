@@ -270,7 +270,7 @@ bot.on('message', msg=>{
                 if(error) throw error
 
                 const serverEmbed = new RichEmbed()
-                .setColor(0x3498DB)
+                .setColor('RANDOM')
                 .setTitle('Server Status')
                 .addField('Server IP', "magicaldreams.us")
                 .addField('Server Version', "1.15.2")
