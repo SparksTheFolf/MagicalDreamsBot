@@ -9,7 +9,7 @@ const separateReqPool = {maxSockets: 15};
 require('events').EventEmitter.defaultMaxListeners = 25
 const bot = new Client();
 let tweets={},apiurls=[],N=[];
-var score = 130;
+var score = 160;
 
 const ytdl = require("ytdl-core");
 const opusscript = require("opusscript");
