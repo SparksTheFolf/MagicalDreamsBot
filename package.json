@@ -21,6 +21,7 @@
     "cheerio": "^1.0.0-rc.3",
     "discord.js": "^11.6.4",
     "eris": "^0.13.1",
+    "error": "^10.4.0",
     "events": "^3.1.0",
     "ffmpeg": "0.0.4",
     "ffmpeg-static": "^4.2.2",
