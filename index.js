@@ -1,7 +1,24 @@
+'use_strict'
+
 const {Client, RichEmbed} = require('discord.js')
+const E = require('events');
+const request = require('request');
+const cheerio = require('cheerio');
+const async = require('async');
+const separateReqPool = {maxSockets: 15};
 require('events').EventEmitter.defaultMaxListeners = 25
 const bot = new Client();
-var score = 110;
+let tweets={},apiurls=[],N=[];
+var score = 160;
+
+const ytdl = require("ytdl-core");
+const opusscript = require("opusscript");
+const ffmpeg = require("ffmpeg-static");
+
+
+var servers = {};
+var connection = {};
+
 
 
 bot.login(process.env.token);
@@ -10,26 +27,216 @@ const PREFIX = 'md!'
 
 const ping = require('minecraft-server-util')
 
+
+
+
 //bot.login(process.env.token);
 //bot.login(token)
 
 bot.on('ready' , (oldMessage, newMessage) =>{
     console.log('MDBot is Online!');
 
-    bot.user.setActivity('for md!help', {type: 'WATCHING'})
+    bot.user.setActivity('for md!help', {type: 'LISTENING'})
     
 })
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+/*
+
+///////////////////////////  CONFIGURE TWITTER HANDLERS /////////////////////////////////////////////////////
+var THandlers=[
+    {
+        name:'TwitterWeb',
+        url:"https://https://twitter.com/MagicalDreamDev",
+        webhook:"https://discordapp.com/api/webhooks/717587493943509064/u_0tBCJYCKrR9Ki9tJ52q7SFI-30-k9GYNyfubeY05m1p2Ff9KFN0vE42ii9wGTPOW9g",
+        avatar_url:"https://twitter.com/MagicalDreamDev/photo",
+        keywords:"[STATUS]",
+    }
+];
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//ADD TWEETS
+THandlers.forEach((th,i) => {
+    tweets[th.url] = [];
+    apiurls.push(th.url);
+});
+
+//DISCORD WEBHOOK
+const sendDiscordMessage = (pl) => {
+    const {content,turl} = pl;
+    const {name,webhook,avatar_url} = THandlers.filter((d,i) => d.url === turl)[0];
+    request.post(webhook).form({username:name,avatar_url:avatar_url,content:content});
+}
+
+console.log('Twitter => Discord program is running');
+
+//MONITOR
+setInterval(() => {
+    async.map(apiurls, function(item, callback){
+        request({url: item, pool: separateReqPool}, function (error, response, body) {
+            try {
+                const $ = cheerio.load(body);
+                var turl = "https://twitter.com" + response.req.path;
+                if(!tweets[turl].length){
+                    //FIRST LOAD
+                    for(let i=0;i<$('div.js-tweet-text-container p').length;i++){
+                        tweets[turl].push($('div.js-tweet-text-container p').eq(i).text());
+                    }
+                }
+                else{
+                    //EVERY OTHER TIME
+                    for(let i=0;i<$('div.js-tweet-text-container p').length;i++){
+                        const s_tweet = $('div.js-tweet-text-container p').eq(i).text();
+                        //CHECK IF TWEET IS NEWS
+                        if(tweets[turl].indexOf(s_tweet) === -1){
+                            tweets[turl].push(s_tweet);
+                            const th_kw = THandlers.filter((d,i) => d.url === turl)[0].keywords.split(',');
+                            const th_name = THandlers.filter((d,i) => d.url === turl)[0].name; 
+                            let nFlag=false;
+                            th_kw.forEach((kw,j) => {
+                                if(kw === '*'){
+                                    nFlag=true;
+                                }
+                                else{
+                                   if(s_tweet.indexOf(kw) != -1){
+                                        nFlag=true;
+                                    }
+                                }
+                            });
+                            if(nFlag){
+                               sendDiscordMessage({content:s_tweet,turl:turl});
+                            }
+                        }
+                    }
+                }           
+                 
+            } catch (e) {
+                  console.log('Error =>' + e);
+            }
+        });
+    }, function(err, results){
+            //console.log(results);
+    });
+},1000);//RUNS EVERY 1 SECONDS
 
 
 
 
-//Client.on("messageDelete", (messageDelete) => {
-   //     const channel = messageDelete.guild.channels.find(ch => ch.name === 'log-stuff');channel.send(`The message : "${messageDelete.content}" by ${messageDelete.author} was deleted. There ID is ${messageDelete.author.id}`)
-  //     }); 
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+*/
+bot.on('message', async message => {
+    if(message.author.bot) return;
+    if(message.channel.id === '')
+        await message.delete();
+    if(message.content.toLowerCase() === 'md!verify' && message.channel.id === '717160550995591169')
+    {   
+        await message.delete().catch(err => console.log(err));
+        if('692989638478135348') {
+            try {
+                await message.member.roles.add(692989638478135348);
+                console.log("Role added!");
+            }
+            catch(err) {
+                console.log(err);
+            }
+        }
+    }
+});
+
+bot.on('guildMemberAdd', member => {
+    console.log(member.user.tag);
+});
+
+
 
 bot.on('message', msg=>{
 
     let args = msg.content.substring(PREFIX.length).split(' ')
+
+    switch(args[0]){
+        case 'play':
+            
+
+         score = score+1;
+
+            function play(connection, msg){
+
+            var server = servers[msg.guild.id];
+
+            server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}));
+
+                score = score+1;
+
+            server.queue.shift();
+
+            server.dispatcher.on("end", function(){
+                if(server.queue[0]){
+                    play(connection, msg);
+                }else{
+                    connection.disconnect();
+                }
+            })
+
+            }
+
+          if(!args[1]){
+            msg.channel.send("You need to provide a link!")
+            return;
+          }
+
+            if(!msg.member.voiceChannel){
+            msg.channel.send('You must be in a channel to play the bot!')
+            return;
+            }
+
+
+
+            if(!servers[msg.guild.id]) servers[msg.guild.id] = {
+             queue: []
+            }
+
+
+         var server = servers[msg.guild.id]; 
+
+         server.queue.push(args[1]);
+
+         if(!msg.guild.voiceConnection) msg.member.voiceChannel.join().then(function(connection){
+            play(connection, msg);
+          })
+
+        
+        break;
+
+
+        case 'skip':
+
+            var server = servers[msg.guild.id]; 
+
+            if(server.dispatcher) server.dispatcher.end();
+            msg.channel.send('Skipping the song!');
+        break;
+
+        case 'stop':
+            var server = servers[msg.guild.id]; 
+
+            if(msg.guild.voiceConnection){
+                for(var i = server.queue.length - 1; i>=0; i--){
+                    server.queue.splice(i, 1);
+                }
+
+                server.dispatcher.end();
+                msg.channel.send('Ending the queue leaving the voice channel!')
+                console.log('stopped the queue');
+            }
+
+            if(msg.guild.connection) msg.guild.voiceConnection.disconnect();
+
+        break;
+    }
 
     switch(args[0]){
         case "poll":
@@ -63,7 +270,7 @@ bot.on('message', msg=>{
                 if(error) throw error
 
                 const serverEmbed = new RichEmbed()
-                .setColor(0x3498DB)
+                .setColor('RANDOM')
                 .setTitle('Server Status')
                 .addField('Server IP', "magicaldreams.us")
                 .addField('Server Version', "1.15.2")
@@ -89,6 +296,7 @@ bot.on('message', msg=>{
             .setTitle('Magical Dreams: Help')
             .addField('Server Status', "md!server")
             .addField('Create A Poll', 'md!poll')
+            .addField('Music', 'md!play (with yt link), md!skip , md!stop     ----Join #Music to listen----')
             .addField('Managers', "managers")
             .addField('Apply for Staff', "app , apply , application")
             .addField('Server Ip', 'ip,  server ip')
@@ -96,7 +304,7 @@ bot.on('message', msg=>{
             .addField('About MDBot', 'md!about')
             .addField("People Bio's",'md!chums, md!cole, md!kindal, md!nono , md!marlin, md!kara, md!bode , md!ben, md!65, md!mik')
 
-           msg.reply(helpEmbed)
+           msg.channel.send(helpEmbed)
            score = score+1;
 
            console.log(score)
@@ -109,7 +317,7 @@ bot.on('message', msg=>{
            const aboutEmbed = new RichEmbed()
             .setColor(0x2AFF00)
             .setTitle('Magical Dreams: About')
-            .addField('Current Build Version', "v1.4.2")
+            .addField('Current Build Version', "v1.5.7")
             .addField('Current Score Since Build', score)
             .addField('Author', "nono(stacker_nono)")
             .addField('Website', 'https://github.com/nolant108')
@@ -205,7 +413,8 @@ switch(args[0]){
        const coleEmbed = new RichEmbed()       
         .setColor(0x2AFF00)
         .setTitle('Magical Dreams: starport75')
-        .addField('I say...', 'It can be anything! :)')
+        .addField('Kat Coordinator...', 'Cole is the other cool kat coordinator')       
+        .addField('He is a theatre boi...', 'Cole wants to seize the day :newspaper2:')
 
        msg.reply(coleEmbed)
        console.log(score)
@@ -392,7 +601,7 @@ switch(args[0]){
 
     if(msg.content === 'morning'){
 
-        msg.reply('Morning to you too! :) How are you?');
+        msg.reply('Morning to you too! :) ');
         score = score+1;
 
         console.log(score)
@@ -400,7 +609,7 @@ switch(args[0]){
 
     if(msg.content === 'morning!'){
 
-        msg.reply('Morning to you too! :) How are you?');
+        msg.reply('Morning to you too! :) ');
         score = score+1;
 
         console.log(score)
@@ -408,7 +617,7 @@ switch(args[0]){
 
     if(msg.content === 'Morning!'){
 
-        msg.reply('Morning to you too! :) How are you?');
+        msg.reply('Morning to you too! :) ');
         score = score+1;
 
         console.log(score)
@@ -416,7 +625,7 @@ switch(args[0]){
 
     if(msg.content === 'Morning'){
 
-        msg.reply('Morning to you too! :) How are you?');
+        msg.reply('Morning to you too! :) ');
         score = score+1;
 
         console.log(score)
@@ -435,16 +644,13 @@ switch(args[0]){
 /*
     let wordArray = msg.content.split(" ");
     console.log(wordArray);
-
     let filterWords = ['fuck', 'shit', 'hell', '$h!t', 'asshole', 'son of a bitch', 'bitches'];
-
     for(var i = 0; 1 < filterWords.length; i++) {
         msg.delete();
         msg.channel.send('You are not allowed to say that here! Our team has been notified and this incident has been logged.')
         .then(msg => msg.delete(10000))
             
     }
-
 */
 
 
@@ -585,7 +791,7 @@ switch(args[0]){
      //start of message updating
     
     
-    bot.on("Update", (oldMessage, newMessage) =>{
+    bot.on("Update", async(oldMessage, newMessage)=>{
         if(oldMessage.content == newMessage.content){
             return;
         }       
@@ -606,7 +812,7 @@ switch(args[0]){
         score = score+1;
         console.log(score)
 
-    }, 10*10000)
+    }, 2/10000)
     //end of message updating
 
     bot.on('close', () => {
