@@ -9,7 +9,7 @@ const separateReqPool = {maxSockets: 15};
 require('events').EventEmitter.defaultMaxListeners = 25
 const bot = new Client();
 let tweets={},apiurls=[],N=[];
-var score = 110;
+var score = 130;
 
 const ytdl = require("ytdl-core");
 const opusscript = require("opusscript");
@@ -317,7 +317,7 @@ bot.on('message', msg=>{
            const aboutEmbed = new RichEmbed()
             .setColor(0x2AFF00)
             .setTitle('Magical Dreams: About')
-            .addField('Current Build Version', "v1.4.2")
+            .addField('Current Build Version', "v1.5.7")
             .addField('Current Score Since Build', score)
             .addField('Author', "nono(stacker_nono)")
             .addField('Website', 'https://github.com/nolant108')
@@ -413,7 +413,8 @@ switch(args[0]){
        const coleEmbed = new RichEmbed()       
         .setColor(0x2AFF00)
         .setTitle('Magical Dreams: starport75')
-        .addField('I say...', 'It can be anything! :)')
+        .addField('Kat Coordinator...', 'Cole is the other cool kat coordinator')       
+        .addField('He is a theatre boi...', 'Cole wants to seize the day :newspaper2:')
 
        msg.reply(coleEmbed)
        console.log(score)
