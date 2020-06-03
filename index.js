@@ -36,13 +36,13 @@ const ping = require('minecraft-server-util')
 bot.on('ready' , (oldMessage, newMessage) =>{
     console.log('MDBot is Online!');
 
-    bot.user.setActivity('for md!help', {type: 'WATCHING'})
+    bot.user.setActivity('for md!help', {type: 'LISTENING'})
     
 })
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
+/*
 
 ///////////////////////////  CONFIGURE TWITTER HANDLERS /////////////////////////////////////////////////////
 var THandlers=[
@@ -127,7 +127,7 @@ setInterval(() => {
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
+*/
 bot.on('message', async message => {
     if(message.author.bot) return;
     if(message.channel.id === '')
