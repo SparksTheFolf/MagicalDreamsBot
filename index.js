@@ -815,8 +815,4 @@ switch(args[0]){
     }, 2/10000)
     //end of message updating
 
-    bot.on('close', () => {
-        connection.removeAllListeners();
-    });
-
 })
