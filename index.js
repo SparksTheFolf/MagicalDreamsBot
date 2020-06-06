@@ -160,6 +160,7 @@ bot.on('message', msg=>{
     switch(args[0]){
         case 'play':
             
+                    msg.channel.send('✅ Okay, Adding song to queue! 👍')
 
          score = score+1;
 
@@ -176,7 +177,6 @@ bot.on('message', msg=>{
             server.dispatcher.on("end", function(){
                 if(server.queue[0]){
                     play(connection, msg);
-                    msg.channel.send('✅ Okay, Adding song to queue! 👍')
                 }else{
                     connection.disconnect();
                 }
