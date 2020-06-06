@@ -821,10 +821,7 @@ switch(args[0]){
     });
 
 })else{
-         let args = msg.content.substring(PREFIX.length).split(' ')
 
-        switch(args[0]){
-        case 'help':
 
             const helpEmbed = new RichEmbed()
             .setColor(0xF0FF00)
