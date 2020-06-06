@@ -820,7 +820,7 @@ switch(args[0]){
         connection.removeAllListeners();
     });
 
-})else{
+}) /*else{
 
 
             const helpEmbed = new RichEmbed()
@@ -841,3 +841,4 @@ switch(args[0]){
 
            console.log(score)
        }
+*/
