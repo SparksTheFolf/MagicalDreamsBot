@@ -169,7 +169,7 @@ bot.on('message', msg=>{
 
             server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}));
 
-            msg.channel.send('✔️ Okay, Adding song to queue! 👍')
+            msg.channel.send('✅ Okay, Adding song to queue! 👍')
                 
                 score = score+1;
 
