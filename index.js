@@ -820,4 +820,27 @@ switch(args[0]){
         connection.removeAllListeners();
     });
 
-})
+}else{
+         let args = msg.content.substring(PREFIX.length).split(' ')
+
+        switch(args[0]){
+        case 'help':
+
+            const helpEmbed = new RichEmbed()
+            .setColor(0xF0FF00)
+            .setTitle('Magical Dreams: Help')
+            .addField('Server Status', "md!server")
+            .addField('Create A Poll', 'md!poll')
+            .addField('Music', 'md!play (with yt link), md!skip , md!stop     ----Join #Music to listen----')
+            .addField('Managers', "managers")
+            .addField('Apply for Staff', "app , apply , application")
+            .addField('Server Ip', 'ip,  server ip')
+            .addField('Staff Commands', 'md!admin')
+            .addField('About MDBot', 'md!about')
+            .addField("People Bio's",'md!chums, md!cole, md!kindal, md!nono , md!marlin, md!kara, md!bode , md!ben, md!65, md!mik')
+
+           msg.channel.send(helpEmbed)
+           score = score+1;
+
+           console.log(score)
+       })
