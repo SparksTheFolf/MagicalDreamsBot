@@ -820,7 +820,7 @@ switch(args[0]){
         connection.removeAllListeners();
     });
 
-}else{
+})else{
          let args = msg.content.substring(PREFIX.length).split(' ')
 
         switch(args[0]){
@@ -843,4 +843,4 @@ switch(args[0]){
            score = score+1;
 
            console.log(score)
-       })
+       }
