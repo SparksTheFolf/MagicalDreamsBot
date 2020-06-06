@@ -169,6 +169,8 @@ bot.on('message', msg=>{
 
             server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}));
 
+            msg.channel.send('✔️ Okay, Adding song to queue! 👍')
+                
                 score = score+1;
 
             server.queue.shift();
@@ -184,12 +186,12 @@ bot.on('message', msg=>{
             }
 
           if(!args[1]){
-            msg.channel.send("You need to provide a link!")
+            msg.channel.send("❌, You need to provide a link!")
             return;
           }
 
             if(!msg.member.voiceChannel){
-            msg.channel.send('You must be in a channel to play the bot!')
+            msg.channel.send('❌, You must be in a channel to play the bot!')
             return;
             }
 
@@ -217,7 +219,7 @@ bot.on('message', msg=>{
             var server = servers[msg.guild.id]; 
 
             if(server.dispatcher) server.dispatcher.end();
-            msg.channel.send('Skipping the song!');
+            msg.channel.send('⏩, Skipping the song!');
         break;
 
         case 'stop':
@@ -229,7 +231,7 @@ bot.on('message', msg=>{
                 }
 
                 server.dispatcher.end();
-                msg.channel.send('Ending the queue leaving the voice channel!')
+                msg.channel.send('🛑, Ending the queue leaving the voice channel!')
                 console.log('stopped the queue');
             }
 
