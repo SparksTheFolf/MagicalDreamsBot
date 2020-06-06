@@ -9,6 +9,8 @@ Current Enviroments: 1[Heroku]
 
 Bot Auth: https://discord.com/api/oauth2/authorize?client_id=708396493354041474&permissions=2147483639&scope=bot
 
+Discord Invite: discord.gg/magicaldreams
+
 --------------LICENCE--------------
 
 MIT License
