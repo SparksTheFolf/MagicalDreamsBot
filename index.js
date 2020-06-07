@@ -820,7 +820,7 @@ switch(args[0]){
         connection.removeAllListeners();
     });
 
-})/*else{
+}2*2000)/*else{
        
        bot.on('message', msg=>{
 
