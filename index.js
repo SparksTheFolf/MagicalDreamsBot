@@ -820,7 +820,9 @@ switch(args[0]){
         connection.removeAllListeners();
     });
 
-}else{
+)}else{
+       
+       bot.on('message', msg=>{
 
 
             const helpEmbed = new RichEmbed()
@@ -841,3 +843,4 @@ switch(args[0]){
 
            console.log(score)
        )}
+}
