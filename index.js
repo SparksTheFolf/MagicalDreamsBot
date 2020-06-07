@@ -840,4 +840,4 @@ switch(args[0]){
            score = score+1;
 
            console.log(score)
-       })
+       )}
