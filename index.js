@@ -212,6 +212,16 @@ bot.on('message', msg=>{
         
         break;
 
+        case 'queue':
+
+            const queueEmbed = new RichEmbed()
+            .setColor(0xFFC300)
+            .setTitle("Music Queue")
+            .addField('⬇️ Queue ⬇️', server.queue[0]);
+
+
+        break;
+
 
         case 'skip':
 
