@@ -217,7 +217,9 @@ bot.on('message', msg=>{
             const queueEmbed = new RichEmbed()
             .setColor(0xFFC300)
             .setTitle("Music Queue")
-            .addField('⬇️ Queue ⬇️', server.queue[0]);
+            .addField('⬇️ Queue ⬇️', server.queue);
+
+            msg.channel.send(queueEmbed)
 
 
         break;
