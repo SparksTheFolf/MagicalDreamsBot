@@ -211,7 +211,6 @@ bot.on('message', msg=>{
 
         
         break;
-
         case 'queue':
 
             const queueEmbed = new RichEmbed()
@@ -221,6 +220,7 @@ bot.on('message', msg=>{
 
             msg.channel.send(queueEmbed)
 
+            score = score+1;
 
         break;
 
@@ -231,6 +231,9 @@ bot.on('message', msg=>{
 
             if(server.dispatcher) server.dispatcher.end();
             msg.channel.send('⏩, Skipping the song!');
+
+            score = score+1;
+
         break;
 
         case 'stop':
