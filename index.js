@@ -129,11 +129,6 @@ setInterval(() => {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
 
-if (message.member.roles.cache.some((role) => role.name === 'Nitro Boosters')){
-    message.member.roles.add(715394475869863996);
-}else{
-    return;
-}
 
 
 
@@ -166,6 +161,12 @@ bot.on('guildMemberAdd', member => {
 bot.on('message', msg=>{
 
     let args = msg.content.substring(PREFIX.length).split(' ')
+
+    if (msg.member.roles.cache.some((role) => role.name === 'Nitro Boosters')){
+        msg.member.roles.add(715394475869863996);
+    }else{
+        return;
+    }
 
     switch(args[0]){
         case 'play':
