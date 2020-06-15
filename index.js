@@ -164,6 +164,7 @@ bot.on('message', msg=>{
 
     if (msg.member.roles.cache.some((role) => role.name === 'Nitro Boosters')){
         msg.member.roles.add(715394475869863996);
+        msg.member.roles.add(721976858006126632);
     }else{
         return;
     }
