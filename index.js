@@ -160,6 +160,7 @@ bot.on('message', msg=>{
     switch(args[0]){
         case 'play':
             
+                    msg.channel.send('✅ Okay, Adding song to queue! 👍')
 
          score = score+1;
 
@@ -167,8 +168,8 @@ bot.on('message', msg=>{
 
             var server = servers[msg.guild.id];
 
-            server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}));
-
+            server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioandvideo"}));
+                
                 score = score+1;
 
             server.queue.shift();
@@ -184,12 +185,12 @@ bot.on('message', msg=>{
             }
 
           if(!args[1]){
-            msg.channel.send("You need to provide a link!")
+            msg.channel.send("❌, You need to provide a link!")
             return;
           }
 
             if(!msg.member.voiceChannel){
-            msg.channel.send('You must be in a channel to play the bot!')
+            msg.channel.send('❌, You must be in a channel to play the bot!')
             return;
             }
 
@@ -210,6 +211,18 @@ bot.on('message', msg=>{
 
         
         break;
+        case 'queue':
+
+            const queueEmbed = new RichEmbed()
+            .setColor(0xFFC300)
+            .setTitle("Music Queue")
+            .addField('⬇️ Queue ⬇️', server.queue);
+
+            msg.channel.send(queueEmbed)
+
+            score = score+1;
+
+        break;
 
 
         case 'skip':
@@ -217,7 +230,10 @@ bot.on('message', msg=>{
             var server = servers[msg.guild.id]; 
 
             if(server.dispatcher) server.dispatcher.end();
-            msg.channel.send('Skipping the song!');
+            msg.channel.send('⏩, Skipping the song!');
+
+            score = score+1;
+
         break;
 
         case 'stop':
@@ -229,7 +245,7 @@ bot.on('message', msg=>{
                 }
 
                 server.dispatcher.end();
-                msg.channel.send('Ending the queue leaving the voice channel!')
+                msg.channel.send('🛑, Ending the queue leaving the voice channel!')
                 console.log('stopped the queue');
             }
 
@@ -802,7 +818,7 @@ switch(args[0]){
         .setDescription("A message from a user was edited.")
         .addField("Before", oldMessage.content)
         .addField("After", newMessage.content)
-        .setFooter("Message Logger 2020 © MagicalDreams")
+        .setFooter("Message Logger 2020  MagicalDreams")
     
 
 
@@ -819,4 +835,27 @@ switch(args[0]){
         connection.removeAllListeners();
     });
 
-})
+})/*else{
+       
+       bot.on('message', msg=>{
+
+
+            const helpEmbed = new RichEmbed()
+            .setColor(0xF0FF00)
+            .setTitle('Magical Dreams: Help')
+            .addField('Server Status', "md!server")
+            .addField('Create A Poll', 'md!poll')
+            .addField('Music', 'md!play (with yt link), md!skip , md!stop     ----Join #Music to listen----')
+            .addField('Managers', "managers")
+            .addField('Apply for Staff', "app , apply , application")
+            .addField('Server Ip', 'ip,  server ip')
+            .addField('Staff Commands', 'md!admin')
+            .addField('About MDBot', 'md!about')
+            .addField("People Bio's",'md!chums, md!cole, md!kindal, md!nono , md!marlin, md!kara, md!bode , md!ben, md!65, md!mik')
+
+           msg.channel.send(helpEmbed)
+           score = score+1;
+
+           console.log(score)
+       )}
+       }*/
