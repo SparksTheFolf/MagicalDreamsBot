@@ -162,9 +162,9 @@ bot.on('message', msg=>{
 
     let args = msg.content.substring(PREFIX.length).split(' ')
 
-    if (msg.member.roles((role) => role.name === 'Nitro Boosters')){
-        msg.member.roles.add(715394475869863996);
-        msg.member.roles.add(721976858006126632);
+    if (msg.client((role) => role.name === 'Nitro Boosters')){
+        msg.member.roles.add(715394475869863996); //MD Server
+        msg.member.roles.add(721976858006126632); //Testing Server
     }else{
         return;
     }
