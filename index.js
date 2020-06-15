@@ -168,7 +168,7 @@ bot.on('message', msg=>{
 
             var server = servers[msg.guild.id];
 
-            server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioonly"}));
+            server.dispatcher = connection.playStream(ytdl(server.queue[0], {filter: "audioandvideo"}));
                 
                 score = score+1;
 
