@@ -128,6 +128,16 @@ setInterval(() => {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
+
+if (message.member.roles.cache.some((role) => role.name === 'Nitro Boosters')){
+    message.member.roles.add(715394475869863996);
+}else{
+    return;
+}
+
+
+
+
 bot.on('message', async message => {
     if(message.author.bot) return;
     if(message.channel.id === '')
