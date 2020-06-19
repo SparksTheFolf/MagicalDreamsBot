@@ -398,7 +398,6 @@ bot.on('message', msg=>{
             .addField('When you write 10 lines of code without searching on stackoverflow or google', '(╯°□°）╯︵ ┻━┻')
             .addField('Me: Clicks "Compile"*', 'My $2000 labtop: Jet engine roar(sound)')
             .addField('Confidence Level of a Programmer', '- I can’t fix this - Crisis of confidence - Questions career - Questions life - Oh it was a type')
-            .addField('OOOOOHHHH, okay', 'https://tenor.com/view/umm-confused-wtf-blinking-okay-gif-7513882')
 
            msg.reply(nonoEmbed)
            console.log(score)
