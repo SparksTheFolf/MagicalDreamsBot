@@ -1,6 +1,6 @@
 'use_strict'
 
-const {Client, RichEmbed} = require('discord.js')
+const {Client, RichEmbed, message} = require('discord.js')
 const E = require('events');
 const request = require('request');
 const cheerio = require('cheerio');
@@ -156,8 +156,8 @@ bot.on('guildMemberAdd', member => {
     console.log(member.user.tag);
 });
 
-bot.on('guildMemberAdd', member, 'message', msg =>{
-
+bot.on('guildMemberAdd', member =>{
+    const msg = new message();
     const joinEmbed = new RichEmbed()
             .setColor('RANDOM')
             .setTitle(`Welcome to the Magical Dreams Discord ${member}!`)
