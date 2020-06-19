@@ -156,13 +156,13 @@ bot.on('guildMemberAdd', member => {
     console.log(member.user.tag);
 });
 
-bot.on('guildMemberAdd', member =>{
+bot.on('guildMemberAdd', member, 'message', msg =>{
 
     const joinEmbed = new RichEmbed()
             .setColor('RANDOM')
             .setTitle(`Welcome to the Magical Dreams Discord ${member}!`)
 
-            author.send(joinEmbed)
+            msg.author.send(joinEmbed)
 
             score = score+1;
 
