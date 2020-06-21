@@ -551,7 +551,7 @@ switch(args[0]){
     
 
 
-        let loggingChannel = newMessage.guild.channels.find(ch => ch.name === "bot-log")
+        let loggingChannel = newMessage.guild.channels.find(ch => ch.name === "bot-log-testing")
 
         loggingChannel.send(ReportEmbed);
         score = score+1;
