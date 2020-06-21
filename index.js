@@ -398,7 +398,7 @@ bot.on('message', msg=>{
             .addField('When you write 10 lines of code without searching on stackoverflow or google', '(╯°□°）╯︵ ┻━┻')
             .addField('Me: Clicks "Compile"*', 'My $2000 labtop: Jet engine roar(sound)')
             .addField('Confidence Level of a Programmer', '- I can’t fix this - Crisis of confidence - Questions career - Questions life - Oh it was a type')
-            .addFeild('Android Dev Page','https://play.google.com/store/apps/dev?id=5577325587016618086')
+            .addField('Android Dev Page','https://play.google.com/store/apps/dev?id=5577325587016618086')
 
            msg.reply(nonoEmbed)
            console.log(score)
