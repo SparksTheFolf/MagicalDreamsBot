@@ -555,8 +555,6 @@ switch(args[0]){
         if(!loggingChannel) return;
 
         loggingChannel.send(logEmbed);
-        score = score+1;
-        console.log(score)
 
     }, 2/10000)
 })
