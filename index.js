@@ -538,7 +538,7 @@ switch(args[0]){
             return;
     }
 
-    let logEmbed = new Discord.RichEmbed()
+    const ReportEmbed = new RichEmbed()
     .setAuthor(oldMessage.author.tag, oldMessage.author.avatarURL)
     .setThumbnail(oldMessage.author.avatarURL)
     .setColor("0x00A6FF")
