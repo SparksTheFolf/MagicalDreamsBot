@@ -532,4 +532,28 @@ switch(args[0]){
         .then(msg => msg.delete(10000))
     }
 
+    //start of updating messages
+    bot.on("Update", async(oldMessage, newMessage)=>{
+        if(oldMessage.content == newMessage.content){
+            return;
+    }
+
+    const ReportEmbed = new RichEmbed()
+    .setAuthor(oldMessage.author.tag, oldMessage.author.avatarURL)
+  //  .setThumbnail(oldMessage.author.avatarURL)
+    .setColor("0x00A6FF")
+    .setDescription("A message from a user was edited.")
+    .addField("Before", oldMessage.content)
+    .addField("After", newMessage.content)
+    .setFooter("Message Logger 2020 © MagicalDreams")
+
+
+
+    let loggingChannel = newMessage.guild.channels.find(ch => ch.name === "bot-log-testing")
+    if(!loggingChannel) return;
+
+    loggingChannel.send(logEmbed);
+
+    })
+
 })
