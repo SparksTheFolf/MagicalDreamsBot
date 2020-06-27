@@ -538,16 +538,15 @@ switch(args[0]){
             return;
     }
 
-    const ReportEmbed = new RichEmbed()
+    let logEmbed = new Discord.RichEmbed()
     .setAuthor(oldMessage.author.tag, oldMessage.author.avatarURL)
-  //  .setThumbnail(oldMessage.author.avatarURL)
+    .setThumbnail(oldMessage.author.avatarURL)
     .setColor("0x00A6FF")
-    .setDescription("A message from a user was edited.")
-    .addField("Before", oldMessage.content)
-    .addField("After", newMessage.content)
-    .setFooter("Message Logger 2020 © MagicalDreams")
-
-
+    .setDescripiton("A message from a user was edited")
+    .addField("Before", oldMessage.content, true)
+    .addField("After", newMessage.content, true)
+    .setTimestamp()
+    .setFooter("If this works I'm pay Kindal $100")
 
     let loggingChannel = newMessage.guild.channels.find(ch => ch.name === "bot-log-testing")
     if(!loggingChannel) return;
