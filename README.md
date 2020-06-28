@@ -5,7 +5,7 @@ Refer to here for the projects: https://github.com/MagicalDreams/MagicalDreamsBo
 
 Current Contributors: Nolant108, OfficialNutella
 
-Current Enviroments: 1[Heroku]
+Current Enviroments: 2[Heroku, Backup Heroku]
 
 Bot Auth: https://discord.com/api/oauth2/authorize?client_id=708396493354041474&permissions=2147483639&scope=bot
 
