@@ -555,4 +555,46 @@ switch(args[0]){
 
     })
 
+    //TempMute//
+    let tomute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!tomute) return message.reply("Couldn't find the ticket of this memeber!");
+    if(tomute.hasPermission("MUTE_MEMBERS")) return message.reply("How do you find out this commnand?!?!?");
+    let muterole = message.guild.roles.find(`name`, "muted");
+
+        if(!muterole){
+            try{
+                muterole = await message.guild.createRole({
+                    name: "muted",
+                    color: "00C9FF",
+                    Permission: []
+                })
+            
+                        message.guild.channels.forEach(async (channel, id) => {
+                            await channel.overwritePermission(muterole, {
+                                SEND_MESSAGES: false,
+                                ADD_REACTIONS: false
+                            });
+                        });
+            
+            }catch(e){
+                console.log(e.stack);
+            }   
+        }
+
+            let mutetime = args[1];
+            if(!mutetime) return message.reply("Please input a certain ammount of time to mute the user?!?!");
+
+            await(tomute.addRole(muterole.id));
+            message.reply(`<@${tomute.id}> has been muted for ${ms(ms)(mutetime)}`);
+
+            setTimeout(function(){
+                tomute.removeRole(muterole.id);
+                message.channel.send(`<@${tomute.id}> has been unmuted!`);
+            }, ms(mutetime));
+
+
 })
+
+        module.exports.help = {
+            name: "tempmute"
+        }
