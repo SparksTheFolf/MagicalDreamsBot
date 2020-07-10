@@ -316,7 +316,6 @@ bot.on('message', msg=>{
                 .addField('Online Players', "Server Temporary Closed")
                // .addField('Online players', resonse.onlinePlayers)
                 .addField('Max Players', resonse.maxPlayers)
-               msg.reply("Here you go, :) ")
                msg.reply(serverEmbed)
 
                score = score+1;
