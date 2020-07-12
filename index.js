@@ -619,7 +619,7 @@ switch(args[0]){
 
     if(msg.content === 'managers'){
 
-        msg.reply('Current Managers are: Chums122, DreamBig02, MakingMiners, Rei_Arch, Starport75');
+        msg.reply('Current Managers are: Chums122, DreamBig02, MakingMiners, Rei_Arch');
         score = score+1;
 
         console.log(score)
@@ -627,7 +627,7 @@ switch(args[0]){
 
     if(msg.content === 'who are the managers'){
 
-        msg.reply('Current Managers are: Chums122, DreamBig02, MakingMiners, Rei_Arch, Starport75');
+        msg.reply('Current Managers are: Chums122, DreamBig02, MakingMiners, Rei_Arch');
         score = score+1;
 
         console.log(score)
