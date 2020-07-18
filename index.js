@@ -235,18 +235,6 @@ bot.on('message', msg=>{
 
         
         break;
-        case 'queue':
-
-            const queueEmbed = new RichEmbed()
-            .setColor(0xFFC300)
-            .setTitle("Music Queue")
-            .addField('⬇️ Queue ⬇️', server.queue);
-
-            msg.channel.send(queueEmbed)
-
-            score = score+1;
-
-        break;
 
 
         case 'skip':
