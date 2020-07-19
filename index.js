@@ -1,6 +1,4 @@
 'use_strict'
-
-
 const {Client, RichEmbed, message} = require('discord.js')
 const E = require('events');
 const request = require('request');
