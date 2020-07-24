@@ -1,4 +1,5 @@
 'use_strict'
+
 const {Client, RichEmbed, message} = require('discord.js')
 const E = require('events');
 const request = require('request');
@@ -815,60 +816,6 @@ switch(args[0]){
 
 
     
-     //----------------------Discord Logger-----------------------
+     
 
-     //start of message updating
-    
-    
-    bot.on("Update", async(oldMessage, newMessage)=>{
-        if(oldMessage.content == newMessage.content){
-            return;
-        }       
-        const ReportEmbed = new RichEmbed()
-        .setAuthor(oldMessage.author.tag, oldMessage.author.avatarURL)
-      //  .setThumbnail(oldMessage.author.avatarURL)
-        .setColor("0x00A6FF")
-        .setDescription("A message from a user was edited.")
-        .addField("Before", oldMessage.content)
-        .addField("After", newMessage.content)
-        .setFooter("Message Logger 2020 © MagicalDreams")
-    
-
-
-        let loggingChannel = newMessage.guild.channels.find(ch => ch.name === "bot-log")
-
-        loggingChannel.send(ReportEmbed);
-        score = score+1;
-        console.log(score)
-
-    }, 2/10000)
-    //end of message updating
-
-    bot.on('close', () => {
-        connection.removeAllListeners();
-    });
-
-})/*else{
-       
-       bot.on('message', msg=>{
-
-
-            const helpEmbed = new RichEmbed()
-            .setColor(0xF0FF00)
-            .setTitle('Magical Dreams: Help')
-            .addField('Server Status', "md!server")
-            .addField('Create A Poll', 'md!poll')
-            .addField('Music', 'md!play (with yt link), md!skip , md!stop     ----Join #Music to listen----')
-            .addField('Managers', "managers")
-            .addField('Apply for Staff', "app , apply , application")
-            .addField('Server Ip', 'ip,  server ip')
-            .addField('Staff Commands', 'md!admin')
-            .addField('About MDBot', 'md!about')
-            .addField("People Bio's",'md!chums, md!cole, md!kindal, md!nono , md!marlin, md!kara, md!bode , md!ben, md!65, md!mik')
-
-           msg.channel.send(helpEmbed)
-           score = score+1;
-
-           console.log(score)
-       )}
-       }*/
+})
