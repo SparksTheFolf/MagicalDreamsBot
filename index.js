@@ -303,7 +303,7 @@ bot.on('message', msg=>{
                 .addField('Server Version', "1.15.2")
                 .addField('Online Players', "Server Temporary Closed")
                // .addField('Online players', resonse.onlinePlayers)
-                .addField('Max Players', resonse.maxPlayers)
+              //  .addField('Max Players', resonse.maxPlayers)
                 .addField('Server Updates', "• EKR opening September 25")
                msg.reply(serverEmbed)
 
