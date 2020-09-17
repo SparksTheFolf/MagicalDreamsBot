@@ -9,7 +9,7 @@ const separateReqPool = {maxSockets: 15};
 require('events').EventEmitter.defaultMaxListeners = 25
 const bot = new Client();
 let tweets={},apiurls=[],N=[];
-var score = 160;
+var score = 161;
 
 const ytdl = require("ytdl-core");
 const opusscript = require("opusscript");
@@ -347,7 +347,7 @@ bot.on('message', msg=>{
             .setTitle('Magical Dreams: About')
             .addField('Current Build Version', "v1.5.7")
             .addField('Current Score Since Build', score)
-            .addField('Author', "nono(stacker_nono)")
+            .addField('Author', "nono(developer_nono)")
             .addField('Website', 'https://github.com/nolant108')
 
            msg.reply(aboutEmbed)
@@ -405,19 +405,6 @@ bot.on('message', msg=>{
 
 
            msg.reply(kindalEmbed)
-           console.log(score)
-    }
-
-    switch(args[0]){
-        case 'marlin':
-           score = score+1;
-
-           const marlinEmbed = new RichEmbed()            .setColor(0x2AFF00)
-            .setTitle('Magical Dreams: Marlin')
-            .addField('Google Sign In: Someone just signed into your computer, do you know them?', "Yes I know him, He's me.")
-            .addField('Have a great weekend!', 'I Hope your code behaves on Monday the same way it did on Friday')
-
-           msg.reply(marlinEmbed)
            console.log(score)
     }
 
@@ -527,6 +514,20 @@ switch(args[0]){
 
            msg.reply(karaEmbed)
            console.log(score)
+    }
+    
+    switch(args[0]){
+        case 'Override A113':
+            score = score+10;
+            
+            const A113Embed = new RichEmbed().setColor(RandomColor)
+            .setTitle('A113')
+            .addField('You have overridden the systen', 'go into dev mode, contact @388716470772826112, and DM: |||System Override A113|||')
+            
+            
+            msg.reply(A113Embed)
+              console.log(score)
+
     }
 
     if(msg.content === 'website'){
@@ -791,32 +792,5 @@ switch(args[0]){
         .then(msg => msg.delete(10000))
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-     
 
 })
