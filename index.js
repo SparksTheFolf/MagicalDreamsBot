@@ -520,7 +520,7 @@ switch(args[0]){
             score = score+10;
             
        
-            msg.reply('You have overridden the systen', 'go into dev mode, contact @388716470772826112, and DM: |||System Override A113|||')
+            msg.reply('You have overridden the systen, go into dev mode, contact @388716470772826112, and DM: |||System Override A113|||')
             console.log(score)
 
     }
