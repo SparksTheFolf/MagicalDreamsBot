@@ -519,13 +519,9 @@ switch(args[0]){
       if(msg.content === 'A113'){
             score = score+10;
             
-            const A113Embed = new RichEmbed().setColor(RandomColor)
-            .setTitle('A113')
-            .addField('You have overridden the systen', 'go into dev mode, contact @388716470772826112, and DM: |||System Override A113|||')
-            
-            
-            msg.reply(A113Embed)
-              console.log(score)
+       
+            msg.reply('You have overridden the systen', 'go into dev mode, contact @388716470772826112, and DM: |||System Override A113|||')
+            console.log(score)
 
     }
 
