@@ -518,9 +518,16 @@ switch(args[0]){
     
       if(msg.content === 'A113'){
             score = score+10;
+                       msg.delete(10)
+
+          
             
        
             msg.reply('You have overridden the systen, go into dev mode, contact @388716470772826112, and DM: ||System Override A113||')
+          
+             msg.delete(10)
+        msg.reply('You have 10 sec to do this then it deletes.')
+        .then(msg => msg.delete(10000))
             console.log(score)
 
     }
