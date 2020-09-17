@@ -520,11 +520,8 @@ switch(args[0]){
             score = score+10;
             msg.delete()
             msg.author.send('You have overridden the systen)
-            msg.delete(30000);
             msg.author.send('Go into dev mode, contact @388716470772826112')
-            msg.delete(30000);
             msg.author.send('DM: ||System Override A113||')
-            msg.delete(30000);
             msg.reply('You have 20 sec to do this then it deletes.').then(msg => msg.delete(7000))
             console.log(score)
 
