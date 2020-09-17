@@ -516,7 +516,7 @@ switch(args[0]){
            console.log(score)
     }
     
-      if(msg.content === 'Override A113'){
+      if(msg.content === 'A113'){
             score = score+10;
             
             const A113Embed = new RichEmbed().setColor(RandomColor)
