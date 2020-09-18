@@ -151,7 +151,7 @@ bot.on("guildMemberAdd", member => {
               const JoinEmbed = new RichEmbed()
             .setColor('RANDOM')
             .setTitle('Magical Dreams: Verify')
-            .addField('After you have read all of this in the chat box down below, type: ', '!verify')
+            .addField('After you have read all of this in the chat box down below, type: ', 'md!verify')
 
              member.send(JoinEmbed)
      
@@ -175,7 +175,7 @@ bot.on('message', msg=>{
     
     switch(args[0]){
         case 'verify':
-                    member.send("You have been verified, thx! :)")         
+                  msg.author.send("You have been verified, thx! :)")         
 
     }
     
