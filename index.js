@@ -149,7 +149,7 @@ bot.on("guildMemberAdd", member => {
         .catch(console.error);
     
               const JoinEmbed = new RichEmbed()
-            .setColor(Random)
+            .setColor('RANDOM')
             .setTitle('Magical Dreams: Verify')
             .addField('After you have read all of this in the chat box down below, type: ', 'md!verify')
 
