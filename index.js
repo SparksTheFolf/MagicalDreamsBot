@@ -140,7 +140,6 @@ setInterval(() => {
 
 bot.on("guildMemberAdd", member => {
                 const AVrole = message.guild.roles.cache.find(role => role.name === 'Awaiting Verification');
-                const member = message.guild.mentions.members.first();
                 member.roles.add(AVrole);
     
     member.send("Welcome to our server ! ")
