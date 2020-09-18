@@ -140,7 +140,6 @@ setInterval(() => {
 
 bot.on("guildMemberAdd", member => {
                 
-    let args = msg.content.substring(PREFIX.length).split(' ')
 
     member.send("Welcome to our server! ")
     member.send("Here are the rules:")
@@ -152,12 +151,9 @@ bot.on("guildMemberAdd", member => {
               const JoinEmbed = new RichEmbed()
             .setColor('RANDOM')
             .setTitle('Magical Dreams: Verify')
-            .addField('After you have read all of this in the chat box down below, type: ', 'md!verify')
+            .addField('After you have read all of this in the chat box down below, type: ', '!verify')
 
              member.send(JoinEmbed)
-        switch(args[0]){
-            case 'verify':
-        member.send("You have been verified, thx! :)")         
      
                 
         }
@@ -176,6 +172,14 @@ bot.on('message', msg=>{
         return;
     }
 */
+    
+    switch(args[0]){
+        case 'verify':
+                    member.send("You have been verified, thx! :)")         
+
+    }
+    
+    
     switch(args[0]){
         case 'play':
             
