@@ -139,12 +139,30 @@ setInterval(() => {
 
 
 bot.on("guildMemberAdd", member => {
+                const AVrole = <guild>.roles.cache.find(role => role.name === 'Awaiting Verification');
+                const member = <message>.mentions.members.first();
+                member.roles.add(AVrole);
+    
     member.send("Welcome to our server ! ")
     member.send("Here are the rules:")
     member.send("• No spamming in chats - This includes but is not limited to, loud/obnoxious noises in voice, @mention spam, character spam, image spam, and message • Do not make fun of, or bully other park guests. - Keeping a friendly, fun environment is enjoyable for all guests! • No advertising other servers or organizations. - Do not link to other Minecraft/Discord servers. - Do not link YouTube or Twitch channels. - Do not link any social media platforms (Twitter, Instagram, Facebook, etc). This excludes the official MagicalDreams platforms and/or any of our partners. • Sharing of personal information (like passwords) or doxing is prohibited. ")
     member.send("• Don't post NSFW/offensive/harmful content. • Use the appropriate channels and abide by their descriptions. • Please avoid using offensive or vulgar language, we maintain a family-friendly network • Do not ping staff members or executives constantly or for no reason")
     member.send("• Respect all staff member decisions, although if you feel like a staff member is abusing their power - contact a Manager. • If a post or rule is in question, contact a Cast Member and they will make the final judgement. • Be respectful to one another and do not cause drama. • Breaking these rules could result in a kick, ban, or mute. Follow these rules and have fun!!")
         .catch(console.error);
+    
+              const JoinEmbed = new RichEmbed()
+            .setColor(Random)
+            .setTitle('Magical Dreams: Verify')
+            .addField('After you have read all of this in the chat box down below, type: ', 'md!verify')
+
+             msg.reply(JoinEmbed)
+        switch(args[0]){
+            case 'verify':
+                member.roles.remove(AVrole);
+     
+                
+        }
+    
 });
 
 
