@@ -41,7 +41,7 @@ bot.on('ready' , (oldMessage, newMessage) =>{
 })
 
 
-client.on('message', async message => {
+bot.on('message', async message => {
     if(message.author.bot) return;
     if(message.channel.id === '756614228605009961')
         await message.delete();
@@ -155,29 +155,10 @@ setInterval(() => {
 
 
 
-bot.on('message', async message => {
-    if(message.author.bot) return;
-    if(message.channel.id === '')
-        await message.delete();
-    if(message.content.toLowerCase() === 'md!verify' && message.channel.id === '717160550995591169')
-    {   
-        await message.delete().catch(err => console.log(err));
-        if('692989638478135348') {
-            try {
-                await message.member.roles.add(692989638478135348);
-                console.log("Role added!");
-            }
-            catch(err) {
-                console.log(err);
-            }
-        }
-    }
-});
-
 
 
 bot.on("guildMemberAdd", member => {
-    member.send("Welcome to our server, <@${member.id}> please read the rules in the #rules-and-info channel! ")
+    member.send("Welcome to our server, ${member.id} please read the rules in the #rules-and-info channel! ")
         .catch(console.error);
 });
 
