@@ -154,23 +154,12 @@ bot.on('message', async message => {
     }
 });
 
-bot.on('guildMemberAdd', member=> {
-        const message = ("Welcome to our server, <@${member.id}> please read the rules in the #rules-and-info channel! ")
-        
-        author.send(message)
+
+
+bot.on("guildMemberAdd", member => {
+    member.send("Welcome to our server, <@${member.id}> please read the rules in the #rules-and-info channel! ")
+        .catch(console.error);
 });
-
-bot.on('guildMemberAdd', member =>{
-    const msg = new message();
-    const joinEmbed = new RichEmbed()
-            .setColor('RANDOM')
-            .setTitle(`Welcome to the Magical Dreams Discord ${member}!`)
-
-            msg.author.send(joinEmbed)
-
-            score = score+1;
-
-})
 
 
 bot.on('message', msg=>{
