@@ -42,7 +42,7 @@ bot.on('ready' , (oldMessage, newMessage) =>{
 
 bot.on('guildMemberAdd', member =>{
 
-    msg.author.send("Welcome to our server ${member}, please read the rules in the #rules-and-info channel! :) )"
+    msg.author.send("Welcome to our server, please read the rules in the #rules-and-info channel! )"
 
 })
 
