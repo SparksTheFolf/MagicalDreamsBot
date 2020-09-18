@@ -36,7 +36,7 @@ const ping = require('minecraft-server-util')
 bot.on('ready' , (oldMessage, newMessage) =>{
     console.log('MDBot is Online!');
 
-    bot.user.setActivity('for md!help', {type: 'Watching'})
+    bot.user.setActivity('Magical Dreams Minecraft', {type: 'Streaming'})
     
 })
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
