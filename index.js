@@ -40,11 +40,6 @@ bot.on('ready' , (oldMessage, newMessage) =>{
     
 })
 
-bot.on('guildMemberAdd', member =>{
-
-    msg.author.send("Welcome to our server, please read the rules in the #rules-and-info channel! )"
-
-})
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -159,8 +154,8 @@ bot.on('message', async message => {
     }
 });
 
-bot.on('guildMemberAdd', member => {
-    console.log(member.user.tag);
+bot.on('guildMemberAdd', member, 'message', msg => {
+        msg.author.send("Welcome to our server, please read the rules in the #rules-and-info channel! )"
 });
 
 bot.on('guildMemberAdd', member =>{
