@@ -139,7 +139,7 @@ setInterval(() => {
 
 
 bot.on("guildMemberAdd", member => {
-    member.send("Welcome to our server " + message.author.username , message.author.avatarURL + "! ")
+    member.send("Welcome to our server ! ")
     member.send("Here are the rules:")
     member.send("• No spamming in chats - This includes but is not limited to, loud/obnoxious noises in voice, @mention spam, character spam, image spam, and message • Do not make fun of, or bully other park guests. - Keeping a friendly, fun environment is enjoyable for all guests! • No advertising other servers or organizations. - Do not link to other Minecraft/Discord servers. - Do not link YouTube or Twitch channels. - Do not link any social media platforms (Twitter, Instagram, Facebook, etc). This excludes the official MagicalDreams platforms and/or any of our partners. • Sharing of personal information (like passwords) or doxing is prohibited. ")
     member.send("• Don't post NSFW/offensive/harmful content. • Use the appropriate channels and abide by their descriptions. • Please avoid using offensive or vulgar language, we maintain a family-friendly network • Do not ping staff members or executives constantly or for no reason")
