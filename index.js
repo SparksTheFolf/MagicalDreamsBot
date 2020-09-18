@@ -156,7 +156,7 @@ bot.on("guildMemberAdd", member => {
              member.send(JoinEmbed)
      
                 
-        }
+       
     
 });
 
