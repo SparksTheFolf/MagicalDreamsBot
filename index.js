@@ -1,6 +1,6 @@
 'use_strict'
 
-const {Client, RichEmbed, message, member, guildMemberAdd} = require('discord.js')
+const {Client, RichEmbed, message, guildMemberAdd} = require('discord.js')
 const E = require('events');
 const request = require('request');
 const cheerio = require('cheerio');
@@ -154,7 +154,7 @@ bot.on('message', async message => {
     }
 });
 
-bot.on('guildMemberAdd', member, 'message', msg => {
+bot.on('guildMemberAdd', member || 'message', msg => {
         msg.author.send("Welcome to our server, please read the rules in the #rules-and-info channel! ")
 });
 
