@@ -140,6 +140,7 @@ setInterval(() => {
 
 bot.on("guildMemberAdd", member => {
                 
+    let args = msg.content.substring(PREFIX.length).split(' ')
 
     member.send("Welcome to our server! ")
     member.send("Here are the rules:")
