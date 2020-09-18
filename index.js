@@ -153,7 +153,7 @@ bot.on("guildMemberAdd", member => {
             .setTitle('Magical Dreams: Verify')
             .addField('After you have read all of this in the chat box down below, type: ', 'md!verify')
 
-             msg.reply(JoinEmbed)
+             member.send(JoinEmbed)
         switch(args[0]){
             case 'verify':
         member.send("You have been verified, thx! :)")         
