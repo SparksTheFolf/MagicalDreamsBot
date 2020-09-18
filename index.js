@@ -140,9 +140,7 @@ setInterval(() => {
 
 bot.on("guildMemberAdd", member => {
                 
-    let AVrole = member.guild.roles.find(role=> role.id == "756625090917171245");
-    member.addRole(AVrole);
-    
+
     member.send("Welcome to our server! ")
     member.send("Here are the rules:")
     member.send("• No spamming in chats - This includes but is not limited to, loud/obnoxious noises in voice, @mention spam, character spam, image spam, and message • Do not make fun of, or bully other park guests. - Keeping a friendly, fun environment is enjoyable for all guests! • No advertising other servers or organizations. - Do not link to other Minecraft/Discord servers. - Do not link YouTube or Twitch channels. - Do not link any social media platforms (Twitter, Instagram, Facebook, etc). This excludes the official MagicalDreams platforms and/or any of our partners. • Sharing of personal information (like passwords) or doxing is prohibited. ")
@@ -158,7 +156,7 @@ bot.on("guildMemberAdd", member => {
              msg.reply(JoinEmbed)
         switch(args[0]){
             case 'verify':
-                
+        member.send("You have been verified, thx! :)")         
      
                 
         }
