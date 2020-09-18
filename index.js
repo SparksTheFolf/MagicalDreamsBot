@@ -36,9 +36,16 @@ const ping = require('minecraft-server-util')
 bot.on('ready' , (oldMessage, newMessage) =>{
     console.log('MDBot is Online!');
 
-    bot.user.setActivity('Magical Dreams Minecraft', {type: 'Streaming'})
+    bot.user.setActivity('Magical Dreams Minecraft', {type: 'STREAMING'})
     
 })
+
+bot.on('guildMemberAdd', member =>{
+
+    msg.author.send("Welcome to our server ${member}, please read the rules in the #rules-and-info channel! :)"
+
+})
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
