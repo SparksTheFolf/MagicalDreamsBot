@@ -155,7 +155,7 @@ bot.on('message', async message => {
 });
 
 bot.on('guildMemberAdd', member, 'message', msg => {
-        msg.author.send("Welcome to our server, please read the rules in the #rules-and-info channel! )"
+        msg.author.send("Welcome to our server, please read the rules in the #rules-and-info channel! ")
 });
 
 bot.on('guildMemberAdd', member =>{
