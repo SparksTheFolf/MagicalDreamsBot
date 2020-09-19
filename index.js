@@ -1,6 +1,6 @@
 'use_strict'
 
-const {Client, RichEmbed, message, member, guildMember, guildMemberAdd, roles, role} = require('discord.js')
+const {Client, RichEmbed, message, member, guildMember, serverNewMember, guildMemberAdd, roles, role} = require('discord.js')
 const E = require('events');
 const request = require('request');
 const cheerio = require('cheerio');
@@ -123,7 +123,9 @@ setInterval(() => {
 
 
 
-
+client.on('serverNewMember', function(server, user) {
+    user.addTo(server.roles.get("nolant108's testing server", "Awaiting Verification"));
+});
 
 
 
@@ -131,7 +133,6 @@ setInterval(() => {
 bot.on("guildMemberAdd", member => {
     
     
-    guildMember.addRole(guildMember.guild.roles.find(role => role.name === "Awaiting Verification"));
 
 
     member.send("Welcome to our server! ")
@@ -150,10 +151,6 @@ bot.on("guildMemberAdd", member => {
 
     if(message.content.startsWith(`md!verify`)){
 
-        let member = message.mentions.members.first();
-        var role = guild.roles.cache.find('name', '{Verified}');
-
-        member.roles.cache.add(role)
         message.author.send("You have been verified, thx! :)")
     
 
