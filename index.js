@@ -1,6 +1,6 @@
 'use_strict'
 
-const {Client, Discord, RichEmbed, message, member, guildMember, serverNewMember, guildMemberAdd, roles, role} = require('discord.js')
+const {Client, RichEmbed, reaction, user, message, member, guildMember, serverNewMember, guildMemberAdd, roles, role} = require('discord.js')
 const E = require('events');
 const request = require('request');
 const cheerio = require('cheerio');
@@ -21,13 +21,6 @@ const ffmpeg = require("ffmpeg-static");
 var servers = {};
 var connection = {};
 
-bot.commands = new Discord.Collection();
-const commandFiles = fs.readdirSync('./commands/').filter(file => file.endswith('.js'));
-for(const file of commandFiles){
-    const command = require(`./commands/${file}`)
-
-    bot.commands.set(command.name, command);
-}
 
 
 bot.login(process.env.token);
@@ -153,13 +146,29 @@ bot.on("guildMemberAdd", member => {
             .addField('After you have read all of this, react to this message!')
             member.send(JoinEmbed)
 
-            bot.commands.get('verify').execute(guildMember, member);
 
-
+            member.roles.add("756625090917171245");
     
     
 });
 
+client.on("messageReactionAdd", async (reaction, user) => {
+    // If a message gains a reaction and it is uncached, fetch and cache the message.
+    // You should account for any errors while fetching, it could return API errors if the resource is missing.
+    if (reaction.message.partial) await reaction.message.fetch(); // Partial messages do not contain any content so skip them.
+    if (reaction.partial) await reaction.fetch();
+    
+    if (user.bot) return; // If the user was a bot, return.
+    if (!reaction.message.guild) return; // If the user was reacting something but not in the guild/server, ignore them.
+    if (reaction.message.guild.id !== "708395721782722581") return; // Use this if your bot was only for one server/private server.
+    
+    if (reaction.message.channel.id === "756614228605009961") { // This is a #self-roles channel.
+      if (reaction.emoji.name === "✅") {
+        await reaction.message.guild.members.cache.get(user.id).roles.add("756612432830398606") // Minecraft role.
+      }
+      
+    }
+  })
 
 
 
@@ -169,23 +178,6 @@ bot.on("guildMemberAdd", member => {
 bot.on('message', msg=>{
 
     let args = msg.content.substring(PREFIX.length).split(' ')
-
-        switch (args[0]) {
-            case 'verify':
-            msg.author.send("You have been verified, thx! :)")
-    
-            bot.commands.get('verify').execute(guildMember, member);
-
-
-        }
-
-    
-
-    
-    
-
-
-    
 
 
     switch (args[0]) {
