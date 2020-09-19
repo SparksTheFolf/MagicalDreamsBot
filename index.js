@@ -1,6 +1,6 @@
 'use_strict'
 
-const {Client, RichEmbed, message, member, guildMember, serverNewMember, guildMemberAdd, roles, role} = require('discord.js')
+const {Client, Discord, RichEmbed, message, member, guildMember, serverNewMember, guildMemberAdd, roles, role} = require('discord.js')
 const E = require('events');
 const request = require('request');
 const cheerio = require('cheerio');
