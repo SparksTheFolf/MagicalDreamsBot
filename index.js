@@ -1,6 +1,6 @@
 'use_strict'
 
-const {Client, RichEmbed, message, member, guildMemberAdd, roles} = require('discord.js')
+const {Client, RichEmbed, message, member, guildMemberAdd, roles, role} = require('discord.js')
 const E = require('events');
 const request = require('request');
 const cheerio = require('cheerio');
@@ -180,7 +180,7 @@ bot.on('message', msg=>{
             
             let Vrole = msg.guild.roles.cache.find(r => r.name === "{Verified}");
                   msg.author.send("You have been verified, thx! :)")         
-            msg.author.roles.add(Vrole);
+            author.roles.add(Vrole);
     }
     
     
