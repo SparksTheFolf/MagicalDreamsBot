@@ -161,11 +161,12 @@ bot.on('message', msg=>{
     let args = msg.content.substring(PREFIX.length).split(' ')
 
     bot.on("guildMember", member => {
-        if(msg.content === 'md!verify'){
-        msg.author.send("You have been verified, thx! :)")
+        switch (args[0]) {
+            case 'verify':
+            msg.author.send("You have been verified, thx! :)")
     
-        let mainrole = msg.guild.roles.find(role => role.name === "{Verified}");
-        member.addRole(mainrole.id);
+            let mainrole = msg.guild.roles.find(role => role.name === "{Verified}");
+         member.addRole(mainrole.id);
 
 
         }
