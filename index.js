@@ -183,6 +183,24 @@ bot.on('message', msg=>{
 
         if(!muterole) return msg.reply("Culden't find the mute role");
 
+        let time = args[2];
+
+        if(!time){
+            return msg.reply("You didnt specify a time!");
+        }
+
+        person.addRole(muterole.id);
+
+        msg.channel.send(`@${person.user.tag} has been muted for ${ms(ms(time))}`);
+
+        setTimeout(function(){
+
+            person.removeRole(muterole.id);
+
+            msg.channel.send(`@${person.user.tag} has been unmuted`);
+
+        }, ms(time))
+
     }
 
 /*
