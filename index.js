@@ -161,7 +161,6 @@ bot.on('message', msg=>{
     let args = msg.content.substring(PREFIX.length).split(' ')
     
     
-    bot.on("member", members => {
 
      
                 
@@ -178,7 +177,7 @@ bot.on('message', msg=>{
 
     }
 
-    });
+
 
     switch (args[0]) {
         case 'mute':
