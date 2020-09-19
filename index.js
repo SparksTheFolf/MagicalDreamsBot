@@ -46,7 +46,6 @@ bot.on('ready' , (oldMessage, newMessage) =>{
 
 
 /*
-
 ///////////////////////////  CONFIGURE TWITTER HANDLERS /////////////////////////////////////////////////////
 var THandlers=[
     {
@@ -58,22 +57,18 @@ var THandlers=[
     }
 ];
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 //ADD TWEETS
 THandlers.forEach((th,i) => {
     tweets[th.url] = [];
     apiurls.push(th.url);
 });
-
 //DISCORD WEBHOOK
 const sendDiscordMessage = (pl) => {
     const {content,turl} = pl;
     const {name,webhook,avatar_url} = THandlers.filter((d,i) => d.url === turl)[0];
     request.post(webhook).form({username:name,avatar_url:avatar_url,content:content});
 }
-
 console.log('Twitter => Discord program is running');
-
 //MONITOR
 setInterval(() => {
     async.map(apiurls, function(item, callback){
@@ -122,13 +117,6 @@ setInterval(() => {
             //console.log(results);
     });
 },1000);//RUNS EVERY 1 SECONDS
-
-
-
-
-
-
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 */
 
@@ -182,6 +170,19 @@ bot.on('message', msg=>{
          //   let role = msg.guild.roless.find(r => r.name === "{Verified}");
 
         //    member.addRole(role).catch(console.error);
+    }
+
+
+    switch(args[0]){
+        case 'mute':
+
+        let person = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[1]))
+        if(!person) return msg.reply("Could't find that member");
+
+        let muterole = msg.guild.roles.find(role => role.name === "Muted")
+
+        if(!muterole) return msg.reply("Culden't find the mute role");
+
     }
 
 /*
