@@ -139,6 +139,8 @@ setInterval(() => {
 
 
 bot.on("guildMemberAdd", member => {
+    
+    
                 
 
     member.send("Welcome to our server! ")
@@ -176,7 +178,7 @@ bot.on('message', msg=>{
     switch(args[0]){
         case 'verify':
                   msg.author.send("You have been verified, thx! :)")         
-
+            msg.member.roles.add('756612432830398606')
     }
     
     
