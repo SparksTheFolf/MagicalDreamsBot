@@ -172,7 +172,7 @@ bot.on('message', msg=>{
              msg.author.send("You have been verified, thx! :)")
             
             
-             const user = client.users.cache.get("USERID");
+             const user = bot.users.cache.get("USERID");
                 if (!user) return console.log("Couldn't find the user");
                 console.log(user.username)
 
