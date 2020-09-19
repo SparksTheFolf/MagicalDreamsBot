@@ -147,7 +147,17 @@ bot.on("guildMemberAdd", member => {
 
              member.send(JoinEmbed)
 
+    if(message.content.startsWith(`md!verify`)){
 
+        let member = message.mentions.members.first();
+        var role = guild.roles.cache.find('name', '{Verified}');
+
+        member.roles.cache.add(role)
+        message.author.send("You have been verified, thx! :)")
+    
+
+    }
+    
 });
 
 
@@ -162,18 +172,9 @@ bot.on('message', msg=>{
     
     
 
-     
-                
-    switch(args[0]){
-        case 'verify':
-    
-    
-            
-             msg.author.send("You have been verified, thx! :)")
-            
-            
-    }
 
+
+    
 
 
     switch (args[0]) {
