@@ -1,6 +1,6 @@
 'use_strict'
 
-const {Client, RichEmbed, message, member, guildMemberAdd, roles, role, ms} = require('discord.js')
+const {Client, RichEmbed, message, member, guildMemberAdd, roles, role} = require('discord.js')
 const E = require('events');
 const request = require('request');
 const cheerio = require('cheerio');
@@ -8,6 +8,7 @@ const async = require('async');
 const separateReqPool = {maxSockets: 15};
 require('events').EventEmitter.defaultMaxListeners = 25
 const bot = new Client();
+const ms = require("ms");
 let tweets={},apiurls=[],N=[];
 var score = 161;
 
