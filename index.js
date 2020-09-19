@@ -123,7 +123,7 @@ setInterval(() => {
 
 
 
-client.on('serverNewMember', function(server, user) {
+bot.on('serverNewMember', function(server, user) {
     user.addTo(server.roles.get("nolant108's testing server", "Awaiting Verification"));
 });
 
