@@ -163,8 +163,9 @@ bot.on("messageReactionAdd", async (reaction, user) => {
     
     if (reaction.message.channel.id === "756614228605009961") { // This is a #self-roles channel.
       if (reaction.emoji.name === "white_check_mark") {
-        await reaction.message.guild.members.cache.get(user.id).roles.add("756612432830398606") // Minecraft role.
-      }
+         reaction.message.guild.members.cache.get(user.id).roles.add("756612432830398606") // Minecraft role.
+         reaction.message.guild.members.cache.get(user.id).roles.remove("756625090917171245")
+        }
       
     }
   })
