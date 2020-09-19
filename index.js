@@ -9,7 +9,7 @@ const separateReqPool = {maxSockets: 15};
 require('events').EventEmitter.defaultMaxListeners = 25
 const bot = new Client();
 const ms = require("ms");
-const fs = require('ft');
+const fs = require('fs');
 let tweets={},apiurls=[],N=[];
 var score = 161;
 
