@@ -172,7 +172,7 @@ bot.on('message', msg=>{
 
         //    member.addRole(role).catch(console.error);
 
-        var person  = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[1]));
+        var person  =  msg.guild.members.get(args[1]);
 
         let mainrole = msg.guild.roles.find(role => role.name === "{Verified}");
 
