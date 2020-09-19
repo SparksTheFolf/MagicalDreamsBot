@@ -143,8 +143,11 @@ bot.on("guildMemberAdd", member => {
             .setColor('RANDOM')
             .setTitle('Magical Dreams: Verify')
             .addField('After you have read all of this, react to this message!')
+            member.send(JoinEmbed)
+
+            msg.reply(msgArgs).then(messageReaction =>{
             messageReaction.react("✅");
-             member.send(JoinEmbed)
+            });
 
     
     
@@ -164,8 +167,7 @@ bot.on('message', msg=>{
             case 'verify':
             msg.author.send("You have been verified, thx! :)")
     
-            let mainrole = msg.guild.role.find(role => role.name === "{Verified}");
-         member.addRole(mainrole.id).catch(console.error);
+            
 
 
         }
