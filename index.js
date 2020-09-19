@@ -160,8 +160,8 @@ bot.on('message', msg=>{
 
     let args = msg.content.substring(PREFIX.length).split(' ')
 
-    
-    if(msg.content === 'md!verify'){
+    bot.on("member", member => {
+        if(msg.content === 'md!verify'){
         msg.author.send("You have been verified, thx! :)")
     
         var person  = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[1]));
@@ -169,10 +169,10 @@ bot.on('message', msg=>{
         person.addRole(mainrole.id);
 
 
-    }
+        }
 
+    });
     
-
     
     
 
