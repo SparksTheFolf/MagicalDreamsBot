@@ -178,9 +178,16 @@ bot.on('message', msg=>{
     switch(args[0]){
         case 'verify':
             
-            let Vrole = msg.guild.roles.cache.find(r => r.name === "{Verified}");
                   msg.author.send("You have been verified, thx! :)")         
-            author.roles.add(Vrole);
+            let role = message.guild.roles.find(r => r.name === "{Verified}");
+
+            // Let's pretend you mentioned the user you want to add a role to (!addrole @user Role Name):
+            let member = message.mentions.members.first();
+
+               // or the person who made the command: let member = message.member;
+
+            // Add the role!
+            member.addRole(role).catch(console.error);
     }
     
     
