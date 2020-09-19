@@ -149,12 +149,7 @@ bot.on("guildMemberAdd", member => {
 
              member.send(JoinEmbed)
 
-    if(message.content.startsWith(`md!verify`)){
-
-        message.author.send("You have been verified, thx! :)")
     
-
-    }
     
 });
 
@@ -169,7 +164,12 @@ bot.on('message', msg=>{
     let args = msg.content.substring(PREFIX.length).split(' ')
     
     
+if(message.content.startsWith(`md!verify`)){
 
+        message.author.send("You have been verified, thx! :)")
+    
+
+    }
 
 
     
