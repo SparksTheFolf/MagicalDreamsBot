@@ -139,12 +139,7 @@ setInterval(() => {
 
 
 
-bot.on('message', msg=>{
-
-
-    l    let args = msg.content.substring(PREFIX.length).split(' ')
-    
-    bot.on("guildMemberAdd", member => {
+bot.on("guildMemberAdd", member => {
     
     
                 
@@ -162,22 +157,32 @@ bot.on('message', msg=>{
             .addField('After you have read all of this in the chat box down below, type: ', 'md!verify')
 
              member.send(JoinEmbed)
+
+
+            });
+
+
+
+bot.on('message', msg=>{
+
+    let args = msg.content.substring(PREFIX.length).split(' ')
+    
+    
      
                 
-             
-         bot.on('roles', roless=>{
-
+    switch(args[0]){
+        case 'verify':
     
-        if(msg.content === '!verify'){
-
+    
             
              msg.author.send("You have been verified, thx! :)")
             
-        }
-        
-    });
-    
-    });
+           // let guild = bot.guilds.get(708395721782722581);
+            
+         //   let role = msg.guild.roless.find(r => r.name === "{Verified}");
+
+        //    member.addRole(role).catch(console.error);
+    }
 
 /*
     if (msg.client.roles((role) => role.name === 'Nitro Boosters')){
