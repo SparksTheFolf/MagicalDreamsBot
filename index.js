@@ -166,7 +166,7 @@ bot.on('message', msg=>{
             msg.author.send("You have been verified, thx! :)")
     
             let mainrole = msg.guild.roles.find(role => role.name === "{Verified}");
-         member.addRole(mainrole.id);
+         member.addRole(mainrole.id).catch(console.error);
 
 
         }
