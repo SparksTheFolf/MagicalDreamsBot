@@ -148,7 +148,11 @@ bot.on("guildMemberAdd", member => {
              member.send(JoinEmbed)
 
 
-            });
+});
+
+
+
+
 
 
 
@@ -157,6 +161,8 @@ bot.on('message', msg=>{
     let args = msg.content.substring(PREFIX.length).split(' ')
     
     
+    bot.on("member", members => {
+
      
                 
     switch(args[0]){
@@ -166,19 +172,14 @@ bot.on('message', msg=>{
             
              msg.author.send("You have been verified, thx! :)")
             
-           // let guild = bot.guilds.get(708395721782722581);
-            
-         //   let role = msg.guild.roless.find(r => r.name === "{Verified}");
+             var role = client.guilds.get('708395721782722581').roles.find(role => role.name === "{Verified}");
+             client.guilds.get('708395721782722581').members.get(message.author.id).addRole(role);
 
-        //    member.addRole(role).catch(console.error);
 
-        var person  =  msg.guild.members.get(args[1]);
 
-        let mainrole = msg.guild.roles.find(role => role.name === "{Verified}");
-
-        person.addRole(mainrole.id)
     }
 
+    });
 
     switch (args[0]) {
         case 'mute':
