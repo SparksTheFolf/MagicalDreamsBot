@@ -127,7 +127,19 @@ setInterval(() => {
 
 
 
-bot.on("guildMemberAdd", member => {
+
+
+
+
+
+
+
+
+bot.on('message', msg=>{
+
+    let args = msg.content.substring(PREFIX.length).split(' ')
+
+    bot.on("guildMemberAdd", member => {
     
     
 
@@ -151,18 +163,8 @@ bot.on("guildMemberAdd", member => {
 
     
     
-});
-
-
-
-
-
-
-
-bot.on('message', msg=>{
-
-    let args = msg.content.substring(PREFIX.length).split(' ')
-
+        });
+        
         switch (args[0]) {
             case 'verify':
             msg.author.send("You have been verified, thx! :)")
