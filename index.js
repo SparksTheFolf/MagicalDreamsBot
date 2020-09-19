@@ -1,6 +1,6 @@
 'use_strict'
 
-const {Client, RichEmbed, message, member, guildMemberAdd, roles, role} = require('discord.js')
+const {Client, RichEmbed, message, member, guildMember, guildMemberAdd, roles, role} = require('discord.js')
 const E = require('events');
 const request = require('request');
 const cheerio = require('cheerio');
@@ -131,7 +131,8 @@ setInterval(() => {
 bot.on("guildMemberAdd", member => {
     
     
-                
+    guildMember.addRole(guildMember.guild.roles.find(role => role.name === "Awaiting Verification"));
+
 
     member.send("Welcome to our server! ")
     member.send("Here are the rules:")
