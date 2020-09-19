@@ -173,6 +173,10 @@ bot.on('message', msg=>{
 
     switch (args[0]) {
         case 'mute':
+
+
+            msg.delete();
+        
             var person  = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[1]));
             if(!person) return  msg.reply("I CANT FIND THE USER " + person)
  
