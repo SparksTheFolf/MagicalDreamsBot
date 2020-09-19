@@ -173,7 +173,7 @@ bot.on('message', msg=>{
             
              
 
-
+             console.log(person.user.tag);
 
     }
 
