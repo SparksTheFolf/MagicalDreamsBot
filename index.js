@@ -177,8 +177,10 @@ bot.on('message', msg=>{
     
     switch(args[0]){
         case 'verify':
+            
+            let Vrole = msg.guild.roles.cache.find(r => r.name === "{Verified}");
                   msg.author.send("You have been verified, thx! :)")         
-            msg.member.roles.add('756612432830398606')
+            msg.member.roles.add(Vrole);
     }
     
     
