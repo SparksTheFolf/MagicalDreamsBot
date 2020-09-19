@@ -138,7 +138,12 @@ setInterval(() => {
 
 
 
-bot.on("guildMemberAdd", member => {
+
+bot.on('message', msg=>{
+
+    let args = msg.content.substring(PREFIX.length).split(' ')
+    
+    bot.on("guildMemberAdd", member => {
     
     
                 
@@ -158,14 +163,25 @@ bot.on("guildMemberAdd", member => {
              member.send(JoinEmbed)
      
                 
-       
+     bot.on('roles', roless=>{
+
+    
+        if(msg.content === 'md!verify'){
+
+            
+             msg.author.send("You have been verified, thx! :)")
+            
+            let guild = bot.guilds.get(708395721782722581);
+            
+            let role = msg.guild.roless.find(r => r.name === "{Verified}");
+
+            member.addRole(role).catch(console.error);
+    }
+        
+    });
     
 });
 
-
-bot.on('message', msg=>{
-
-    let args = msg.content.substring(PREFIX.length).split(' ')
 /*
     if (msg.client.roles((role) => role.name === 'Nitro Boosters')){
         msg.member.roles.add(715394475869863996); //MD Server
@@ -175,17 +191,7 @@ bot.on('message', msg=>{
     }
 */
     
-    switch(args[0]){
-        case 'verify':
-            
-                  msg.author.send("You have been verified, thx! :)")
-            
-            let guild = bot.guilds.get(708395721782722581);
-            
-            let role = msg.guild.roles.cache.find(r => r.name === "{Verified}");
 
-            author.addRole(role).catch(console.error);
-    }
     
     
     switch(args[0]){
