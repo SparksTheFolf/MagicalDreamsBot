@@ -123,9 +123,6 @@ setInterval(() => {
 
 
 
-bot.on('serverNewMember', function(server, user) {
-    user.addTo(server.roles.get("nolant108's testing server", "Awaiting Verification"));
-});
 
 
 
@@ -164,9 +161,8 @@ bot.on('message', msg=>{
     let args = msg.content.substring(PREFIX.length).split(' ')
     
     
-if(message.content.startsWith(`md!verify`)){
-
-        message.author.send("You have been verified, thx! :)")
+    if(msg.content === 'md!verify'){
+        msg.author.send("You have been verified, thx! :)")
     
 
     }
