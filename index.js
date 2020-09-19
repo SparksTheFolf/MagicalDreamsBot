@@ -180,7 +180,7 @@ bot.on('message', msg=>{
             
             let Vrole = msg.guild.roles.cache.find(r => r.name === "{Verified}");
                   msg.author.send("You have been verified, thx! :)")         
-            msg.member.roles.add(Vrole);
+            msg.author.roles.add(Vrole);
     }
     
     
