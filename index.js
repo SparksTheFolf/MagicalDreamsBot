@@ -172,8 +172,7 @@ bot.on('message', msg=>{
             
              msg.author.send("You have been verified, thx! :)")
             
-             var role = client.guilds.get('708395721782722581').roles.find(role => role.name === "{Verified}");
-             client.guilds.get('708395721782722581').members.get(message.author.id).addRole(role);
+             
 
 
 
