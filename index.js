@@ -138,12 +138,12 @@ bot.on("guildMemberAdd", member => {
     member.send("• Don't post NSFW/offensive/harmful content. • Use the appropriate channels and abide by their descriptions. • Please avoid using offensive or vulgar language, we maintain a family-friendly network • Do not ping staff members or executives constantly or for no reason")
     member.send("• Respect all staff member decisions, although if you feel like a staff member is abusing their power - contact a Manager. • If a post or rule is in question, contact a Cast Member and they will make the final judgement. • Be respectful to one another and do not cause drama. • Breaking these rules could result in a kick, ban, or mute. Follow these rules and have fun!!")
         .catch(console.error);
-    
-              const JoinEmbed = new RichEmbed()
+        
+            const JoinEmbed = new RichEmbed()
             .setColor('RANDOM')
             .setTitle('Magical Dreams: Verify')
-            .addField('After you have read all of this in the chat box down below, type: ', 'md!verify')
-
+            .addField('After you have read all of this, react to this message!')
+            messageReaction.react("✅");
              member.send(JoinEmbed)
 
     
@@ -164,7 +164,7 @@ bot.on('message', msg=>{
             case 'verify':
             msg.author.send("You have been verified, thx! :)")
     
-            let mainrole = msg.guild.roles.find(role => role.name === "{Verified}");
+            let mainrole = msg.guild.role.find(role => role.name === "{Verified}");
          member.addRole(mainrole.id).catch(console.error);
 
 
