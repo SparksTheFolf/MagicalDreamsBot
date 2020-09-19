@@ -142,7 +142,7 @@ setInterval(() => {
 bot.on('message', msg=>{
 
 
-    let args = msg.content.substring(PREFIX.length).split(' ')
+    l    let args = msg.content.substring(PREFIX.length).split(' ')
     
     bot.on("guildMemberAdd", member => {
     
@@ -173,11 +173,6 @@ bot.on('message', msg=>{
             
              msg.author.send("You have been verified, thx! :)")
             
-            let guild = bot.guilds.get(708395721782722581);
-            
-            let role = msg.guild.roless.find(r => r.name === "{Verified}");
-
-            member.addRole(role).catch(console.error);
         }
         
     });
