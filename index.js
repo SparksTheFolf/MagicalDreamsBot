@@ -160,7 +160,6 @@ bot.on('message', msg=>{
 
     let args = msg.content.substring(PREFIX.length).split(' ')
 
-    bot.on("guildMember", member => {
         switch (args[0]) {
             case 'verify':
             msg.author.send("You have been verified, thx! :)")
@@ -171,8 +170,8 @@ bot.on('message', msg=>{
 
         }
 
-    });
     
+
     
     
 
