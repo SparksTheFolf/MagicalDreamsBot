@@ -180,7 +180,7 @@ bot.on('message', msg=>{
             if(!person) return  msg.reply("I CANT FIND THE USER " + person)
  
             let mainrole = msg.guild.roles.find(role => role.name === "{Verified}");
-            let role = msg.guild.roles.find(role => role.name === "mute");
+            let role = msg.guild.roles.find(role => role.name === "Muted");
            
  
             if(!role) return msg.reply("Couldn't find the mute role.")
