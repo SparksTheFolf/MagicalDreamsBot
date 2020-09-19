@@ -146,8 +146,7 @@ bot.on("guildMemberAdd", member => {
             .addField('After you have read all of this, react to this message!')
             member.send(JoinEmbed)
 
-
-            member.roles.add("756625090917171245");
+            
     
     
 });
