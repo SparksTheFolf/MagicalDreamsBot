@@ -9,6 +9,7 @@ const separateReqPool = {maxSockets: 15};
 require('events').EventEmitter.defaultMaxListeners = 25
 const bot = new Client();
 const ms = require("ms");
+const fs = require('ft');
 let tweets={},apiurls=[],N=[];
 var score = 161;
 
@@ -20,6 +21,13 @@ const ffmpeg = require("ffmpeg-static");
 var servers = {};
 var connection = {};
 
+bot.commands = new Discord.Collection();
+const commandFiles = fs.readdirSync('./commands/').filter(file => file.endswith('.js'));
+for(const file of commandFiles){
+    const command = require(`./commands/${file}`)
+
+    bot.commands.set(command.name, command);
+}
 
 
 bot.login(process.env.token);
@@ -127,19 +135,7 @@ setInterval(() => {
 
 
 
-
-
-
-
-
-
-
-
-bot.on('message', msg=>{
-
-    let args = msg.content.substring(PREFIX.length).split(' ')
-
-    bot.on("guildMemberAdd", member => {
+bot.on("guildMemberAdd", member => {
     
     
 
@@ -157,19 +153,28 @@ bot.on('message', msg=>{
             .addField('After you have read all of this, react to this message!')
             member.send(JoinEmbed)
 
-            msg.reply(msgArgs).then(messageReaction =>{
-            messageReaction.react("✅");
-            });
+            bot.commands.get('verify').execute(guildMember, member);
+
 
     
     
-        });
-        
+});
+
+
+
+
+
+
+
+bot.on('message', msg=>{
+
+    let args = msg.content.substring(PREFIX.length).split(' ')
+
         switch (args[0]) {
             case 'verify':
             msg.author.send("You have been verified, thx! :)")
     
-            
+            bot.commands.get('verify').execute(guildMember, member);
 
 
         }
