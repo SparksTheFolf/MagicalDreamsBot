@@ -356,7 +356,7 @@ bot.on('message', msg=>{
                 .addField('Online Players', "Server Temporary Closed")
                // .addField('Online players', resonse.onlinePlayers)
               //  .addField('Max Players', resonse.maxPlayers)
-                .addField('Server Updates', "• EKR opening September 25")
+                .addField('Server Updates', "• EKR opening: `Delayed`")
                msg.reply(serverEmbed)
 
                score = score+1;
@@ -382,7 +382,7 @@ bot.on('message', msg=>{
             .addField('Server Ip', 'ip,  server ip')
             .addField('Staff Commands', 'md!admin')
             .addField('About MDBot', 'md!about')
-            .addField("People Bio's",'md!chums, md!cole, md!kindal, md!nono , md!marlin, md!kara, md!bode , md!ben, md!65, md!mik')
+            .addField("People Bio's",'md!chums, md!cole, md!kindal, md!nono , md!kara, md!bode , md!ben, md!65')
 
            msg.channel.send(helpEmbed)
            score = score+1;
@@ -395,9 +395,9 @@ bot.on('message', msg=>{
            score = score+1;
 
            const aboutEmbed = new RichEmbed()
-            .setColor(0x2AFF00)
+            .setColor("RANDOM")
             .setTitle('Magical Dreams: About')
-            .addField('Current Build Version', "v1.5.7")
+            .addField('Current Build Version', "v1.7.2")
             .addField('Current Score Since Build', score)
             .addField('Author', "nono(developer_nono)")
             .addField('Website', 'https://github.com/nolant108')
@@ -609,7 +609,9 @@ switch(args[0]){
         console.log(score)
     }
 
-    if(msg.content === 'server ip'){
+switch(args[0]){
+    case 'server ip':
+       score = score+1;
 
         msg.reply('Server ip is: magicaldreams.us');
         score = score+1;
@@ -627,7 +629,7 @@ switch(args[0]){
 
     if(msg.content === 'managers'){
 
-        msg.reply('Current Managers are: Chums122, DreamBig02, MakingMiners, Rei_Arch');
+        msg.reply('Current Managers are: Chums122, DreamBig02, Will(OmniWill), Rei_Arch');
         score = score+1;
 
         console.log(score)
@@ -635,7 +637,7 @@ switch(args[0]){
 
     if(msg.content === 'who are the managers'){
 
-        msg.reply('Current Managers are: Chums122, DreamBig02, MakingMiners, Rei_Arch');
+        msg.reply('Current Managers are: Chums122, DreamBig02, Will(OmniWill), Rei_Arch');
         score = score+1;
 
         console.log(score)
