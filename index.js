@@ -451,7 +451,7 @@ bot.on('message', msg=>{
 
            const kindalEmbed = new RichEmbed()
             .setColor(0x2AFF00)
-            .setTitle('Magical Dreams: MakingMiners')
+            .setTitle('Magical Dreams(Former Staff): MakingMiners')
             .addField('Bio', 'We keep moving forward, opening new doors, and doing new things, because were curious and curiosity keeps leading us down new paths. Oh and by the way.. I’m Kindal tehe')
             .addField('I say...', 'Useless')
 
@@ -476,19 +476,6 @@ bot.on('message', msg=>{
            console.log(score)
     }
 
-switch(args[0]){
-    case 'cole':
-       score = score+1;
-
-       const coleEmbed = new RichEmbed()       
-        .setColor(0x2AFF00)
-        .setTitle('Magical Dreams: starport75')
-        .addField('Kat Coordinator...', 'Cole is the other cool kat coordinator')       
-        .addField('He is a theatre boi...', 'Cole wants to seize the day :newspaper2:')
-
-       msg.reply(coleEmbed)
-       console.log(score)
-}
 
 switch(args[0]){
     case 'ben':
@@ -520,22 +507,6 @@ switch(args[0]){
        console.log(score)
 }
 
-    switch(args[0]){
-        case 'mik':
-           score = score+1;
-
-           const mikEmbed = new RichEmbed()
-                       .setColor(0xBD00FF)
-            .setTitle('Magical Dreams: Mik (kozzy913)')
-            .addField('Bee Movie?', 'Barry says "Ya like Jazz?"')
-            .addField('According to all known laws of aviation,'
-            , 'there is no way a bee should be able to fly.')
-
-
-           msg.reply(mikEmbed)
-           console.log(score)
-    }
-
 
     switch(args[0]){
         case 'bode':
@@ -543,7 +514,7 @@ switch(args[0]){
 
            const bodeEmbed = new RichEmbed()
             .setColor(0x2AFF00)
-            .setTitle('Magical Dreams: Bode (Disneyland_)')
+            .setTitle('Magical Dreams(Former Staff): Bode (Disneyland_)')
             .addField('Whomst', 'Iz Bode')
             .addField('and BTW', 'You Just got Vectored')
 
