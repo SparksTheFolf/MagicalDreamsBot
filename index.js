@@ -379,7 +379,7 @@ bot.on('message', msg=>{
             .addField('Music', 'md!play (with yt link), md!skip , md!stop     ----Join #Music to listen----')
             .addField('Managers', "managers")
             .addField('Apply for Staff', "app , apply , application")
-            .addField('Server Ip', 'ip,  server ip')
+            .addField('md!server ip', 'ip,  server ip')
             .addField('Staff Commands', 'md!admin')
             .addField('About MDBot', 'md!about')
             .addField("People Bio's",'md!chums, md!cole, md!kindal, md!nono , md!kara, md!bode , md!ben, md!65')
