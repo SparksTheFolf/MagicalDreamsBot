@@ -354,7 +354,7 @@ bot.on('message', msg=>{
         client.destroy().then(() => {
           client.login('token');
         });
-      });
+     
       break;
     }
 
