@@ -221,7 +221,8 @@ bot.on('message', msg=>{
     }
 
 /*
-    if (msg.client.roles((role) => role.name === 'Nitro Boosters')){
+    if (msg.
+    .roles((role) => role.name === 'Nitro Boosters')){
         msg.member.roles.add(715394475869863996); //MD Server
         msg.member.roles.add(721976858006126632); //Testing Server
     }else{
@@ -351,8 +352,8 @@ bot.on('message', msg=>{
      switch (args[0]) {
     case 'restart': {
 
-        client.destroy().then(() => {
-          client.login('token');
+        bot.destroy().then(() => {
+          bot.login('token');
         });
      
       break;
@@ -361,7 +362,7 @@ bot.on('message', msg=>{
 
     case 'shutdown': {
 
-        client.destroy();
+        bot.destroy();
       
       break;
     }
