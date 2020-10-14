@@ -351,7 +351,6 @@ bot.on('message', msg=>{
      switch (args[0]) {
     case 'restart': {
 
-      message.channel.send('Restarting...').then(m => {
         client.destroy().then(() => {
           client.login('token');
         });
@@ -362,7 +361,6 @@ bot.on('message', msg=>{
 
     case 'shutdown': {
 
-      message.channel.send('Shutting down...').then(m => {
         client.destroy();
       });
       break;
