@@ -337,6 +337,50 @@ bot.on('message', msg=>{
 
         break;
     }
+    
+    
+    
+    
+    
+   
+    
+    
+    
+    
+    
+     switch (args[0]) {
+    case 'restart': {
+
+      message.channel.send('Restarting...').then(m => {
+        client.destroy().then(() => {
+          client.login('token');
+        });
+      });
+      break;
+    }
+
+
+    case 'shutdown': {
+
+      message.channel.send('Shutting down...').then(m => {
+        client.destroy();
+      });
+      break;
+    }
+  }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
  
     switch(args[0]){
         case 'server':
