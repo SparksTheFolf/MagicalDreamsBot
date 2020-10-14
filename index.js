@@ -362,7 +362,7 @@ bot.on('message', msg=>{
     case 'shutdown': {
 
         client.destroy();
-      });
+      
       break;
     }
   }
