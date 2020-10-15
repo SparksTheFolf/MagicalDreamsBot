@@ -31,6 +31,14 @@ const ping = require('minecraft-server-util')
 
 
 
+let Manager = message.guild.roles.get("365007915226234880");
+let Coord = message.guild.roles.get("702274417232969808");
+let Dev = message.guild.roles.get("365008009707126784");
+let CM = message.guild.roles.get("365008057664536587");
+let IN = message.guild.roles.get("365008105181806602");
+
+
+
 
 //bot.login(process.env.token);
 //bot.login(token)
@@ -351,6 +359,22 @@ bot.on('message', msg=>{
     
      switch (args[0]) {
     case 'restart': {
+        
+        if (!Manager)
+        return;
+        
+        if (!Coord)
+        return;
+        
+        if (!DEV)
+        return;
+        
+        if (!CM)
+        return;
+        
+        if (!IN)
+        return;
+        
   msg.delete(1000);
         msg.reply('Ok Restarting Now...');
         bot.destroy().then(() => {
@@ -363,6 +387,21 @@ bot.on('message', msg=>{
 
     case 'shutdown': {
 
+        if (!Manager)
+        return;
+        
+        if (!Coord)
+        return;
+        
+        if (!DEV)
+        return;
+        
+        if (!CM)
+        return;
+        
+        if (!IN)
+        return; 
+        
         msg.reply('Ok Stopping Now...');
         bot.destroy();
       
