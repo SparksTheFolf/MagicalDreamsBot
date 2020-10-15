@@ -353,7 +353,7 @@ bot.on('message', msg=>{
     case 'restart': {
 
         bot.destroy().then(() => {
-          bot.login('token');
+          bot.login(process.env.token);
         });
      
       break;
