@@ -31,7 +31,7 @@ const ping = require('minecraft-server-util')
 
 
 
-let Manager = message.roles.cache.find("365007915226234880");
+let Manager = message.guild.roles.get("365007915226234880");
 let Coord = message.guild.roles.get("702274417232969808");
 let Dev = message.guild.roles.get("365008009707126784");
 let CM = message.guild.roles.get("365008057664536587");
@@ -47,6 +47,8 @@ bot.on('ready' , (oldMessage, newMessage) =>{
     console.log('MDBot is Online!');
 
     bot.user.setActivity('md!help', {type: 'Watching'})
+    
+    const guild = client.guilds.get("365007577060212736");
     
 })
 
