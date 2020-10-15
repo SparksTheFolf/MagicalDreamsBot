@@ -353,7 +353,9 @@ bot.on('message', msg=>{
     case 'restart': {
 
         bot.destroy().then(() => {
-          bot.login(process.env.token);
+            msg.delete();
+        msg.reply('Ok Restarting Now...');
+          bot.login(process.env.token);  
         });
      
       break;
@@ -362,6 +364,7 @@ bot.on('message', msg=>{
 
     case 'shutdown': {
 
+        msg.reply('Ok STopping Now...');
         bot.destroy();
       
       break;
