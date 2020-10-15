@@ -43,7 +43,7 @@ bot.on('ready' , (oldMessage, newMessage) =>{
 
     bot.user.setActivity('md!help', {type: 'Watching'})
     
-    const guild = client.guilds.get("365007577060212736");
+    const guild = bot.guilds.get("365007577060212736");
     
     let Manager = message.guild.roles.get("365007915226234880");
 let Coord = message.guild.roles.get("702274417232969808");
