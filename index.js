@@ -363,7 +363,7 @@ bot.on('message', msg=>{
 
     case 'shutdown': {
 
-        msg.reply('Ok STopping Now...');
+        msg.reply('Ok Stopping Now...');
         bot.destroy();
       
       break;
