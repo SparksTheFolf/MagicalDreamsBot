@@ -351,10 +351,9 @@ bot.on('message', msg=>{
     
      switch (args[0]) {
     case 'restart': {
-
-        bot.destroy().then(() => {
-            msg.delete();
+  msg.delete(1000);
         msg.reply('Ok Restarting Now...');
+        bot.destroy().then(() => {
           bot.login(process.env.token);  
         });
      
