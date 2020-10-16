@@ -382,9 +382,7 @@ let IN = guild.roles.find("name", "Intern");
         bot.destroy();
           bot.login(process.env.token);  
        
-        })
-     
-      break;
+   
     }
 
 /*
