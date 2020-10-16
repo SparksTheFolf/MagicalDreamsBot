@@ -375,14 +375,13 @@ let IN = guild.roles.find("name", "Intern");
         
         if (!Manager || !Coord || !Dev || !CM || !IN){
         return;
-        }
-        else{
+      
         
     msg.delete(1000);
         msg.reply('Ok Restarting Now...');
         bot.destroy().then(() => {
           bot.login(process.env.token);  
-        });
+       ]
         });
      
       break;
