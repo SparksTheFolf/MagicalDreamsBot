@@ -379,7 +379,7 @@ let IN = guild.roles.find("name", "Intern");
         if (!Coord)
         return;
         
-        if (!DEV)
+        if (!Dev)
         return;
         
         if (!CM)
