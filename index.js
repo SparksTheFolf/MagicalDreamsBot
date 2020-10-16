@@ -47,10 +47,10 @@ bot.on('ready' , (oldMessage, newMessage) =>{
     const guild = bot.guilds.get("365007577060212736");
     
    let Manager = guild.roles.find("name", "Manager");
-let Coord = message.guilds.roles.get("702274417232969808");
-let Dev = message.guilds.roles.get("365008009707126784");
-let CM = message.guilds.roles.get("365008057664536587");
-let IN = message.guilds.roles.get("365008105181806602");
+let Coord = guild.roles.find("name", "Coordinator");
+let Dev = guild.roles.find("name", "Developer");
+let CM = guild.roles.find("name", "Cast Member");
+let IN = guild.roles.find("name", "Intern");
 
     
 })
