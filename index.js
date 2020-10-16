@@ -381,7 +381,7 @@ let IN = guild.roles.find("name", "Intern");
         msg.reply('Ok Restarting Now...');
         bot.destroy().then(() => {
           bot.login(process.env.token);  
-       ]
+       
         });
      
       break;
