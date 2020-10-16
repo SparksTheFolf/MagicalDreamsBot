@@ -371,11 +371,7 @@ let IN = guild.roles.find("name", "Intern");
     
     
      switch (args[0]) {
-    case 'restart': 
-        
-        if (!Manager) || (!Coord) || (!Dev) || (!CM) || (!IN)
-        return;
-      
+    case 'restart':    
         
     msg.delete(1000);
         msg.reply('Ok Restarting Now...');
@@ -385,15 +381,13 @@ let IN = guild.roles.find("name", "Intern");
    
     }
 
-/*
-    case 'shutdown': {
+     switch (args[0]) {
+    case 'shutdown': 
         msg.reply('Ok Stopping Now...');
         bot.destroy();
       
-      break;
     }
-  }
-*/
+ 
     
     
     
