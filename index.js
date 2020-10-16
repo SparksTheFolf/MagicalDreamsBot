@@ -387,7 +387,7 @@ let IN = guild.roles.find("name", "Intern");
       break;
     }
 
-
+/*
     case 'shutdown': {
         msg.reply('Ok Stopping Now...');
         bot.destroy();
@@ -395,7 +395,7 @@ let IN = guild.roles.find("name", "Intern");
       break;
     }
   }
-
+*/
     
     
     
