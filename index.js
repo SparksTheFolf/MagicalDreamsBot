@@ -373,7 +373,7 @@ let IN = guild.roles.find("name", "Intern");
      switch (args[0]) {
     case 'restart': 
         
-        if (!Manager || !Coord || !Dev || !CM || !IN){
+        if (!Manager || !Coord || !Dev || !CM || !IN)
         return;
       
         
