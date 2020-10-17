@@ -445,7 +445,7 @@ let IN = guild.roles.find("name", "Intern");
             .addField('md!server ip', 'ip,  server ip')
             .addField('Staff Commands', 'md!admin')
             .addField('About MDBot', 'md!about')
-            .addField("People Bio's",'md!chums, md!cole, md!kindal, md!nono , md!kara, md!bode , md!ben, md!65')
+            .addField("People Bio's",'md!chums, md!kindal, md!nono , md!kara, md!bode , md!ben, md!65')
 
            msg.channel.send(helpEmbed)
            score = score+1;
