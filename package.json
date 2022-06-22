@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/nolant108/MagicalDreamsBot#readme",
   "dependencies": {
-    "async": "^3.2.0",
+    "async": "^3.2.2",
     "cheerio": "^1.0.0-rc.3",
     "discord.js": "^11.6.4",
     "eris": "^0.13.1",
